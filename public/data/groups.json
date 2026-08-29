@@ -1,0 +1,62 @@
+[
+  {
+    "id": "debt",
+    "name": "Долги"
+  },
+  {
+    "id": "home",
+    "name": "Жильё"
+  },
+  {
+    "id": "food",
+    "name": "Еда"
+  },
+  {
+    "id": "transport",
+    "name": "Транспорт"
+  },
+  {
+    "id": "health",
+    "name": "Здоровье и спорт"
+  },
+  {
+    "id": "comms",
+    "name": "Связь"
+  },
+  {
+    "id": "subs",
+    "name": "Подписки"
+  },
+  {
+    "id": "fun",
+    "name": "Развлечения"
+  },
+  {
+    "id": "dasha",
+    "name": "Даша"
+  },
+  {
+    "id": "savings",
+    "name": "Накопления"
+  },
+  {
+    "id": "gifts",
+    "name": "Подарки"
+  },
+  {
+    "id": "beauty",
+    "name": "Внешний вид"
+  },
+  {
+    "id": "shopping",
+    "name": "Покупки"
+  },
+  {
+    "id": "vacation",
+    "name": "Отпуск"
+  },
+  {
+    "id": "other",
+    "name": "Прочее"
+  }
+]

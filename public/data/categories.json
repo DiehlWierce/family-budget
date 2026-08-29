@@ -1,0 +1,320 @@
+[
+  {
+    "id": "mortgage",
+    "name": "Ипотека",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-dasha",
+    "name": "Кредит Даши",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "household",
+    "name": "Бытовые траты",
+    "group": "home",
+    "groupName": "Жильё"
+  },
+  {
+    "id": "invest",
+    "name": "Инвестиции",
+    "group": "savings",
+    "groupName": "Накопления"
+  },
+  {
+    "id": "utilities",
+    "name": "Кварплата",
+    "group": "home",
+    "groupName": "Жильё"
+  },
+  {
+    "id": "sport",
+    "name": "Спорт",
+    "group": "health",
+    "groupName": "Здоровье и спорт"
+  },
+  {
+    "id": "internet-home",
+    "name": "Домашний интернет",
+    "group": "comms",
+    "groupName": "Связь"
+  },
+  {
+    "id": "mobile-dasha",
+    "name": "Мобильный (Даши)",
+    "group": "comms",
+    "groupName": "Связь"
+  },
+  {
+    "id": "mobile-my",
+    "name": "Мобильный (мой)",
+    "group": "comms",
+    "groupName": "Связь"
+  },
+  {
+    "id": "sub-yandex",
+    "name": "Яндекс.Плюс",
+    "group": "subs",
+    "groupName": "Подписки"
+  },
+  {
+    "id": "sub-tinkoff",
+    "name": "Тинькофф Про",
+    "group": "subs",
+    "groupName": "Подписки"
+  },
+  {
+    "id": "sub-snowball",
+    "name": "Snowball",
+    "group": "subs",
+    "groupName": "Подписки"
+  },
+  {
+    "id": "transport",
+    "name": "Дорога",
+    "group": "transport",
+    "groupName": "Транспорт"
+  },
+  {
+    "id": "food",
+    "name": "Еда",
+    "group": "food",
+    "groupName": "Еда"
+  },
+  {
+    "id": "fun",
+    "name": "Развлечения",
+    "group": "fun",
+    "groupName": "Развлечения"
+  },
+  {
+    "id": "gifts-x",
+    "name": "Подарки и праздники",
+    "group": "gifts",
+    "groupName": "Подарки"
+  },
+  {
+    "id": "shopping-x",
+    "name": "Покупки",
+    "group": "shopping",
+    "groupName": "Покупки"
+  },
+  {
+    "id": "beauty-x",
+    "name": "Внешний вид",
+    "group": "beauty",
+    "groupName": "Внешний вид"
+  },
+  {
+    "id": "dasha-x",
+    "name": "Даша (разово)",
+    "group": "dasha",
+    "groupName": "Даша"
+  },
+  {
+    "id": "sport-x",
+    "name": "Спорт (разово)",
+    "group": "health",
+    "groupName": "Здоровье и спорт"
+  },
+  {
+    "id": "fun-x",
+    "name": "Развлечения (разово)",
+    "group": "fun",
+    "groupName": "Развлечения"
+  },
+  {
+    "id": "inc-dasha",
+    "name": "От Даши",
+    "group": "income",
+    "groupName": "Прочее"
+  },
+  {
+    "id": "transport-x",
+    "name": "Транспорт (разово)",
+    "group": "transport",
+    "groupName": "Транспорт"
+  },
+  {
+    "id": "inc-carryover",
+    "name": "Остаток с прошлой получки",
+    "group": "income",
+    "groupName": "Прочее"
+  },
+  {
+    "id": "inc-refund",
+    "name": "Возврат / кэшбэк",
+    "group": "income",
+    "groupName": "Прочее"
+  },
+  {
+    "id": "subs-x",
+    "name": "Подписки (разово)",
+    "group": "subs",
+    "groupName": "Подписки"
+  },
+  {
+    "id": "home-x",
+    "name": "Жильё (разово)",
+    "group": "home",
+    "groupName": "Жильё"
+  },
+  {
+    "id": "health-x",
+    "name": "Здоровье",
+    "group": "health",
+    "groupName": "Здоровье и спорт"
+  },
+  {
+    "id": "other-x",
+    "name": "Прочее",
+    "group": "other",
+    "groupName": "Прочее"
+  },
+  {
+    "id": "inc-savings",
+    "name": "Из отложенных",
+    "group": "income",
+    "groupName": "Прочее"
+  },
+  {
+    "id": "debt-extra",
+    "name": "Долги (разово)",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "inc-other",
+    "name": "Прочий приход",
+    "group": "income",
+    "groupName": "Прочее"
+  },
+  {
+    "id": "savings-move",
+    "name": "Отложить / из отложенных",
+    "group": "savings",
+    "groupName": "Накопления"
+  },
+  {
+    "id": "inc-person",
+    "name": "От людей",
+    "group": "income",
+    "groupName": "Прочее"
+  },
+  {
+    "id": "inc-vacation",
+    "name": "Отпускные",
+    "group": "income",
+    "groupName": "Прочее"
+  },
+  {
+    "id": "loan-remont-old",
+    "name": "Кредит за ремонт",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-refin",
+    "name": "Рефинансирование",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "split-yandex",
+    "name": "Яндекс.Сплит",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "sub-icloud",
+    "name": "iCloud",
+    "group": "subs",
+    "groupName": "Подписки"
+  },
+  {
+    "id": "vacation-x",
+    "name": "Отпуск",
+    "group": "vacation",
+    "groupName": "Отпуск"
+  },
+  {
+    "id": "dasha",
+    "name": "Траты на Дашу",
+    "group": "dasha",
+    "groupName": "Даша"
+  },
+  {
+    "id": "food-x",
+    "name": "Еда (разово)",
+    "group": "food",
+    "groupName": "Еда"
+  },
+  {
+    "id": "loan-remont-13",
+    "name": "Кредит за ремонт 1.3 млн",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-remont-250",
+    "name": "Кредит за ремонт 250к",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-150",
+    "name": "Кредит на 150к",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "sub-citymobil",
+    "name": "Ситимобил",
+    "group": "subs",
+    "groupName": "Подписки"
+  },
+  {
+    "id": "credit-card",
+    "name": "Кредитная карта",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-250",
+    "name": "Кредит на 250к",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-early-3",
+    "name": "Досрочное погашение",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-520",
+    "name": "Кредит №2 на 520к",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-laptop",
+    "name": "Кредит за ноутбук",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-650",
+    "name": "Кредит №2 на 650к",
+    "group": "debt",
+    "groupName": "Долги"
+  },
+  {
+    "id": "loan-otpusk",
+    "name": "Кредит на отпуск",
+    "group": "debt",
+    "groupName": "Долги"
+  }
+]
