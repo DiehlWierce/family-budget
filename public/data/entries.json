@@ -14997,7 +14997,7 @@
     "kind": "required",
     "categoryId": "mobile-dasha",
     "title": "Моб. инет (Даши)",
-    "plan": 550,
+    "plan": 0,
     "fact": null,
     "order": 18,
     "templateId": "tpl-req-1-15"
@@ -15008,7 +15008,7 @@
     "kind": "required",
     "categoryId": "mobile-my",
     "title": "Моб. инет (Мой)",
-    "plan": 750,
+    "plan": 0,
     "fact": null,
     "order": 19,
     "templateId": "tpl-req-1-17"
