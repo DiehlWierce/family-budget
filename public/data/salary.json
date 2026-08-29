@@ -27,7 +27,7 @@
     }
   ],
   "indexation": {
-    "enabled": false,
+    "enabled": true,
     "month": 9,
     "percent": 5
   }
