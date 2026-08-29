@@ -14970,7 +14970,7 @@
     "title": "Развлечения",
     "plan": 3000,
     "fact": null,
-    "order": 27,
+    "order": 41,
     "templateId": "tpl-req-2-26"
   },
   {
@@ -14991,7 +14991,7 @@
     "title": "На досрочку за отпуск",
     "plan": 45000,
     "fact": null,
-    "order": 39
+    "order": 40
   },
   {
     "id": "2026-09-2-40",
@@ -15001,7 +15001,7 @@
     "title": "Отложить на ДР О.С.",
     "plan": 5000,
     "fact": null,
-    "order": 40
+    "order": 42
   },
   {
     "id": "2026-10-1-11",
@@ -17416,7 +17416,7 @@
     "title": "Дорога",
     "plan": 3000,
     "fact": null,
-    "order": 25
+    "order": 26
   },
   {
     "id": "2026-10-2-t-tpl-req-1-21",
@@ -17592,7 +17592,7 @@
     "title": "Еда",
     "plan": 15000,
     "fact": null,
-    "order": 26
+    "order": 27
   },
   {
     "id": "2026-10-2-t-tpl-req-1-23",
@@ -17779,7 +17779,7 @@
     "title": "Траты на Дашу",
     "plan": 2000,
     "fact": null,
-    "order": 41
+    "order": 43
   },
   {
     "id": "2026-10-2-new-mtf0ugwc",
@@ -17929,6 +17929,46 @@
     "categoryId": "other",
     "title": "Траты на Дашу",
     "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2026-09-1-new-mtf11u4r",
+    "paycheckId": "2026-09-1",
+    "kind": "required",
+    "order": 33,
+    "categoryId": "other",
+    "title": "Домашний интернет",
+    "plan": 750,
+    "fact": null
+  },
+  {
+    "id": "2026-09-1-new-mtf11urw",
+    "paycheckId": "2026-09-1",
+    "kind": "required",
+    "order": 34,
+    "categoryId": "other",
+    "title": "Моб. инет (Даши)",
+    "plan": 550,
+    "fact": null
+  },
+  {
+    "id": "2026-09-2-new-mtf13fkb",
+    "paycheckId": "2026-09-2",
+    "kind": "optional",
+    "order": 39,
+    "categoryId": "other-x",
+    "title": "iCloud Мне",
+    "plan": 1000,
+    "fact": null
+  },
+  {
+    "id": "2026-09-2-new-mtf146el",
+    "paycheckId": "2026-09-2",
+    "kind": "required",
+    "order": 25,
+    "categoryId": "other",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
     "fact": null
   }
 ]
