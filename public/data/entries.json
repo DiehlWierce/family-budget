@@ -14665,7 +14665,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": 27122,
     "order": 10
   },
@@ -14674,8 +14674,8 @@
     "paycheckId": "2026-08-2",
     "kind": "required",
     "categoryId": "loan-remont-13",
-    "title": "Кредит за ремонт 1.3кк",
-    "plan": 36870,
+    "title": "Кредит №1 на 1.3кк",
+    "plan": 36900,
     "fact": 36870,
     "order": 11
   },
@@ -14694,8 +14694,8 @@
     "paycheckId": "2026-08-2",
     "kind": "required",
     "categoryId": "loan-otpusk",
-    "title": "Кредит на отпуск",
-    "plan": 10866,
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
     "fact": 10866,
     "order": 13
   },
@@ -14748,16 +14748,6 @@
     "plan": 0,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2026-08-2-22",
-    "paycheckId": "2026-08-2",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2026-08-2-24",

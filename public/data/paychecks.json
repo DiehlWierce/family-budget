@@ -965,8 +965,8 @@
     "periodYear": 2026,
     "periodMonth": 8,
     "slot": 2,
-    "salaryOverride": 102527,
-    "salaryFact": null,
+    "salaryOverride": null,
+    "salaryFact": 102527,
     "legacy": {
       "column": "GP",
       "declaredSpend": 123552,
