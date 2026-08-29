@@ -17,7 +17,7 @@ export function Analytics() {
       groups: groupStats(budget, year),
       debts: debtStats(budget),
       strip: budget.paychecks.map((p) => ({
-        id: p.id, date: p.date, value: totals(p, budget.entries).free,
+        id: p.id, date: p.date, value: totals(p, budget).free,
       })),
       currentId: currentPaycheckId(budget.paychecks),
     }

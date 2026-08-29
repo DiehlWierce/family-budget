@@ -1,10 +1,12 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
-import type { Budget, Entry, GithubConfig, Paycheck } from './types'
+import type { Budget, Entry, GithubConfig, Paycheck, SalaryConfig, Template } from './types'
 import { commitFiles } from './github'
+import { applyForward, extendPlan } from './plan'
 
 const DRAFT_KEY = 'fb.draft.v1'
 const GH_KEY = 'fb.github.v1'
-const DATA_FILES = ['meta', 'paychecks', 'entries', 'categories', 'groups'] as const
+const DATA_FILES = ['meta', 'paychecks', 'entries', 'categories', 'groups',
+  'templates', 'salary', 'calendar'] as const
 
 type SaveState =
   | { kind: 'idle' }
@@ -70,6 +72,13 @@ interface Ctx {
   updateEntry: (id: string, patch: Partial<Entry>) => void
   addEntry: (paycheckId: string, kind: Entry['kind']) => string
   removeEntry: (id: string) => void
+  /** Перенести правку строки на все последующие получки того же типа. */
+  spreadForward: (paycheckId: string, entry: Entry, change: 'amount' | 'add' | 'remove') => number
+  updateTemplate: (id: string, patch: Partial<Template>) => void
+  addTemplate: (t: Template) => void
+  removeTemplate: (id: string) => void
+  updateSalary: (patch: Partial<SalaryConfig>) => void
+  extendTo: (year: number) => number
   publish: () => Promise<void>
   discardDraft: () => void
   reload: () => void
@@ -117,6 +126,17 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
     return () => { alive = false }
   }, [nonce])
 
+  /**
+   * Пишем состояние напрямую, а не через апдейтер: действиям планировщика нужно
+   * вернуть, сколько получек они затронули, а апдейтер React вызывает отложенно.
+   */
+  const commit = useCallback((next: Budget) => {
+    setBudget(next)
+    writeDraft({ remoteUpdatedAt, dirty: true, budget: next })
+    setDirty(true)
+    setSave({ kind: 'idle' })
+  }, [remoteUpdatedAt])
+
   const mutate = useCallback((fn: (b: Budget) => Budget) => {
     setBudget((prev) => {
       if (!prev) return prev
@@ -154,6 +174,41 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
   const removeEntry: Ctx['removeEntry'] = useCallback((id) => {
     mutate((b) => ({ ...b, entries: b.entries.filter((e) => e.id !== id) }))
   }, [mutate])
+
+  const spreadForward: Ctx['spreadForward'] = useCallback((pid, entry, change) => {
+    if (!budget) return 0
+    const res = applyForward(budget, pid, entry, change)
+    commit({ ...budget, entries: res.entries, templates: res.templates })
+    return res.touched
+  }, [budget, commit])
+
+  const updateTemplate: Ctx['updateTemplate'] = useCallback((id, patch) => {
+    mutate((b) => ({ ...b, templates: b.templates.map((t) => (t.id === id ? { ...t, ...patch } : t)) }))
+  }, [mutate])
+
+  const addTemplate: Ctx['addTemplate'] = useCallback((t) => {
+    mutate((b) => ({ ...b, templates: [...b.templates, t] }))
+  }, [mutate])
+
+  const removeTemplate: Ctx['removeTemplate'] = useCallback((id) => {
+    mutate((b) => ({ ...b, templates: b.templates.filter((t) => t.id !== id) }))
+  }, [mutate])
+
+  const updateSalary: Ctx['updateSalary'] = useCallback((patch) => {
+    mutate((b) => ({ ...b, salary: { ...b.salary, ...patch } }))
+  }, [mutate])
+
+  const extendTo: Ctx['extendTo'] = useCallback((year) => {
+    if (!budget) return 0
+    const gen = extendPlan(budget, year, budget.calendar)
+    if (!gen.paychecks.length) return 0
+    commit({
+      ...budget,
+      paychecks: [...budget.paychecks, ...gen.paychecks].sort((a, z) => a.date.localeCompare(z.date)),
+      entries: [...budget.entries, ...gen.entries],
+    })
+    return gen.paychecks.length
+  }, [budget, commit])
 
   const setGithub: Ctx['setGithub'] = useCallback((cfg) => {
     setGithubState(cfg)
@@ -200,9 +255,11 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
   const value = useMemo<Ctx>(() => ({
     status, error, budget, dirty, save, canEdit, github, setGithub,
     updatePaycheck, updateEntry, addEntry, removeEntry, publish, discardDraft,
+    spreadForward, updateTemplate, addTemplate, removeTemplate, updateSalary, extendTo,
     reload: () => setNonce((n) => n + 1),
   }), [status, error, budget, dirty, save, canEdit, github, setGithub,
-      updatePaycheck, updateEntry, addEntry, removeEntry, publish, discardDraft])
+      updatePaycheck, updateEntry, addEntry, removeEntry, publish, discardDraft,
+      spreadForward, updateTemplate, addTemplate, removeTemplate, updateSalary, extendTo])
 
   return <BudgetContext.Provider value={value}>{children}</BudgetContext.Provider>
 }

@@ -4,13 +4,15 @@ import { currentPaycheckId } from './calc'
 import { Now } from './views/Now'
 import { PaycheckView } from './views/PaycheckView'
 import { Analytics } from './views/Analytics'
+import { Plan } from './views/Plan'
 import { Settings } from './views/Settings'
 
-type Tab = 'now' | 'paycheck' | 'analytics' | 'settings'
+type Tab = 'now' | 'paycheck' | 'plan' | 'analytics' | 'settings'
 
 const TABS: { id: Tab; label: string; glyph: string }[] = [
   { id: 'now', label: 'Сейчас', glyph: '◉' },
   { id: 'paycheck', label: 'Получка', glyph: '▤' },
+  { id: 'plan', label: 'План', glyph: '⌁' },
   { id: 'analytics', label: 'Аналитика', glyph: '◨' },
   { id: 'settings', label: 'Настройки', glyph: '⚙' },
 ]
@@ -87,6 +89,7 @@ function Shell() {
           )}
           {tab === 'now' && <Now onOpenPaycheck={openPaycheck} />}
           {tab === 'paycheck' && <PaycheckView paycheckId={paycheckId} onSelect={setPaycheckId} />}
+          {tab === 'plan' && <Plan />}
           {tab === 'analytics' && <Analytics />}
           {tab === 'settings' && <Settings />}
         </>

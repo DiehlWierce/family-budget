@@ -5,13 +5,13 @@
     "periodYear": 2023,
     "periodMonth": 12,
     "slot": 2,
-    "salaryPlan": 84300.0,
+    "salaryOverride": 84300,
     "salaryFact": null,
     "legacy": {
       "column": "C",
-      "declaredSpend": 83470.0,
-      "declaredRest": 830.0,
-      "entriesSum": 83470.0
+      "declaredSpend": 83470,
+      "declaredRest": 830,
+      "entriesSum": 83470
     }
   },
   {
@@ -20,13 +20,13 @@
     "periodYear": 2024,
     "periodMonth": 1,
     "slot": 1,
-    "salaryPlan": 92712.79,
+    "salaryOverride": 92712.79,
     "salaryFact": null,
     "legacy": {
       "column": "G",
-      "declaredSpend": 92550.0,
+      "declaredSpend": 92550,
       "declaredRest": 162.79,
-      "entriesSum": 92550.0
+      "entriesSum": 92550
     }
   },
   {
@@ -35,7 +35,7 @@
     "periodYear": 2024,
     "periodMonth": 1,
     "slot": 2,
-    "salaryPlan": 47337.76,
+    "salaryOverride": 47337.76,
     "salaryFact": null,
     "legacy": {
       "column": "J",
@@ -50,13 +50,13 @@
     "periodYear": 2024,
     "periodMonth": 2,
     "slot": 1,
-    "salaryPlan": 121926.76,
+    "salaryOverride": 121926.76,
     "salaryFact": null,
     "legacy": {
       "column": "M",
-      "declaredSpend": 121867.0,
+      "declaredSpend": 121867,
       "declaredRest": 59.76,
-      "entriesSum": 121867.0
+      "entriesSum": 121867
     }
   },
   {
@@ -65,13 +65,13 @@
     "periodYear": 2024,
     "periodMonth": 2,
     "slot": 2,
-    "salaryPlan": 88522.0,
+    "salaryOverride": 88522,
     "salaryFact": null,
     "legacy": {
       "column": "P",
-      "declaredSpend": 88520.0,
-      "declaredRest": 2.0,
-      "entriesSum": 88520.0
+      "declaredSpend": 88520,
+      "declaredRest": 2,
+      "entriesSum": 88520
     }
   },
   {
@@ -80,13 +80,13 @@
     "periodYear": 2024,
     "periodMonth": 3,
     "slot": 1,
-    "salaryPlan": 73078.0,
+    "salaryOverride": 73078,
     "salaryFact": null,
     "legacy": {
       "column": "S",
-      "declaredSpend": 73080.0,
-      "declaredRest": -2.0,
-      "entriesSum": 73080.0
+      "declaredSpend": 73080,
+      "declaredRest": -2,
+      "entriesSum": 73080
     }
   },
   {
@@ -95,13 +95,13 @@
     "periodYear": 2024,
     "periodMonth": 3,
     "slot": 2,
-    "salaryPlan": 80475.0,
+    "salaryOverride": 80475,
     "salaryFact": null,
     "legacy": {
       "column": "V",
-      "declaredSpend": 80555.0,
-      "declaredRest": -80.0,
-      "entriesSum": 80555.0
+      "declaredSpend": 80555,
+      "declaredRest": -80,
+      "entriesSum": 80555
     }
   },
   {
@@ -110,13 +110,13 @@
     "periodYear": 2024,
     "periodMonth": 4,
     "slot": 1,
-    "salaryPlan": 81125.0,
+    "salaryOverride": 81125,
     "salaryFact": null,
     "legacy": {
       "column": "Y",
-      "declaredSpend": 80950.0,
-      "declaredRest": 175.0,
-      "entriesSum": 80950.0
+      "declaredSpend": 80950,
+      "declaredRest": 175,
+      "entriesSum": 80950
     }
   },
   {
@@ -125,13 +125,13 @@
     "periodYear": 2024,
     "periodMonth": 4,
     "slot": 2,
-    "salaryPlan": 84307.0,
+    "salaryOverride": 84307,
     "salaryFact": null,
     "legacy": {
       "column": "AB",
-      "declaredSpend": 84310.0,
-      "declaredRest": -3.0,
-      "entriesSum": 84310.0
+      "declaredSpend": 84310,
+      "declaredRest": -3,
+      "entriesSum": 84310
     }
   },
   {
@@ -140,13 +140,13 @@
     "periodYear": 2024,
     "periodMonth": 5,
     "slot": 1,
-    "salaryPlan": 77293.0,
+    "salaryOverride": 77293,
     "salaryFact": null,
     "legacy": {
       "column": "AE",
-      "declaredSpend": 76076.0,
-      "declaredRest": 1217.0,
-      "entriesSum": 76076.0
+      "declaredSpend": 76076,
+      "declaredRest": 1217,
+      "entriesSum": 76076
     }
   },
   {
@@ -155,13 +155,13 @@
     "periodYear": 2024,
     "periodMonth": 5,
     "slot": 2,
-    "salaryPlan": 56333.0,
+    "salaryOverride": 56333,
     "salaryFact": null,
     "legacy": {
       "column": "AH",
-      "declaredSpend": 57758.0,
-      "declaredRest": -1425.0,
-      "entriesSum": 57758.0
+      "declaredSpend": 57758,
+      "declaredRest": -1425,
+      "entriesSum": 57758
     }
   },
   {
@@ -170,13 +170,13 @@
     "periodYear": 2024,
     "periodMonth": 6,
     "slot": 1,
-    "salaryPlan": 97187.5,
+    "salaryOverride": 97187.5,
     "salaryFact": null,
     "legacy": {
       "column": "AK",
-      "declaredSpend": 97456.0,
+      "declaredSpend": 97456,
       "declaredRest": -268.5,
-      "entriesSum": 97456.0
+      "entriesSum": 97456
     }
   },
   {
@@ -185,13 +185,13 @@
     "periodYear": 2024,
     "periodMonth": 6,
     "slot": 2,
-    "salaryPlan": 76239.0,
+    "salaryOverride": 76239,
     "salaryFact": null,
     "legacy": {
       "column": "AN",
-      "declaredSpend": 74405.0,
-      "declaredRest": 1834.0,
-      "entriesSum": 74405.0
+      "declaredSpend": 74405,
+      "declaredRest": 1834,
+      "entriesSum": 74405
     }
   },
   {
@@ -200,13 +200,13 @@
     "periodYear": 2024,
     "periodMonth": 7,
     "slot": 1,
-    "salaryPlan": 85361.0,
+    "salaryOverride": 85361,
     "salaryFact": null,
     "legacy": {
       "column": "AQ",
-      "declaredSpend": 96600.0,
-      "declaredRest": -11239.0,
-      "entriesSum": 96600.0
+      "declaredSpend": 96600,
+      "declaredRest": -11239,
+      "entriesSum": 96600
     }
   },
   {
@@ -215,13 +215,13 @@
     "periodYear": 2024,
     "periodMonth": 7,
     "slot": 2,
-    "salaryPlan": 77200.0,
+    "salaryOverride": 77200,
     "salaryFact": null,
     "legacy": {
       "column": "AT",
-      "declaredSpend": 78152.0,
-      "declaredRest": -952.0,
-      "entriesSum": 78152.0
+      "declaredSpend": 78152,
+      "declaredRest": -952,
+      "entriesSum": 78152
     }
   },
   {
@@ -230,13 +230,13 @@
     "periodYear": 2024,
     "periodMonth": 8,
     "slot": 1,
-    "salaryPlan": 84400.0,
+    "salaryOverride": 84400,
     "salaryFact": null,
     "legacy": {
       "column": "AW",
-      "declaredSpend": 84864.0,
-      "declaredRest": -464.0,
-      "entriesSum": 84864.0
+      "declaredSpend": 84864,
+      "declaredRest": -464,
+      "entriesSum": 84864
     }
   },
   {
@@ -245,13 +245,13 @@
     "periodYear": 2024,
     "periodMonth": 8,
     "slot": 2,
-    "salaryPlan": 14690.0,
+    "salaryOverride": 14690,
     "salaryFact": null,
     "legacy": {
       "column": "AZ",
-      "declaredSpend": 10990.0,
-      "declaredRest": 3700.0,
-      "entriesSum": 10990.0
+      "declaredSpend": 10990,
+      "declaredRest": 3700,
+      "entriesSum": 10990
     }
   },
   {
@@ -260,13 +260,13 @@
     "periodYear": 2024,
     "periodMonth": 9,
     "slot": 1,
-    "salaryPlan": 80361.94,
+    "salaryOverride": 80361.94,
     "salaryFact": null,
     "legacy": {
       "column": "BC",
-      "declaredSpend": 79150.0,
+      "declaredSpend": 79150,
       "declaredRest": 1211.94,
-      "entriesSum": 79150.0
+      "entriesSum": 79150
     }
   },
   {
@@ -275,13 +275,13 @@
     "periodYear": 2024,
     "periodMonth": 9,
     "slot": 2,
-    "salaryPlan": 80760.0,
+    "salaryOverride": 80760,
     "salaryFact": null,
     "legacy": {
       "column": "BF",
-      "declaredSpend": 75025.0,
-      "declaredRest": 5735.0,
-      "entriesSum": 75025.0
+      "declaredSpend": 75025,
+      "declaredRest": 5735,
+      "entriesSum": 75025
     }
   },
   {
@@ -290,13 +290,13 @@
     "periodYear": 2024,
     "periodMonth": 10,
     "slot": 1,
-    "salaryPlan": 88840.0,
+    "salaryOverride": 88840,
     "salaryFact": null,
     "legacy": {
       "column": "BI",
-      "declaredSpend": 88750.0,
-      "declaredRest": 90.0,
-      "entriesSum": 88750.0
+      "declaredSpend": 88750,
+      "declaredRest": 90,
+      "entriesSum": 88750
     }
   },
   {
@@ -305,13 +305,13 @@
     "periodYear": 2024,
     "periodMonth": 10,
     "slot": 2,
-    "salaryPlan": 81113.0,
+    "salaryOverride": 81113,
     "salaryFact": null,
     "legacy": {
       "column": "BL",
-      "declaredSpend": 88680.0,
-      "declaredRest": -7567.0,
-      "entriesSum": 88680.0
+      "declaredSpend": 88680,
+      "declaredRest": -7567,
+      "entriesSum": 88680
     }
   },
   {
@@ -320,13 +320,13 @@
     "periodYear": 2024,
     "periodMonth": 11,
     "slot": 1,
-    "salaryPlan": 88487.0,
+    "salaryOverride": 88487,
     "salaryFact": null,
     "legacy": {
       "column": "BO",
-      "declaredSpend": 82800.0,
-      "declaredRest": 5687.0,
-      "entriesSum": 82800.0
+      "declaredSpend": 82800,
+      "declaredRest": 5687,
+      "entriesSum": 82800
     }
   },
   {
@@ -335,13 +335,13 @@
     "periodYear": 2024,
     "periodMonth": 11,
     "slot": 2,
-    "salaryPlan": 88615.0,
+    "salaryOverride": 88615,
     "salaryFact": null,
     "legacy": {
       "column": "BR",
-      "declaredSpend": 88673.0,
-      "declaredRest": -58.0,
-      "entriesSum": 88673.0
+      "declaredSpend": 88673,
+      "declaredRest": -58,
+      "entriesSum": 88673
     }
   },
   {
@@ -350,13 +350,13 @@
     "periodYear": 2024,
     "periodMonth": 12,
     "slot": 1,
-    "salaryPlan": 80985.0,
+    "salaryOverride": 80985,
     "salaryFact": null,
     "legacy": {
       "column": "BU",
-      "declaredSpend": 88077.0,
-      "declaredRest": -7092.0,
-      "entriesSum": 88077.0
+      "declaredSpend": 88077,
+      "declaredRest": -7092,
+      "entriesSum": 88077
     }
   },
   {
@@ -365,13 +365,13 @@
     "periodYear": 2024,
     "periodMonth": 12,
     "slot": 2,
-    "salaryPlan": 80760.0,
+    "salaryOverride": 80760,
     "salaryFact": null,
     "legacy": {
       "column": "BX",
-      "declaredSpend": 67797.0,
-      "declaredRest": 12963.0,
-      "entriesSum": 67797.0
+      "declaredSpend": 67797,
+      "declaredRest": 12963,
+      "entriesSum": 67797
     }
   },
   {
@@ -380,13 +380,13 @@
     "periodYear": 2025,
     "periodMonth": 1,
     "slot": 1,
-    "salaryPlan": 65005.0,
+    "salaryOverride": 65005,
     "salaryFact": null,
     "legacy": {
       "column": "CB",
-      "declaredSpend": 64751.0,
-      "declaredRest": 254.0,
-      "entriesSum": 64751.0
+      "declaredSpend": 64751,
+      "declaredRest": 254,
+      "entriesSum": 64751
     }
   },
   {
@@ -395,13 +395,13 @@
     "periodYear": 2025,
     "periodMonth": 1,
     "slot": 2,
-    "salaryPlan": 58853.0,
+    "salaryOverride": 58853,
     "salaryFact": null,
     "legacy": {
       "column": "CE",
-      "declaredSpend": 57258.0,
-      "declaredRest": 1595.0,
-      "entriesSum": 57258.0
+      "declaredSpend": 57258,
+      "declaredRest": 1595,
+      "entriesSum": 57258
     }
   },
   {
@@ -410,13 +410,13 @@
     "periodYear": 2025,
     "periodMonth": 2,
     "slot": 1,
-    "salaryPlan": 158000.0,
+    "salaryOverride": 158000,
     "salaryFact": null,
     "legacy": {
       "column": "CH",
-      "declaredSpend": 157830.0,
-      "declaredRest": 170.0,
-      "entriesSum": 157830.0
+      "declaredSpend": 157830,
+      "declaredRest": 170,
+      "entriesSum": 157830
     }
   },
   {
@@ -425,13 +425,13 @@
     "periodYear": 2025,
     "periodMonth": 2,
     "slot": 2,
-    "salaryPlan": 100050.0,
+    "salaryOverride": 100050,
     "salaryFact": null,
     "legacy": {
       "column": "CK",
-      "declaredSpend": 100428.0,
-      "declaredRest": -378.0,
-      "entriesSum": 100428.0
+      "declaredSpend": 100428,
+      "declaredRest": -378,
+      "entriesSum": 100428
     }
   },
   {
@@ -440,13 +440,13 @@
     "periodYear": 2025,
     "periodMonth": 3,
     "slot": 1,
-    "salaryPlan": 100050.0,
+    "salaryOverride": 100050,
     "salaryFact": null,
     "legacy": {
       "column": "CN",
-      "declaredSpend": 99508.0,
-      "declaredRest": 542.0,
-      "entriesSum": 99508.0
+      "declaredSpend": 99508,
+      "declaredRest": 542,
+      "entriesSum": 99508
     }
   },
   {
@@ -455,13 +455,13 @@
     "periodYear": 2025,
     "periodMonth": 3,
     "slot": 2,
-    "salaryPlan": 95286.0,
+    "salaryOverride": 95286,
     "salaryFact": null,
     "legacy": {
       "column": "CQ",
-      "declaredSpend": 95100.0,
-      "declaredRest": 186.0,
-      "entriesSum": 95100.0
+      "declaredSpend": 95100,
+      "declaredRest": 186,
+      "entriesSum": 95100
     }
   },
   {
@@ -470,13 +470,13 @@
     "periodYear": 2025,
     "periodMonth": 4,
     "slot": 1,
-    "salaryPlan": 104814.0,
+    "salaryOverride": 104814,
     "salaryFact": null,
     "legacy": {
       "column": "CT",
-      "declaredSpend": 104940.0,
-      "declaredRest": -126.0,
-      "entriesSum": 104940.0
+      "declaredSpend": 104940,
+      "declaredRest": -126,
+      "entriesSum": 104940
     }
   },
   {
@@ -485,13 +485,13 @@
     "periodYear": 2025,
     "periodMonth": 4,
     "slot": 2,
-    "salaryPlan": 100050.0,
+    "salaryOverride": 100050,
     "salaryFact": null,
     "legacy": {
       "column": "CW",
-      "declaredSpend": 100108.0,
-      "declaredRest": -58.0,
-      "entriesSum": 100108.0
+      "declaredSpend": 100108,
+      "declaredRest": -58,
+      "entriesSum": 100108
     }
   },
   {
@@ -500,13 +500,13 @@
     "periodYear": 2025,
     "periodMonth": 5,
     "slot": 1,
-    "salaryPlan": 110285.96,
+    "salaryOverride": 110285.96,
     "salaryFact": null,
     "legacy": {
       "column": "CZ",
-      "declaredSpend": 109750.0,
+      "declaredSpend": 109750,
       "declaredRest": 535.96,
-      "entriesSum": 109750.0
+      "entriesSum": 109750
     }
   },
   {
@@ -515,7 +515,7 @@
     "periodYear": 2025,
     "periodMonth": 5,
     "slot": 2,
-    "salaryPlan": 77817.0,
+    "salaryOverride": 77817,
     "salaryFact": null,
     "legacy": {
       "column": "DC",
@@ -530,13 +530,13 @@
     "periodYear": 2025,
     "periodMonth": 6,
     "slot": 1,
-    "salaryPlan": 122283.0,
+    "salaryOverride": 122283,
     "salaryFact": null,
     "legacy": {
       "column": "DF",
-      "declaredSpend": 122086.0,
-      "declaredRest": 197.0,
-      "entriesSum": 122086.0
+      "declaredSpend": 122086,
+      "declaredRest": 197,
+      "entriesSum": 122086
     }
   },
   {
@@ -545,13 +545,13 @@
     "periodYear": 2025,
     "periodMonth": 6,
     "slot": 2,
-    "salaryPlan": 84253.0,
+    "salaryOverride": 84253,
     "salaryFact": null,
     "legacy": {
       "column": "DI",
-      "declaredSpend": 85871.0,
-      "declaredRest": -1618.0,
-      "entriesSum": 85871.0
+      "declaredSpend": 85871,
+      "declaredRest": -1618,
+      "entriesSum": 85871
     }
   },
   {
@@ -560,13 +560,13 @@
     "periodYear": 2025,
     "periodMonth": 7,
     "slot": 1,
-    "salaryPlan": 115847.0,
+    "salaryOverride": 115847,
     "salaryFact": null,
     "legacy": {
       "column": "DL",
-      "declaredSpend": 115900.0,
-      "declaredRest": -53.0,
-      "entriesSum": 115900.0
+      "declaredSpend": 115900,
+      "declaredRest": -53,
+      "entriesSum": 115900
     }
   },
   {
@@ -575,13 +575,13 @@
     "periodYear": 2025,
     "periodMonth": 7,
     "slot": 2,
-    "salaryPlan": 95700.0,
+    "salaryOverride": 95700,
     "salaryFact": null,
     "legacy": {
       "column": "DO",
-      "declaredSpend": 95650.0,
-      "declaredRest": 50.0,
-      "entriesSum": 95650.0
+      "declaredSpend": 95650,
+      "declaredRest": 50,
+      "entriesSum": 95650
     }
   },
   {
@@ -590,13 +590,13 @@
     "periodYear": 2025,
     "periodMonth": 8,
     "slot": 1,
-    "salaryPlan": 104050.0,
+    "salaryOverride": 104050,
     "salaryFact": null,
     "legacy": {
       "column": "DR",
-      "declaredSpend": 105150.0,
-      "declaredRest": -1100.0,
-      "entriesSum": 105150.0
+      "declaredSpend": 105150,
+      "declaredRest": -1100,
+      "entriesSum": 105150
     }
   },
   {
@@ -605,13 +605,13 @@
     "periodYear": 2025,
     "periodMonth": 8,
     "slot": 2,
-    "salaryPlan": 104815.0,
+    "salaryOverride": 104815,
     "salaryFact": null,
     "legacy": {
       "column": "DU",
-      "declaredSpend": 104873.0,
-      "declaredRest": -58.0,
-      "entriesSum": 104873.0
+      "declaredSpend": 104873,
+      "declaredRest": -58,
+      "entriesSum": 104873
     }
   },
   {
@@ -620,13 +620,13 @@
     "periodYear": 2025,
     "periodMonth": 9,
     "slot": 1,
-    "salaryPlan": 0,
+    "salaryOverride": 0,
     "salaryFact": null,
     "legacy": {
       "column": "DX",
-      "declaredSpend": 0.0,
-      "declaredRest": 0.0,
-      "entriesSum": 0.0
+      "declaredSpend": 0,
+      "declaredRest": 0,
+      "entriesSum": 0
     }
   },
   {
@@ -635,13 +635,13 @@
     "periodYear": 2025,
     "periodMonth": 9,
     "slot": 2,
-    "salaryPlan": 107875.0,
+    "salaryOverride": 107875,
     "salaryFact": null,
     "legacy": {
       "column": "EA",
-      "declaredSpend": 102812.0,
-      "declaredRest": 5063.0,
-      "entriesSum": 102812.0
+      "declaredSpend": 102812,
+      "declaredRest": 5063,
+      "entriesSum": 102812
     }
   },
   {
@@ -650,13 +650,13 @@
     "periodYear": 2025,
     "periodMonth": 10,
     "slot": 1,
-    "salaryPlan": 107425.0,
+    "salaryOverride": 107425,
     "salaryFact": null,
     "legacy": {
       "column": "ED",
-      "declaredSpend": 99740.0,
-      "declaredRest": 7685.0,
-      "entriesSum": 99740.0
+      "declaredSpend": 99740,
+      "declaredRest": 7685,
+      "entriesSum": 99740
     }
   },
   {
@@ -665,13 +665,13 @@
     "periodYear": 2025,
     "periodMonth": 10,
     "slot": 2,
-    "salaryPlan": 102900.0,
+    "salaryOverride": 102900,
     "salaryFact": null,
     "legacy": {
       "column": "EG",
-      "declaredSpend": 102925.0,
-      "declaredRest": -25.0,
-      "entriesSum": 102925.0
+      "declaredSpend": 102925,
+      "declaredRest": -25,
+      "entriesSum": 102925
     }
   },
   {
@@ -680,13 +680,13 @@
     "periodYear": 2025,
     "periodMonth": 11,
     "slot": 1,
-    "salaryPlan": 112400.0,
+    "salaryOverride": 112400,
     "salaryFact": null,
     "legacy": {
       "column": "EJ",
-      "declaredSpend": 108284.0,
-      "declaredRest": 4116.0,
-      "entriesSum": 108284.0
+      "declaredSpend": 108284,
+      "declaredRest": 4116,
+      "entriesSum": 108284
     }
   },
   {
@@ -695,13 +695,13 @@
     "periodYear": 2025,
     "periodMonth": 11,
     "slot": 2,
-    "salaryPlan": 100500.0,
+    "salaryOverride": 100500,
     "salaryFact": null,
     "legacy": {
       "column": "EM",
-      "declaredSpend": 100255.0,
-      "declaredRest": 245.0,
-      "entriesSum": 100255.0
+      "declaredSpend": 100255,
+      "declaredRest": 245,
+      "entriesSum": 100255
     }
   },
   {
@@ -710,13 +710,13 @@
     "periodYear": 2025,
     "periodMonth": 12,
     "slot": 1,
-    "salaryPlan": 111364.0,
+    "salaryOverride": 111364,
     "salaryFact": null,
     "legacy": {
       "column": "EP",
-      "declaredSpend": 114944.0,
-      "declaredRest": -3580.0,
-      "entriesSum": 114944.0
+      "declaredSpend": 114944,
+      "declaredRest": -3580,
+      "entriesSum": 114944
     }
   },
   {
@@ -725,13 +725,13 @@
     "periodYear": 2025,
     "periodMonth": 12,
     "slot": 2,
-    "salaryPlan": 105179.0,
+    "salaryOverride": 105179,
     "salaryFact": null,
     "legacy": {
       "column": "ES",
-      "declaredSpend": 104200.0,
-      "declaredRest": 979.0,
-      "entriesSum": 104200.0
+      "declaredSpend": 104200,
+      "declaredRest": 979,
+      "entriesSum": 104200
     }
   },
   {
@@ -740,13 +740,13 @@
     "periodYear": 2026,
     "periodMonth": 1,
     "slot": 1,
-    "salaryPlan": 9915.64,
+    "salaryOverride": 9915.64,
     "salaryFact": null,
     "legacy": {
       "column": "EW",
-      "declaredSpend": 9000.0,
+      "declaredSpend": 9000,
       "declaredRest": 915.64,
-      "entriesSum": 9000.0
+      "entriesSum": 9000
     }
   },
   {
@@ -755,13 +755,13 @@
     "periodYear": 2026,
     "periodMonth": 1,
     "slot": 2,
-    "salaryPlan": 57400.0,
+    "salaryOverride": 57400,
     "salaryFact": null,
     "legacy": {
       "column": "EZ",
-      "declaredSpend": 58822.0,
-      "declaredRest": -1422.0,
-      "entriesSum": 58822.0
+      "declaredSpend": 58822,
+      "declaredRest": -1422,
+      "entriesSum": 58822
     }
   },
   {
@@ -770,13 +770,13 @@
     "periodYear": 2026,
     "periodMonth": 2,
     "slot": 1,
-    "salaryPlan": 158542.0,
+    "salaryOverride": 158542,
     "salaryFact": null,
     "legacy": {
       "column": "FC",
-      "declaredSpend": 156270.0,
-      "declaredRest": 2272.0,
-      "entriesSum": 156270.0
+      "declaredSpend": 156270,
+      "declaredRest": 2272,
+      "entriesSum": 156270
     }
   },
   {
@@ -785,13 +785,13 @@
     "periodYear": 2026,
     "periodMonth": 2,
     "slot": 2,
-    "salaryPlan": 113300.0,
+    "salaryOverride": 113300,
     "salaryFact": null,
     "legacy": {
       "column": "FF",
-      "declaredSpend": 111622.0,
-      "declaredRest": 1678.0,
-      "entriesSum": 111622.0
+      "declaredSpend": 111622,
+      "declaredRest": 1678,
+      "entriesSum": 111622
     }
   },
   {
@@ -800,13 +800,13 @@
     "periodYear": 2026,
     "periodMonth": 3,
     "slot": 1,
-    "salaryPlan": 102000.0,
+    "salaryOverride": 102000,
     "salaryFact": null,
     "legacy": {
       "column": "FI",
-      "declaredSpend": 102170.0,
-      "declaredRest": -170.0,
-      "entriesSum": 102170.0
+      "declaredSpend": 102170,
+      "declaredRest": -170,
+      "entriesSum": 102170
     }
   },
   {
@@ -815,13 +815,13 @@
     "periodYear": 2026,
     "periodMonth": 3,
     "slot": 2,
-    "salaryPlan": 92250.0,
+    "salaryOverride": 92250,
     "salaryFact": null,
     "legacy": {
       "column": "FL",
-      "declaredSpend": 88950.0,
-      "declaredRest": 3300.0,
-      "entriesSum": 88950.0
+      "declaredSpend": 88950,
+      "declaredRest": 3300,
+      "entriesSum": 88950
     }
   },
   {
@@ -830,13 +830,13 @@
     "periodYear": 2026,
     "periodMonth": 4,
     "slot": 1,
-    "salaryPlan": 123650.0,
+    "salaryOverride": 123650,
     "salaryFact": null,
     "legacy": {
       "column": "FO",
-      "declaredSpend": 122792.0,
-      "declaredRest": 858.0,
-      "entriesSum": 122792.0
+      "declaredSpend": 122792,
+      "declaredRest": 858,
+      "entriesSum": 122792
     }
   },
   {
@@ -845,13 +845,13 @@
     "periodYear": 2026,
     "periodMonth": 4,
     "slot": 2,
-    "salaryPlan": 107650.0,
+    "salaryOverride": 107650,
     "salaryFact": null,
     "legacy": {
       "column": "FR",
-      "declaredSpend": 105150.0,
-      "declaredRest": 2500.0,
-      "entriesSum": 105150.0
+      "declaredSpend": 105150,
+      "declaredRest": 2500,
+      "entriesSum": 105150
     }
   },
   {
@@ -860,13 +860,13 @@
     "periodYear": 2026,
     "periodMonth": 5,
     "slot": 1,
-    "salaryPlan": 98486.0,
+    "salaryOverride": 98486,
     "salaryFact": null,
     "legacy": {
       "column": "FU",
-      "declaredSpend": 83270.0,
-      "declaredRest": 15216.0,
-      "entriesSum": 83270.0
+      "declaredSpend": 83270,
+      "declaredRest": 15216,
+      "entriesSum": 83270
     }
   },
   {
@@ -875,13 +875,13 @@
     "periodYear": 2026,
     "periodMonth": 5,
     "slot": 2,
-    "salaryPlan": 101987.0,
+    "salaryOverride": 101987,
     "salaryFact": null,
     "legacy": {
       "column": "FX",
-      "declaredSpend": 100122.0,
-      "declaredRest": 1865.0,
-      "entriesSum": 100122.0
+      "declaredSpend": 100122,
+      "declaredRest": 1865,
+      "entriesSum": 100122
     }
   },
   {
@@ -890,13 +890,13 @@
     "periodYear": 2026,
     "periodMonth": 6,
     "slot": 1,
-    "salaryPlan": 113969.0,
+    "salaryOverride": 113969,
     "salaryFact": null,
     "legacy": {
       "column": "GA",
-      "declaredSpend": 114020.0,
-      "declaredRest": -51.0,
-      "entriesSum": 114020.0
+      "declaredSpend": 114020,
+      "declaredRest": -51,
+      "entriesSum": 114020
     }
   },
   {
@@ -905,13 +905,13 @@
     "periodYear": 2026,
     "periodMonth": 6,
     "slot": 2,
-    "salaryPlan": 102500.0,
+    "salaryOverride": 102500,
     "salaryFact": null,
     "legacy": {
       "column": "GD",
-      "declaredSpend": 98806.0,
-      "declaredRest": 3694.0,
-      "entriesSum": 98806.0
+      "declaredSpend": 98806,
+      "declaredRest": 3694,
+      "entriesSum": 98806
     }
   },
   {
@@ -920,13 +920,13 @@
     "periodYear": 2026,
     "periodMonth": 7,
     "slot": 1,
-    "salaryPlan": 113430.0,
+    "salaryOverride": 113430,
     "salaryFact": null,
     "legacy": {
       "column": "GG",
-      "declaredSpend": 113196.0,
-      "declaredRest": 234.0,
-      "entriesSum": 113196.0
+      "declaredSpend": 113196,
+      "declaredRest": 234,
+      "entriesSum": 113196
     }
   },
   {
@@ -935,13 +935,13 @@
     "periodYear": 2026,
     "periodMonth": 7,
     "slot": 2,
-    "salaryPlan": 102973.0,
+    "salaryOverride": 102973,
     "salaryFact": null,
     "legacy": {
       "column": "GJ",
-      "declaredSpend": 102009.0,
-      "declaredRest": 964.0,
-      "entriesSum": 102009.0
+      "declaredSpend": 102009,
+      "declaredRest": 964,
+      "entriesSum": 102009
     }
   },
   {
@@ -950,13 +950,13 @@
     "periodYear": 2026,
     "periodMonth": 8,
     "slot": 1,
-    "salaryPlan": 56165.21739,
+    "salaryOverride": 56165.21739,
     "salaryFact": null,
     "legacy": {
       "column": "GM",
-      "declaredSpend": 55878.0,
+      "declaredSpend": 55878,
       "declaredRest": 287.2173913,
-      "entriesSum": 55878.0
+      "entriesSum": 55878
     }
   },
   {
@@ -965,13 +965,13 @@
     "periodYear": 2026,
     "periodMonth": 8,
     "slot": 2,
-    "salaryPlan": 102527.0,
+    "salaryOverride": 102527,
     "salaryFact": null,
     "legacy": {
       "column": "GP",
-      "declaredSpend": 123552.0,
-      "declaredRest": -21025.0,
-      "entriesSum": 123552.0
+      "declaredSpend": 123552,
+      "declaredRest": -21025,
+      "entriesSum": 123552
     }
   },
   {
@@ -980,13 +980,13 @@
     "periodYear": 2026,
     "periodMonth": 9,
     "slot": 1,
-    "salaryPlan": 10238.09524,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "GS",
-      "declaredSpend": 10000.0,
+      "declaredSpend": 10000,
       "declaredRest": 238.0952381,
-      "entriesSum": 10000.0
+      "entriesSum": 10000
     }
   },
   {
@@ -995,13 +995,13 @@
     "periodYear": 2026,
     "periodMonth": 9,
     "slot": 2,
-    "salaryPlan": 118250.0,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "GV",
-      "declaredSpend": 117988.0,
-      "declaredRest": 262.0,
-      "entriesSum": 117988.0
+      "declaredSpend": 117988,
+      "declaredRest": 262,
+      "entriesSum": 117988
     }
   },
   {
@@ -1010,13 +1010,13 @@
     "periodYear": 2026,
     "periodMonth": 10,
     "slot": 1,
-    "salaryPlan": 118250.0,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "GY",
-      "declaredSpend": 118520.0,
-      "declaredRest": -270.0,
-      "entriesSum": 118520.0
+      "declaredSpend": 118520,
+      "declaredRest": -270,
+      "entriesSum": 118520
     }
   },
   {
@@ -1025,13 +1025,13 @@
     "periodYear": 2026,
     "periodMonth": 10,
     "slot": 2,
-    "salaryPlan": 112875.0,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "HB",
-      "declaredSpend": 105988.0,
-      "declaredRest": 6887.0,
-      "entriesSum": 105988.0
+      "declaredSpend": 105988,
+      "declaredRest": 6887,
+      "entriesSum": 105988
     }
   },
   {
@@ -1040,13 +1040,13 @@
     "periodYear": 2026,
     "periodMonth": 11,
     "slot": 1,
-    "salaryPlan": 118250.0,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "HE",
-      "declaredSpend": 119520.0,
-      "declaredRest": -1270.0,
-      "entriesSum": 119520.0
+      "declaredSpend": 119520,
+      "declaredRest": -1270,
+      "entriesSum": 119520
     }
   },
   {
@@ -1055,13 +1055,13 @@
     "periodYear": 2026,
     "periodMonth": 11,
     "slot": 2,
-    "salaryPlan": 101587.5,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "HH",
-      "declaredSpend": 100322.0,
+      "declaredSpend": 100322,
       "declaredRest": 1265.5,
-      "entriesSum": 100322.0
+      "entriesSum": 100322
     }
   },
   {
@@ -1070,13 +1070,13 @@
     "periodYear": 2026,
     "periodMonth": 12,
     "slot": 1,
-    "salaryPlan": 124162.5,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "HK",
-      "declaredSpend": 121478.0,
+      "declaredSpend": 121478,
       "declaredRest": 2684.5,
-      "entriesSum": 121478.0
+      "entriesSum": 121478
     }
   },
   {
@@ -1085,13 +1085,13 @@
     "periodYear": 2026,
     "periodMonth": 12,
     "slot": 2,
-    "salaryPlan": 112875.0,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "HN",
-      "declaredSpend": 106050.0,
-      "declaredRest": 6825.0,
-      "entriesSum": 106050.0
+      "declaredSpend": 106050,
+      "declaredRest": 6825,
+      "entriesSum": 106050
     }
   },
   {
@@ -1100,13 +1100,13 @@
     "periodYear": 2027,
     "periodMonth": 1,
     "slot": 1,
-    "salaryPlan": 20522.72727,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "HR",
-      "declaredSpend": 23000.0,
+      "declaredSpend": 23000,
       "declaredRest": -2477.272727,
-      "entriesSum": 23000.0
+      "entriesSum": 23000
     }
   },
   {
@@ -1115,13 +1115,13 @@
     "periodYear": 2027,
     "periodMonth": 1,
     "slot": 2,
-    "salaryPlan": 112875.0,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "HU",
-      "declaredSpend": 65822.0,
-      "declaredRest": 47053.0,
-      "entriesSum": 65822.0
+      "declaredSpend": 65822,
+      "declaredRest": 47053,
+      "entriesSum": 65822
     }
   },
   {
@@ -1130,13 +1130,13 @@
     "periodYear": 2027,
     "periodMonth": 2,
     "slot": 1,
-    "salaryPlan": 118250.0,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "HY",
-      "declaredSpend": 116670.0,
-      "declaredRest": 1580.0,
-      "entriesSum": 116670.0
+      "declaredSpend": 116670,
+      "declaredRest": 1580,
+      "entriesSum": 116670
     }
   },
   {
@@ -1145,13 +1145,933 @@
     "periodYear": 2027,
     "periodMonth": 2,
     "slot": 2,
-    "salaryPlan": 112875.0,
+    "salaryOverride": null,
     "salaryFact": null,
     "legacy": {
       "column": "IB",
-      "declaredSpend": 65822.0,
-      "declaredRest": 47053.0,
-      "entriesSum": 65822.0
+      "declaredSpend": 65822,
+      "declaredRest": 47053,
+      "entriesSum": 65822
     }
+  },
+  {
+    "id": "2027-03-1",
+    "date": "2027-03-05",
+    "periodYear": 2027,
+    "periodMonth": 3,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-03-2",
+    "date": "2027-03-19",
+    "periodYear": 2027,
+    "periodMonth": 3,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-04-1",
+    "date": "2027-04-06",
+    "periodYear": 2027,
+    "periodMonth": 4,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-04-2",
+    "date": "2027-04-21",
+    "periodYear": 2027,
+    "periodMonth": 4,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-05-1",
+    "date": "2027-05-06",
+    "periodYear": 2027,
+    "periodMonth": 5,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-05-2",
+    "date": "2027-05-21",
+    "periodYear": 2027,
+    "periodMonth": 5,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-06-1",
+    "date": "2027-06-04",
+    "periodYear": 2027,
+    "periodMonth": 6,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-06-2",
+    "date": "2027-06-21",
+    "periodYear": 2027,
+    "periodMonth": 6,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-07-1",
+    "date": "2027-07-06",
+    "periodYear": 2027,
+    "periodMonth": 7,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-07-2",
+    "date": "2027-07-21",
+    "periodYear": 2027,
+    "periodMonth": 7,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-08-1",
+    "date": "2027-08-06",
+    "periodYear": 2027,
+    "periodMonth": 8,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-08-2",
+    "date": "2027-08-20",
+    "periodYear": 2027,
+    "periodMonth": 8,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-09-1",
+    "date": "2027-09-06",
+    "periodYear": 2027,
+    "periodMonth": 9,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-09-2",
+    "date": "2027-09-21",
+    "periodYear": 2027,
+    "periodMonth": 9,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-10-1",
+    "date": "2027-10-06",
+    "periodYear": 2027,
+    "periodMonth": 10,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-10-2",
+    "date": "2027-10-21",
+    "periodYear": 2027,
+    "periodMonth": 10,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-11-1",
+    "date": "2027-11-05",
+    "periodYear": 2027,
+    "periodMonth": 11,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-11-2",
+    "date": "2027-11-19",
+    "periodYear": 2027,
+    "periodMonth": 11,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-12-1",
+    "date": "2027-12-06",
+    "periodYear": 2027,
+    "periodMonth": 12,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2027-12-2",
+    "date": "2027-12-21",
+    "periodYear": 2027,
+    "periodMonth": 12,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-01-1",
+    "date": "2027-12-31",
+    "periodYear": 2028,
+    "periodMonth": 1,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-01-2",
+    "date": "2028-01-21",
+    "periodYear": 2028,
+    "periodMonth": 1,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-02-1",
+    "date": "2028-02-04",
+    "periodYear": 2028,
+    "periodMonth": 2,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-02-2",
+    "date": "2028-02-21",
+    "periodYear": 2028,
+    "periodMonth": 2,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-03-1",
+    "date": "2028-03-06",
+    "periodYear": 2028,
+    "periodMonth": 3,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-03-2",
+    "date": "2028-03-21",
+    "periodYear": 2028,
+    "periodMonth": 3,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-04-1",
+    "date": "2028-04-06",
+    "periodYear": 2028,
+    "periodMonth": 4,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-04-2",
+    "date": "2028-04-21",
+    "periodYear": 2028,
+    "periodMonth": 4,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-05-1",
+    "date": "2028-05-05",
+    "periodYear": 2028,
+    "periodMonth": 5,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-05-2",
+    "date": "2028-05-19",
+    "periodYear": 2028,
+    "periodMonth": 5,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-06-1",
+    "date": "2028-06-06",
+    "periodYear": 2028,
+    "periodMonth": 6,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-06-2",
+    "date": "2028-06-21",
+    "periodYear": 2028,
+    "periodMonth": 6,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-07-1",
+    "date": "2028-07-06",
+    "periodYear": 2028,
+    "periodMonth": 7,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-07-2",
+    "date": "2028-07-21",
+    "periodYear": 2028,
+    "periodMonth": 7,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-08-1",
+    "date": "2028-08-04",
+    "periodYear": 2028,
+    "periodMonth": 8,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-08-2",
+    "date": "2028-08-21",
+    "periodYear": 2028,
+    "periodMonth": 8,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-09-1",
+    "date": "2028-09-06",
+    "periodYear": 2028,
+    "periodMonth": 9,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-09-2",
+    "date": "2028-09-21",
+    "periodYear": 2028,
+    "periodMonth": 9,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-10-1",
+    "date": "2028-10-06",
+    "periodYear": 2028,
+    "periodMonth": 10,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-10-2",
+    "date": "2028-10-20",
+    "periodYear": 2028,
+    "periodMonth": 10,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-11-1",
+    "date": "2028-11-03",
+    "periodYear": 2028,
+    "periodMonth": 11,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-11-2",
+    "date": "2028-11-21",
+    "periodYear": 2028,
+    "periodMonth": 11,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-12-1",
+    "date": "2028-12-06",
+    "periodYear": 2028,
+    "periodMonth": 12,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2028-12-2",
+    "date": "2028-12-21",
+    "periodYear": 2028,
+    "periodMonth": 12,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-01-1",
+    "date": "2028-12-29",
+    "periodYear": 2029,
+    "periodMonth": 1,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-01-2",
+    "date": "2029-01-19",
+    "periodYear": 2029,
+    "periodMonth": 1,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-02-1",
+    "date": "2029-02-06",
+    "periodYear": 2029,
+    "periodMonth": 2,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-02-2",
+    "date": "2029-02-21",
+    "periodYear": 2029,
+    "periodMonth": 2,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-03-1",
+    "date": "2029-03-06",
+    "periodYear": 2029,
+    "periodMonth": 3,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-03-2",
+    "date": "2029-03-21",
+    "periodYear": 2029,
+    "periodMonth": 3,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-04-1",
+    "date": "2029-04-06",
+    "periodYear": 2029,
+    "periodMonth": 4,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-04-2",
+    "date": "2029-04-20",
+    "periodYear": 2029,
+    "periodMonth": 4,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-05-1",
+    "date": "2029-05-04",
+    "periodYear": 2029,
+    "periodMonth": 5,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-05-2",
+    "date": "2029-05-21",
+    "periodYear": 2029,
+    "periodMonth": 5,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-06-1",
+    "date": "2029-06-06",
+    "periodYear": 2029,
+    "periodMonth": 6,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-06-2",
+    "date": "2029-06-21",
+    "periodYear": 2029,
+    "periodMonth": 6,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-07-1",
+    "date": "2029-07-06",
+    "periodYear": 2029,
+    "periodMonth": 7,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-07-2",
+    "date": "2029-07-20",
+    "periodYear": 2029,
+    "periodMonth": 7,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-08-1",
+    "date": "2029-08-06",
+    "periodYear": 2029,
+    "periodMonth": 8,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-08-2",
+    "date": "2029-08-21",
+    "periodYear": 2029,
+    "periodMonth": 8,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-09-1",
+    "date": "2029-09-06",
+    "periodYear": 2029,
+    "periodMonth": 9,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-09-2",
+    "date": "2029-09-21",
+    "periodYear": 2029,
+    "periodMonth": 9,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-10-1",
+    "date": "2029-10-05",
+    "periodYear": 2029,
+    "periodMonth": 10,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-10-2",
+    "date": "2029-10-19",
+    "periodYear": 2029,
+    "periodMonth": 10,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-11-1",
+    "date": "2029-11-06",
+    "periodYear": 2029,
+    "periodMonth": 11,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-11-2",
+    "date": "2029-11-21",
+    "periodYear": 2029,
+    "periodMonth": 11,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-12-1",
+    "date": "2029-12-06",
+    "periodYear": 2029,
+    "periodMonth": 12,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2029-12-2",
+    "date": "2029-12-21",
+    "periodYear": 2029,
+    "periodMonth": 12,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-01-1",
+    "date": "2029-12-31",
+    "periodYear": 2030,
+    "periodMonth": 1,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-01-2",
+    "date": "2030-01-21",
+    "periodYear": 2030,
+    "periodMonth": 1,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-02-1",
+    "date": "2030-02-06",
+    "periodYear": 2030,
+    "periodMonth": 2,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-02-2",
+    "date": "2030-02-21",
+    "periodYear": 2030,
+    "periodMonth": 2,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-03-1",
+    "date": "2030-03-06",
+    "periodYear": 2030,
+    "periodMonth": 3,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-03-2",
+    "date": "2030-03-21",
+    "periodYear": 2030,
+    "periodMonth": 3,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-04-1",
+    "date": "2030-04-05",
+    "periodYear": 2030,
+    "periodMonth": 4,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-04-2",
+    "date": "2030-04-19",
+    "periodYear": 2030,
+    "periodMonth": 4,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-05-1",
+    "date": "2030-05-06",
+    "periodYear": 2030,
+    "periodMonth": 5,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-05-2",
+    "date": "2030-05-21",
+    "periodYear": 2030,
+    "periodMonth": 5,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-06-1",
+    "date": "2030-06-06",
+    "periodYear": 2030,
+    "periodMonth": 6,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-06-2",
+    "date": "2030-06-21",
+    "periodYear": 2030,
+    "periodMonth": 6,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-07-1",
+    "date": "2030-07-05",
+    "periodYear": 2030,
+    "periodMonth": 7,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-07-2",
+    "date": "2030-07-19",
+    "periodYear": 2030,
+    "periodMonth": 7,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-08-1",
+    "date": "2030-08-06",
+    "periodYear": 2030,
+    "periodMonth": 8,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-08-2",
+    "date": "2030-08-21",
+    "periodYear": 2030,
+    "periodMonth": 8,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-09-1",
+    "date": "2030-09-06",
+    "periodYear": 2030,
+    "periodMonth": 9,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-09-2",
+    "date": "2030-09-20",
+    "periodYear": 2030,
+    "periodMonth": 9,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-10-1",
+    "date": "2030-10-04",
+    "periodYear": 2030,
+    "periodMonth": 10,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-10-2",
+    "date": "2030-10-21",
+    "periodYear": 2030,
+    "periodMonth": 10,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-11-1",
+    "date": "2030-11-06",
+    "periodYear": 2030,
+    "periodMonth": 11,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-11-2",
+    "date": "2030-11-21",
+    "periodYear": 2030,
+    "periodMonth": 11,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-12-1",
+    "date": "2030-12-06",
+    "periodYear": 2030,
+    "periodMonth": 12,
+    "slot": 1,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
+  },
+  {
+    "id": "2030-12-2",
+    "date": "2030-12-20",
+    "periodYear": 2030,
+    "periodMonth": 12,
+    "slot": 2,
+    "salaryOverride": null,
+    "salaryFact": null,
+    "generated": true
   }
 ]

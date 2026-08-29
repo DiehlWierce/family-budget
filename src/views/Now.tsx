@@ -14,7 +14,7 @@ export function Now({ onOpenPaycheck }: { onOpenPaycheck: (id: string) => void }
     if (!id) return null
     const paycheck = budget.paychecks.find((p) => p.id === id)!
     const next = nextPaycheck(budget.paychecks, id)
-    const t = totals(paycheck, budget.entries)
+    const t = totals(paycheck, budget)
     const mine = budget.entries.filter((e) => e.paycheckId === id && e.kind !== 'income')
     const cats = byId(budget.categories)
     const unpaid = mine.filter((e) => e.fact === null && planned(e) > 0)
@@ -24,7 +24,7 @@ export function Now({ onOpenPaycheck }: { onOpenPaycheck: (id: string) => void }
     const strip = budget.paychecks
       .slice(Math.max(0, budget.paychecks.findIndex((p) => p.id === id) - 11),
              budget.paychecks.findIndex((p) => p.id === id) + 1)
-      .map((p) => ({ id: p.id, date: p.date, value: totals(p, budget.entries).free }))
+      .map((p) => ({ id: p.id, date: p.date, value: totals(p, budget).free }))
     const daysLeft = next ? daysBetween(now, next.date) : null
     return { paycheck, next, t, unpaid, paid, incomes, cats, strip, daysLeft }
   }, [budget])

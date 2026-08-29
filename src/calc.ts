@@ -1,5 +1,6 @@
 import type { Budget, Category, Entry, Paycheck } from './types'
 import { today } from './format'
+import { effectiveSalary } from './salary'
 
 /** Сколько строка реально стоит: факт, если проставлен, иначе план. */
 export const actual = (e: Entry) => e.fact ?? e.plan ?? 0
@@ -23,9 +24,9 @@ export interface Totals {
   free: number
 }
 
-export function totals(paycheck: Paycheck, entries: Entry[]): Totals {
-  const mine = entries.filter((e) => e.paycheckId === paycheck.id)
-  const salary = paycheck.salaryFact ?? paycheck.salaryPlan
+export function totals(paycheck: Paycheck, b: Budget): Totals {
+  const mine = b.entries.filter((e) => e.paycheckId === paycheck.id)
+  const salary = effectiveSalary(paycheck, b.salary, b.calendar)
   const extraIncome = mine.filter((e) => e.kind === 'income').reduce((s, e) => s + actual(e), 0)
   const out = mine.filter((e) => e.kind !== 'income')
   const required = out.filter((e) => e.kind === 'required').reduce((s, e) => s + actual(e), 0)
@@ -75,7 +76,7 @@ export function yearStats(b: Budget): YearStat[] {
   const cats = byId(b.categories)
   const map = new Map<number, YearStat>()
   for (const p of b.paychecks) {
-    const t = totals(p, b.entries)
+    const t = totals(p, b)
     const y = p.periodYear
     const s = map.get(y) ?? {
       year: y, income: 0, required: 0, optional: 0, debt: 0, debtShare: 0, negatives: 0, paychecks: 0,

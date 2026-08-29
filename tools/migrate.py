@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = sys.argv[1] if len(sys.argv) > 1 else str(Path.home() / 'Downloads' / 'Траты на 2024.xlsx')
 SHEET = 'Годовой бюджет'
 EPOCH = datetime.date(1899, 12, 30)
+TODAY = datetime.date.today().isoformat()
 MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
           'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
 
@@ -109,6 +110,104 @@ def classify(title, rules, default):
         if re.search(pattern, low):
             return (cid, name, rest[0] if rest else None)
     return default
+
+
+def build_templates(paychecks, entries, cats):
+    """Шаблон будущих получек: регулярная база плюс ежегодные события из истории."""
+    past = [p for p in paychecks if p['date'] <= TODAY]
+    last_id = paychecks[-1]['id']
+    y, m, _ = last_id.split('-')
+    y, m = int(y), int(m)
+    m += 1
+    if m > 12:
+        m, y = 1, y + 1
+    start = '%04d-%02d-1' % (y, m)
+
+    out, order = [], 0
+
+    # Регулярные обязательные. Одну и ту же трату он двигает между получками месяца,
+    # поэтому берём типичную сумму за МЕСЯЦ и делим по получкам в той же пропорции.
+    months = sorted({(p['periodYear'], p['periodMonth']) for p in past})[-4:]
+    month_ids = {}
+    for y, m in months:
+        month_ids[(y, m)] = {p['slot']: p['id'] for p in paychecks if (p['periodYear'], p['periodMonth']) == (y, m)}
+
+    titles = []
+    for slot in (1, 2):
+        source = [p for p in past if p['slot'] == slot]
+        if source:
+            for e in sorted([x for x in entries if x['paycheckId'] == source[-1]['id']
+                             and x['kind'] == 'required'], key=lambda x: x['order']):
+                if e['title'] not in [t['title'] for t in titles]:
+                    titles.append({'title': e['title'], 'categoryId': e['categoryId'], 'order': e['order']})
+
+    def median(xs):
+        xs = sorted(xs)
+        return xs[len(xs) // 2] if xs else 0
+
+    for info in titles:
+        totals_by_month, shares = [], []
+        for key, ids in month_ids.items():
+            per_slot = {}
+            for slot, pid in ids.items():
+                per_slot[slot] = sum(e['plan'] or 0 for e in entries
+                                     if e['paycheckId'] == pid and e['kind'] == 'required'
+                                     and e['title'] == info['title'])
+            total = sum(per_slot.values())
+            totals_by_month.append(total)
+            if total > 0:
+                shares.append(per_slot.get(1, 0) / total)
+        amount_month = median(totals_by_month)
+        share1 = median(shares) if shares else 0.0
+        first = round(amount_month * share1)
+        parts = {1: first, 2: round(amount_month) - first}
+        for slot in (1, 2):
+            order += 1
+            out.append({
+                'id': 'tpl-req-%d-%d' % (slot, order),
+                'title': info['title'], 'categoryId': info['categoryId'], 'kind': 'required',
+                'amount': parts[slot], 'slot': slot, 'freq': 'each',
+                'from': start, 'to': None, 'order': info['order'],
+            })
+
+    # Ежегодные события: то, что повторялось в одном и том же месяце минимум в двух годах.
+    by_pid = {p['id']: p for p in paychecks}
+    buckets = {}
+    for e in entries:
+        if e['kind'] != 'optional' or not e['plan'] or e['plan'] <= 0:
+            continue
+        p = by_pid.get(e['paycheckId'])
+        if not p:
+            continue
+        key = (norm_title(e['title']), p['periodMonth'], p['slot'])
+        buckets.setdefault(key, []).append((p['periodYear'], e))
+    for (title, month, slot), hits in sorted(buckets.items()):
+        years = {y for y, _ in hits}
+        if len(years) < 2:
+            continue
+        amounts = sorted(e['plan'] for _, e in hits)
+        order += 1
+        sample = hits[-1][1]
+        out.append({
+            'id': 'tpl-year-%d' % order,
+            'title': sample['title'], 'categoryId': sample['categoryId'], 'kind': 'optional',
+            'amount': amounts[len(amounts) // 2], 'slot': slot, 'freq': 'yearly', 'month': month,
+            'from': start, 'to': None, 'order': 100 + order,
+            'note': 'повторялось в %s' % ', '.join(str(y) for y in sorted(years)),
+        })
+    return out
+
+
+def norm_title(t):
+    t = t.lower().replace('ё', 'е')
+    t = re.sub(r'\([^)]*\)', '', t)
+    t = re.sub(r'\d+\s*ч\.?', '', t)
+    t = re.sub(r'[^а-яa-z ]', ' ', t)
+    t = re.sub(r'\s+', ' ', t).strip()
+    for prefix in ('на ', 'для ', 'от ', 'из '):
+        if t.startswith(prefix):
+            t = t[len(prefix):]
+    return t
 
 
 # ---------------------------------------------------------------- разбор листа
@@ -212,7 +311,8 @@ def main():
         paychecks.append({
             'id': pid, 'date': date.isoformat(),
             'periodYear': period_y, 'periodMonth': period_m, 'slot': slot,
-            'salaryPlan': salary, 'salaryFact': None,
+            'salaryOverride': salary if date.isoformat() <= TODAY else None,
+            'salaryFact': None,
             'legacy': {'column': idx_to_col(c),
                        'declaredSpend': declared_spend,
                        'declaredRest': declared_rest,
@@ -246,6 +346,17 @@ def main():
     dump('entries.json', entries)
     dump('categories.json', categories)
     dump('groups.json', [{'id': k, 'name': v} for k, v in GROUPS.items()])
+    dump('templates.json', build_templates(paychecks, entries, cat_seen))
+    dump('salary.json', {
+        'history': [{'from': TODAY[:8] + '01', 'monthly': 215000,
+                     'note': 'актуальный оклад — поправь, если не так'}],
+        'indexation': {'enabled': True, 'month': 9, 'percent': 5},
+    })
+    dump('calendar.json', {
+        # Переносы конца года утверждает постановление, правило их не знает.
+        'extraHolidays': ['2024-12-30', '2024-12-31', '2026-12-31'],
+        'extraWorkdays': ['2024-12-28'],
+    })
     dump('migration-report.json', {
         'source': SRC, 'sheet': SHEET,
         'paychecks': len(paychecks), 'entries': len(entries),
@@ -253,6 +364,7 @@ def main():
         'duplicatePaycheckIds': dup,
         'reconciliationMismatches': mismatch,
         'anomalies': anomalies,
+        'templates': len(build_templates(paychecks, entries, cat_seen)),
     })
 
     kinds = Counter(e['kind'] for e in entries)
