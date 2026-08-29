@@ -359,3 +359,104 @@ td.n { font-family: "JetBrains Mono", monospace; font-size: 13px; }
 }
 .askbar-actions { display: flex; gap: 8px; margin-left: auto; }
 .askbar .btn { padding: 7px 13px; }
+
+/* ------------------------------------------------------------ перестановка строк */
+
+.erow.movable {
+  grid-template-columns: 1fr 1fr 26px 34px;
+  grid-template-areas:
+    "name name ord del"
+    "plan fact ord del";
+}
+.ord { grid-area: ord; display: flex; flex-direction: column; gap: 1px; align-self: center; }
+.ordbtn {
+  background: none; border: 0; cursor: pointer; color: var(--ink3);
+  font-size: 11px; line-height: 1; padding: 3px 0;
+}
+.ordbtn:hover:not(:disabled) { color: var(--accent-ink); }
+.ordbtn:disabled { opacity: .2; cursor: default; }
+
+/* ------------------------------------------------------------ строки базы (План) */
+
+.trow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 26px 34px;
+  grid-template-areas:
+    "name name ord del"
+    "amt  when ord del"
+    "what what ord del";
+  gap: 4px 6px; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid var(--line2);
+}
+.trow .t-name { grid-area: name; }
+.trow .t-amt { grid-area: amt; }
+.trow .t-when { grid-area: when; }
+.trow .t-what { grid-area: what; }
+.trow .del { grid-area: del; align-self: center; }
+.trow.head {
+  display: none;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink3);
+  border-bottom: 1px solid var(--line); padding-bottom: 6px;
+}
+.trow.head .r { text-align: right; }
+.trow input {
+  width: 100%; background: transparent; border: 1px solid var(--line2);
+  border-radius: 3px; padding: 7px 8px; min-width: 0;
+}
+.trow input:hover:not(:disabled) { border-color: var(--line); }
+.trow input:focus { outline: none; border-color: var(--accent); background: var(--surface2); }
+.trow input:disabled { border-color: transparent; }
+.trow input.amount {
+  text-align: right; font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums; font-size: 13.5px;
+}
+.trow .t-when, .trow .t-what { display: flex; gap: 6px; min-width: 0; }
+.trow select {
+  flex: 1 1 0; min-width: 0;
+  background: var(--surface2); border: 1px solid var(--line2);
+  border-radius: 3px; padding: 7px 4px; font-size: 12.5px; color: var(--ink2);
+}
+.trow select:disabled { opacity: .7; }
+.trow .del {
+  background: none; border: 0; cursor: pointer; color: var(--ink3);
+  font-size: 17px; line-height: 1; padding: 4px;
+}
+.trow .del:hover { color: var(--crit); }
+
+/* ------------------------------------------------------------ куда применять правку */
+
+.scopes { display: grid; gap: 8px; }
+.scope {
+  display: flex; gap: 10px; align-items: flex-start;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 10px 12px; cursor: pointer;
+}
+.scope.on { border-color: var(--accent); background: var(--accent-soft); }
+.scope input { width: 17px; height: 17px; margin-top: 2px; accent-color: var(--accent); }
+.scope span { display: grid; gap: 2px; }
+.scope b { font-weight: 600; font-size: 14.5px; }
+.scope i { font-style: normal; }
+
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fields .field { margin-bottom: 0; }
+.field select {
+  background: var(--surface2); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 9px 10px; width: 100%;
+}
+.field select:focus { outline: none; border-color: var(--accent); }
+
+.pill.now { background: var(--accent-soft); color: var(--accent-ink); }
+.nowbtn { white-space: nowrap; padding: 9px 12px; }
+
+@media (min-width: 600px) {
+  .erow.movable {
+    grid-template-columns: 1fr 118px 118px 26px 34px;
+    grid-template-areas: "name plan fact ord del";
+  }
+  .trow {
+    grid-template-columns: 1fr 108px minmax(0, 1.1fr) minmax(0, 1.2fr) 26px 34px;
+    grid-template-areas: "name amt when what ord del";
+  }
+  .trow.head { display: grid; }
+}

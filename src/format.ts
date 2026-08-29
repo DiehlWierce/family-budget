@@ -22,6 +22,9 @@ export const dayMonth = (iso: string) => {
 
 export const monthName = (m: number) => MONTHS_NOM[m - 1]
 
+/** Родительный падеж: «с первого числа сентября». */
+export const monthNameGen = (m: number) => MONTHS_GEN[m - 1]
+
 export const periodLabel = (year: number, month: number, slot: number) =>
   `${MONTHS_NOM[month - 1]} ${year}, ${slot === 1 ? 'первая' : 'вторая'} получка`
 

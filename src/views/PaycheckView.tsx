@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useBudget } from '../store'
-import { planned, totals } from '../calc'
+import { currentPaycheckId, planned, totals } from '../calc'
 import { computeSalary, salaryPlan } from '../salary'
 import { dayMonth, money, periodLabel, plural, today } from '../format'
 import type { Entry, Kind } from '../types'
@@ -54,7 +54,7 @@ export function PaycheckView({
   onSelect: (id: string) => void
 }) {
   const {
-    budget, canEdit, updateEntry, updatePaycheck, addEntry, removeEntry, spreadForward,
+    budget, canEdit, updateEntry, updatePaycheck, addEntry, removeEntry, moveEntry, spreadForward,
   } = useBudget()
   const [pending, setPending] = useState<Pending>(null)
   const [spread, setSpread] = useState<string | null>(null)
@@ -77,6 +77,7 @@ export function PaycheckView({
 
   if (!budget || !data) return <div className="center">Получка не выбрана.</div>
   const { paycheck, index, rows, t, calc, plan } = data
+  const nowId = currentPaycheckId(budget.paychecks)
   const isPast = paycheck.date <= today()
   const slotName = paycheck.slot === 1 ? 'первые' : 'вторые'
 
@@ -115,17 +116,23 @@ export function PaycheckView({
         <select value={paycheck.id} onChange={(ev) => onSelect(ev.target.value)} aria-label="Выбрать получку">
           {budget.paychecks.map((p) => (
             <option key={p.id} value={p.id}>
-              {dayMonth(p.date)} {p.date.slice(0, 4)} · {p.slot === 1 ? 'первая' : 'вторая'}
+              {p.id === nowId ? '➤ ' : ''}{dayMonth(p.date)} {p.date.slice(0, 4)} ·{' '}
+              {p.slot === 1 ? 'первая' : 'вторая'}{p.id === nowId ? ' · сейчас' : ''}
             </option>
           ))}
         </select>
         <button className="iconbtn" onClick={() => go(1)}
           disabled={index === budget.paychecks.length - 1} aria-label="Следующая получка">›</button>
+        <button
+          className="btn ghost nowbtn" onClick={() => nowId && onSelect(nowId)}
+          disabled={!nowId || paycheck.id === nowId} title="Вернуться к текущей получке"
+        >Сейчас</button>
       </div>
 
       <div className="card" style={{ marginTop: 14 }}>
         <div className="card-head">
           <h2>{dayMonth(paycheck.date)}</h2>
+          {paycheck.id === nowId && <span className="pill now">сейчас</span>}
           <span className="hint">{periodLabel(paycheck.periodYear, paycheck.periodMonth, paycheck.slot)}</span>
         </div>
         <div className="card-body">
@@ -183,12 +190,13 @@ export function PaycheckView({
               <span className="total">{money(sectionTotal(section.kind))}</span>
             </div>
             <div className="card"><div className="card-body" style={{ paddingTop: 8 }}>
-              <div className="erow head">
-                <span>Название</span><span className="r">План</span><span className="r">Факт</span><span />
+              <div className="erow movable head">
+                <span>Название</span><span className="r">План</span><span className="r">Факт</span>
+                <span /><span />
               </div>
               {list.length === 0 && <div className="tiny muted" style={{ padding: '10px 8px' }}>Пусто.</div>}
-              {list.map((e: Entry) => (
-                <div className={'erow' + (canEdit ? '' : ' readonly')} key={e.id}>
+              {list.map((e: Entry, i: number) => (
+                <div className={'erow movable' + (canEdit ? '' : ' readonly')} key={e.id}>
                   <input
                     className="e-name"
                     defaultValue={e.title}
@@ -206,6 +214,18 @@ export function PaycheckView({
                     value={e.fact} placeholder="факт" area="fact" className="fact" disabled={!canEdit}
                     onChange={(v) => updateEntry(e.id, { fact: v })}
                   />
+                  {canEdit ? (
+                    <span className="ord">
+                      <button
+                        className="ordbtn" title="Выше" aria-label="Поднять строку"
+                        disabled={i === 0} onClick={() => moveEntry(e.id, -1)}
+                      >↑</button>
+                      <button
+                        className="ordbtn" title="Ниже" aria-label="Опустить строку"
+                        disabled={i === list.length - 1} onClick={() => moveEntry(e.id, 1)}
+                      >↓</button>
+                    </span>
+                  ) : <span />}
                   {canEdit ? (
                     <button className="del" title="Удалить строку" onClick={() => {
                       removeEntry(e.id)

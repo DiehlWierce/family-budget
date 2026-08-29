@@ -180,3 +180,110 @@ const previousId = (p: Paycheck) => {
   const year = p.periodMonth === 1 ? p.periodYear - 1 : p.periodYear
   return paycheckId(year, month, 2)
 }
+
+export type TemplateChange = 'upsert' | 'remove'
+
+export interface TemplateSync {
+  entries: Entry[]
+  touched: number
+}
+
+/**
+ * Попадает ли шаблон в эту получку по смыслу — без учёта дат действия.
+ * Даты здесь не спрашиваем: «применить с такой-то получки» и есть ответ про даты.
+ */
+const covers = (t: Template, p: Paycheck) =>
+  (t.slot === 'both' || t.slot === p.slot) && (t.freq !== 'yearly' || t.month === p.periodMonth)
+
+/**
+ * Тянет правку шаблона в уже расписанные получки, начиная с fromPaycheckId.
+ * Раньше этой получки не трогает ничего: там записанная история.
+ * Факт не переписываем — план подтягиваем только там, где факта ещё нет.
+ */
+export function applyTemplate(
+  budget: Budget,
+  template: Template,
+  fromPaycheckId: string,
+  change: TemplateChange,
+  prev?: Template,
+): TemplateSync {
+  const was = prev ?? template
+  // Пустое название ничего не опознаёт: только что добавленный шаблон ищем строго по id.
+  const matchable = was.title.trim().length > 0
+  const byId = new Map(budget.paychecks.map((p) => [p.id, p]))
+  const kept: Entry[] = []
+  const covered = new Set<string>()
+  let touched = 0
+
+  for (const e of budget.entries) {
+    const p = byId.get(e.paycheckId)
+    if (!p || p.id < fromPaycheckId) { kept.push(e); continue }
+
+    const own = e.templateId === template.id
+    // Строки из таблицы про шаблон не знают — опознаём по названию. Но «Ипотека» первой
+    // получки и «Ипотека» второй — разные шаблоны, и ежегодное «На ВБ» в мае не имеет
+    // отношения к февральскому. Поэтому сверяемся с тем, каким шаблон был до правки.
+    const legacy = !e.templateId && matchable
+      && e.title === was.title && e.kind === was.kind && covers(was, p)
+    if (!own && !legacy) { kept.push(e); continue }
+
+    // Убрали шаблон — или он больше не попадает в эту получку (сменились получка / месяц).
+    if (change === 'remove' || !templateApplies(template, p)) { touched++; continue }
+    covered.add(p.id)
+    touched++
+    kept.push({
+      ...e,
+      templateId: template.id,
+      title: template.title,
+      categoryId: template.categoryId,
+      kind: template.kind,
+      plan: e.fact === null ? template.amount : e.plan,
+    })
+  }
+
+  if (change === 'upsert') {
+    for (const p of budget.paychecks) {
+      if (p.id < fromPaycheckId || covered.has(p.id)) continue
+      if (!templateApplies(template, p)) continue
+      touched++
+      kept.push({
+        id: `${p.id}-t-${template.id}`,
+        paycheckId: p.id,
+        templateId: template.id,
+        kind: template.kind,
+        categoryId: template.categoryId,
+        title: template.title,
+        plan: template.amount,
+        fact: null,
+        order: template.order,
+      })
+    }
+  }
+
+  return { entries: kept, touched }
+}
+
+/**
+ * Меняет местами два соседних элемента, раздавая по кругу их же значения order.
+ * Так перестановка внутри секции не задевает порядок соседних секций.
+ */
+export function swapOrder<T extends { id: string; order: number }>(
+  all: T[],
+  group: T[],
+  id: string,
+  dir: -1 | 1,
+): T[] {
+  const sorted = [...group].sort((a, z) => a.order - z.order)
+  const i = sorted.findIndex((x) => x.id === id)
+  const j = i + dir
+  if (i < 0 || j < 0 || j >= sorted.length) return all
+
+  const ids = sorted.map((x) => x.id)
+  ;[ids[i], ids[j]] = [ids[j], ids[i]]
+  let orders = sorted.map((x) => x.order).sort((a, z) => a - z)
+  // Одинаковые order встречаются в перенесённых из таблицы строках: по кругу их раздавать
+  // бессмысленно — перестановка не была бы видна. Тогда нумеруем секцию заново.
+  if (new Set(orders).size !== orders.length) orders = orders.map((_, k) => orders[0] + k)
+  const next = new Map(ids.map((x, k) => [x, orders[k]]))
+  return all.map((x) => (next.has(x.id) ? { ...x, order: next.get(x.id)! } : x))
+}

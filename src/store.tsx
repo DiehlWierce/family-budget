@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { Budget, Entry, GithubConfig, Paycheck, SalaryConfig, Template } from './types'
 import { commitFiles } from './github'
-import { applyForward, extendPlan } from './plan'
+import { applyForward, applyTemplate, extendPlan, swapOrder, type TemplateChange } from './plan'
 
 const DRAFT_KEY = 'fb.draft.v1'
 const GH_KEY = 'fb.github.v1'
@@ -72,11 +72,19 @@ interface Ctx {
   updateEntry: (id: string, patch: Partial<Entry>) => void
   addEntry: (paycheckId: string, kind: Entry['kind']) => string
   removeEntry: (id: string) => void
+  /** Переставить строку внутри её секции получки. */
+  moveEntry: (id: string, dir: -1 | 1) => void
   /** Перенести правку строки на все последующие получки того же типа. */
   spreadForward: (paycheckId: string, entry: Entry, change: 'amount' | 'add' | 'remove') => number
   updateTemplate: (id: string, patch: Partial<Template>) => void
   addTemplate: (t: Template) => void
   removeTemplate: (id: string) => void
+  /** Переставить шаблон внутри его списка (регулярные одного типа / события месяца). */
+  moveTemplate: (id: string, dir: -1 | 1, groupIds: string[]) => void
+  /** Записать шаблон и протащить правку в уже расписанные получки с указанной. */
+  applyTemplateToPaychecks: (
+    t: Template, fromPaycheckId: string, change: TemplateChange, prev?: Template,
+  ) => number
   updateSalary: (patch: Partial<SalaryConfig>) => void
   extendTo: (year: number) => number
   publish: () => Promise<void>
@@ -175,6 +183,16 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
     mutate((b) => ({ ...b, entries: b.entries.filter((e) => e.id !== id) }))
   }, [mutate])
 
+  const moveEntry: Ctx['moveEntry'] = useCallback((id, dir) => {
+    mutate((b) => {
+      const me = b.entries.find((e) => e.id === id)
+      if (!me) return b
+      // Двигаем внутри своей секции: обязательные, необязательные и приходы — разные списки.
+      const group = b.entries.filter((e) => e.paycheckId === me.paycheckId && e.kind === me.kind)
+      return { ...b, entries: swapOrder(b.entries, group, id, dir) }
+    })
+  }, [mutate])
+
   const spreadForward: Ctx['spreadForward'] = useCallback((pid, entry, change) => {
     if (!budget) return 0
     const res = applyForward(budget, pid, entry, change)
@@ -193,6 +211,28 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
   const removeTemplate: Ctx['removeTemplate'] = useCallback((id) => {
     mutate((b) => ({ ...b, templates: b.templates.filter((t) => t.id !== id) }))
   }, [mutate])
+
+  const moveTemplate: Ctx['moveTemplate'] = useCallback((id, dir, groupIds) => {
+    mutate((b) => {
+      const set = new Set(groupIds)
+      return { ...b, templates: swapOrder(b.templates, b.templates.filter((t) => set.has(t.id)), id, dir) }
+    })
+  }, [mutate])
+
+  const applyTemplateToPaychecks: Ctx['applyTemplateToPaychecks'] =
+    useCallback((t, fromPaycheckId, change, prev) => {
+      if (!budget) return 0
+      // «Применить с этой получки» — значит шаблон действует с неё же, иначе он её не застаёт.
+      const template = fromPaycheckId < t.from ? { ...t, from: fromPaycheckId } : t
+      const res = applyTemplate(budget, template, fromPaycheckId, change, prev)
+      const templates = change === 'remove'
+        ? budget.templates.filter((x) => x.id !== t.id)
+        : budget.templates.some((x) => x.id === t.id)
+          ? budget.templates.map((x) => (x.id === t.id ? template : x))
+          : [...budget.templates, template]
+      commit({ ...budget, entries: res.entries, templates })
+      return res.touched
+    }, [budget, commit])
 
   const updateSalary: Ctx['updateSalary'] = useCallback((patch) => {
     mutate((b) => ({ ...b, salary: { ...b.salary, ...patch } }))
@@ -254,12 +294,14 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<Ctx>(() => ({
     status, error, budget, dirty, save, canEdit, github, setGithub,
-    updatePaycheck, updateEntry, addEntry, removeEntry, publish, discardDraft,
-    spreadForward, updateTemplate, addTemplate, removeTemplate, updateSalary, extendTo,
+    updatePaycheck, updateEntry, addEntry, removeEntry, moveEntry, publish, discardDraft,
+    spreadForward, updateTemplate, addTemplate, removeTemplate, moveTemplate,
+    applyTemplateToPaychecks, updateSalary, extendTo,
     reload: () => setNonce((n) => n + 1),
   }), [status, error, budget, dirty, save, canEdit, github, setGithub,
-      updatePaycheck, updateEntry, addEntry, removeEntry, publish, discardDraft,
-      spreadForward, updateTemplate, addTemplate, removeTemplate, updateSalary, extendTo])
+      updatePaycheck, updateEntry, addEntry, removeEntry, moveEntry, publish, discardDraft,
+      spreadForward, updateTemplate, addTemplate, removeTemplate, moveTemplate,
+      applyTemplateToPaychecks, updateSalary, extendTo])
 
   return <BudgetContext.Provider value={value}>{children}</BudgetContext.Provider>
 }
