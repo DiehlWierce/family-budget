@@ -15006,30 +15006,22 @@
     "paycheckId": "2026-09-1",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
-    "plan": 0,
+    "title": "Моб. инет (Даши)",
+    "plan": 550,
     "fact": null,
-    "order": 18
+    "order": 18,
+    "templateId": "tpl-req-1-15"
   },
   {
     "id": "2026-09-1-19",
     "paycheckId": "2026-09-1",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
-    "plan": 0,
+    "title": "Моб. инет (Мой)",
+    "plan": 750,
     "fact": null,
-    "order": 19
-  },
-  {
-    "id": "2026-09-1-22",
-    "paycheckId": "2026-09-1",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
+    "order": 19,
+    "templateId": "tpl-req-1-17"
   },
   {
     "id": "2026-09-1-24",
@@ -15292,30 +15284,22 @@
     "paycheckId": "2026-10-1",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
-    "order": 18
+    "order": 18,
+    "templateId": "tpl-req-1-15"
   },
   {
     "id": "2026-10-1-19",
     "paycheckId": "2026-10-1",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
-    "order": 19
-  },
-  {
-    "id": "2026-10-1-22",
-    "paycheckId": "2026-10-1",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
+    "order": 19,
+    "templateId": "tpl-req-1-17"
   },
   {
     "id": "2026-10-1-24",
@@ -15632,30 +15616,22 @@
     "paycheckId": "2026-11-1",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
-    "order": 18
+    "order": 18,
+    "templateId": "tpl-req-1-15"
   },
   {
     "id": "2026-11-1-19",
     "paycheckId": "2026-11-1",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
-    "order": 19
-  },
-  {
-    "id": "2026-11-1-22",
-    "paycheckId": "2026-11-1",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
+    "order": 19,
+    "templateId": "tpl-req-1-17"
   },
   {
     "id": "2026-11-1-24",
@@ -16018,30 +15994,22 @@
     "paycheckId": "2026-12-1",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
-    "order": 18
+    "order": 18,
+    "templateId": "tpl-req-1-15"
   },
   {
     "id": "2026-12-1-19",
     "paycheckId": "2026-12-1",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
-    "order": 19
-  },
-  {
-    "id": "2026-12-1-22",
-    "paycheckId": "2026-12-1",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
+    "order": 19,
+    "templateId": "tpl-req-1-17"
   },
   {
     "id": "2026-12-1-24",
@@ -16356,30 +16324,22 @@
     "paycheckId": "2027-01-1",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
-    "plan": 0,
+    "title": "Моб. инет (Даши)",
+    "plan": 550,
     "fact": null,
-    "order": 18
+    "order": 18,
+    "templateId": "tpl-req-1-15"
   },
   {
     "id": "2027-01-1-19",
     "paycheckId": "2027-01-1",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
-    "plan": 0,
+    "title": "Моб. инет (Мой)",
+    "plan": 750,
     "fact": null,
-    "order": 19
-  },
-  {
-    "id": "2027-01-1-22",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
+    "order": 19,
+    "templateId": "tpl-req-1-17"
   },
   {
     "id": "2027-01-1-24",
@@ -16612,30 +16572,22 @@
     "paycheckId": "2027-02-1",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
-    "order": 18
+    "order": 18,
+    "templateId": "tpl-req-1-15"
   },
   {
     "id": "2027-02-1-19",
     "paycheckId": "2027-02-1",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
-    "order": 19
-  },
-  {
-    "id": "2027-02-1-22",
-    "paycheckId": "2027-02-1",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 150,
-    "fact": null,
-    "order": 22
+    "order": 19,
+    "templateId": "tpl-req-1-17"
   },
   {
     "id": "2027-02-1-24",
@@ -16852,7 +16804,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -16863,21 +16815,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-03-1-t-tpl-req-1-19",
-    "paycheckId": "2027-03-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-03-1-t-tpl-req-1-21",
@@ -17006,7 +16947,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -17017,21 +16958,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-04-1-t-tpl-req-1-19",
-    "paycheckId": "2027-04-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-04-1-t-tpl-req-1-21",
@@ -17160,7 +17090,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -17171,21 +17101,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-05-1-t-tpl-req-1-19",
-    "paycheckId": "2027-05-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-05-1-t-tpl-req-1-21",
@@ -17303,7 +17222,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -17314,21 +17233,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-06-1-t-tpl-req-1-19",
-    "paycheckId": "2027-06-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-06-1-t-tpl-req-1-21",
@@ -17446,7 +17354,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -17457,21 +17365,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-07-1-t-tpl-req-1-19",
-    "paycheckId": "2027-07-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-07-1-t-tpl-req-1-21",
@@ -17611,7 +17508,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -17622,21 +17519,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-08-1-t-tpl-req-1-19",
-    "paycheckId": "2027-08-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-08-1-t-tpl-req-1-21",
@@ -17765,7 +17651,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -17776,21 +17662,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-09-1-t-tpl-req-1-19",
-    "paycheckId": "2027-09-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-09-1-t-tpl-req-1-21",
@@ -17908,7 +17783,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -17919,21 +17794,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-10-1-t-tpl-req-1-19",
-    "paycheckId": "2027-10-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-10-1-t-tpl-req-1-21",
@@ -18095,7 +17959,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -18106,21 +17970,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-11-1-t-tpl-req-1-19",
-    "paycheckId": "2027-11-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-11-1-t-tpl-req-1-21",
@@ -18249,7 +18102,7 @@
     "templateId": "tpl-req-1-15",
     "kind": "required",
     "categoryId": "mobile-dasha",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
     "order": 18
@@ -18260,21 +18113,10 @@
     "templateId": "tpl-req-1-17",
     "kind": "required",
     "categoryId": "mobile-my",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
     "order": 19
-  },
-  {
-    "id": "2027-12-1-t-tpl-req-1-19",
-    "paycheckId": "2027-12-1",
-    "templateId": "tpl-req-1-19",
-    "kind": "required",
-    "categoryId": "sub-icloud",
-    "title": "Подписка iCloud",
-    "plan": 0,
-    "fact": null,
-    "order": 22
   },
   {
     "id": "2027-12-1-t-tpl-req-1-21",

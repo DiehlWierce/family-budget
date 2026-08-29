@@ -85,39 +85,27 @@
   },
   {
     "id": "tpl-req-1-15",
-    "title": "Мобильный интернет (Даши)",
+    "title": "Моб. инет (Даши)",
     "categoryId": "mobile-dasha",
     "kind": "required",
     "amount": 550,
     "slot": 1,
     "freq": "each",
-    "from": "2027-03-1",
+    "from": "2026-08-2",
     "to": null,
     "order": 18
   },
   {
     "id": "tpl-req-1-17",
-    "title": "Мобильный интернет (Мой)",
+    "title": "Моб. инет (Мой)",
     "categoryId": "mobile-my",
     "kind": "required",
     "amount": 750,
     "slot": 1,
     "freq": "each",
-    "from": "2027-03-1",
+    "from": "2026-08-2",
     "to": null,
     "order": 19
-  },
-  {
-    "id": "tpl-req-1-19",
-    "title": "Подписка iCloud",
-    "categoryId": "sub-icloud",
-    "kind": "required",
-    "amount": 0,
-    "slot": 1,
-    "freq": "each",
-    "from": "2027-03-1",
-    "to": null,
-    "order": 22
   },
   {
     "id": "tpl-req-1-21",
@@ -129,7 +117,7 @@
     "freq": "each",
     "from": "2026-09-1",
     "to": null,
-    "order": 24
+    "order": 25
   },
   {
     "id": "tpl-req-1-23",
@@ -141,7 +129,7 @@
     "freq": "each",
     "from": "2026-09-1",
     "to": null,
-    "order": 25
+    "order": 26
   },
   {
     "id": "tpl-req-2-26",
@@ -153,7 +141,7 @@
     "freq": "each",
     "from": "2026-09-1",
     "to": null,
-    "order": 26
+    "order": 27
   },
   {
     "id": "tpl-req-1-27",
@@ -165,7 +153,7 @@
     "freq": "each",
     "from": "2026-09-1",
     "to": null,
-    "order": 27
+    "order": 28
   },
   {
     "id": "tpl-year-34",
