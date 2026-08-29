@@ -18102,5 +18102,27 @@
     "plan": 3000,
     "fact": null,
     "order": 151
+  },
+  {
+    "id": "2026-09-1-t-tpl-req-1-7",
+    "paycheckId": "2026-09-1",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2026-10-1-t-tpl-req-1-7",
+    "paycheckId": "2026-10-1",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
   }
 ]
