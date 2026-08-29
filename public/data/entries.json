@@ -14956,7 +14956,7 @@
     "kind": "required",
     "categoryId": "loan-650",
     "title": "Кредит №2 на 650к",
-    "plan": 0,
+    "plan": 27100,
     "fact": null,
     "order": 12
   },
@@ -15037,7 +15037,7 @@
     "kind": "required",
     "categoryId": "transport",
     "title": "Дорога",
-    "plan": 3000,
+    "plan": 5000,
     "fact": null,
     "order": 24,
     "templateId": "tpl-req-1-21"
@@ -15054,22 +15054,12 @@
     "templateId": "tpl-req-1-23"
   },
   {
-    "id": "2026-09-1-26",
-    "paycheckId": "2026-09-1",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 0,
-    "fact": null,
-    "order": 26
-  },
-  {
     "id": "2026-09-1-27",
     "paycheckId": "2026-09-1",
     "kind": "required",
     "categoryId": "dasha",
     "title": "Траты на Дашу",
-    "plan": 2000,
+    "plan": 0,
     "fact": null,
     "order": 27,
     "templateId": "tpl-req-1-27"
@@ -15079,7 +15069,7 @@
     "paycheckId": "2026-09-1",
     "kind": "income",
     "categoryId": "inc-vacation",
-    "title": "Из отпускных",
+    "title": "Из отложенных с отпускных",
     "plan": 10000,
     "fact": null,
     "order": 32
@@ -18375,17 +18365,6 @@
     "order": 138
   },
   {
-    "id": "2026-09-1-t-tpl-req-2-10",
-    "paycheckId": "2026-09-1",
-    "templateId": "tpl-req-2-10",
-    "kind": "required",
-    "categoryId": "utilities",
-    "title": "Кварплата",
-    "plan": 12000,
-    "fact": null,
-    "order": 15
-  },
-  {
     "id": "2026-10-1-t-tpl-req-2-10",
     "paycheckId": "2026-10-1",
     "templateId": "tpl-req-2-10",
@@ -18909,7 +18888,7 @@
     "kind": "required",
     "categoryId": "fun",
     "title": "Развлечения",
-    "plan": 3000,
+    "plan": 0,
     "fact": null,
     "order": 26
   },
@@ -19253,5 +19232,35 @@
     "plan": 2000,
     "fact": null,
     "order": 27
+  },
+  {
+    "id": "2026-09-1-new-mtezq1kk",
+    "paycheckId": "2026-09-1",
+    "kind": "income",
+    "order": 33,
+    "categoryId": "inc-other",
+    "title": "Из отложенных на кредит №1",
+    "plan": 36900,
+    "fact": null
+  },
+  {
+    "id": "2026-09-1-new-mtezqb96",
+    "paycheckId": "2026-09-1",
+    "kind": "income",
+    "order": 34,
+    "categoryId": "inc-other",
+    "title": "Из отложенных на кредит №2",
+    "plan": 27100,
+    "fact": null
+  },
+  {
+    "id": "2026-09-1-new-mtezqk89",
+    "paycheckId": "2026-09-1",
+    "kind": "income",
+    "order": 35,
+    "categoryId": "inc-other",
+    "title": "Из отложенных на кредит №3",
+    "plan": 10900,
+    "fact": null
   }
 ]

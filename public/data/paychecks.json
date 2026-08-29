@@ -980,7 +980,7 @@
     "periodYear": 2026,
     "periodMonth": 9,
     "slot": 1,
-    "salaryOverride": null,
+    "salaryOverride": 10200,
     "salaryFact": null,
     "legacy": {
       "column": "GS",
