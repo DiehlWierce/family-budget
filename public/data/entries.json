@@ -15143,16 +15143,6 @@
     "templateId": "tpl-year-44"
   },
   {
-    "id": "2026-10-2-35",
-    "paycheckId": "2026-10-2",
-    "kind": "optional",
-    "categoryId": "gifts-x",
-    "title": "На ДР Люды",
-    "plan": 3000,
-    "fact": null,
-    "order": 35
-  },
-  {
     "id": "2026-10-2-36",
     "paycheckId": "2026-10-2",
     "kind": "optional",
@@ -15160,7 +15150,7 @@
     "title": "На ДР Бори",
     "plan": 3000,
     "fact": null,
-    "order": 36,
+    "order": 37,
     "templateId": "tpl-year-37"
   },
   {
@@ -15171,7 +15161,7 @@
     "title": "iCloud Даше",
     "plan": 1000,
     "fact": null,
-    "order": 37
+    "order": 39
   },
   {
     "id": "2026-10-2-39",
@@ -15181,7 +15171,7 @@
     "title": "На досрочку за отпуск",
     "plan": 30000,
     "fact": null,
-    "order": 39
+    "order": 151
   },
   {
     "id": "2026-11-1-11",
@@ -18100,7 +18090,7 @@
     "title": "На ДР Люды",
     "plan": 3000,
     "fact": null,
-    "order": 151
+    "order": 36
   },
   {
     "id": "2027-10-2-t-tpl-y-mtf1e3o9",
