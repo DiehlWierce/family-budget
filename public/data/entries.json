@@ -17460,28 +17460,6 @@
     "fact": null
   },
   {
-    "id": "2026-09-1-t-tpl-req-2-26",
-    "paycheckId": "2026-09-1",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
-    "id": "2026-09-1-t-tpl-req-1-27",
-    "paycheckId": "2026-09-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 3000,
-    "fact": null,
-    "order": 28
-  },
-  {
     "id": "2026-10-1-new-mtf1a4q3",
     "paycheckId": "2026-10-1",
     "kind": "required",
@@ -18102,17 +18080,6 @@
     "plan": 3000,
     "fact": null,
     "order": 151
-  },
-  {
-    "id": "2026-09-1-t-tpl-req-1-7",
-    "paycheckId": "2026-09-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
   },
   {
     "id": "2026-10-1-t-tpl-req-1-7",
