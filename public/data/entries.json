@@ -14968,7 +14968,7 @@
     "kind": "required",
     "categoryId": "fun",
     "title": "Развлечения",
-    "plan": 3000,
+    "plan": 2000,
     "fact": null,
     "order": 41,
     "templateId": "tpl-req-2-26"
@@ -15089,17 +15089,6 @@
     "templateId": "tpl-req-1-23"
   },
   {
-    "id": "2026-10-1-27",
-    "paycheckId": "2026-10-1",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27,
-    "templateId": "tpl-req-1-27"
-  },
-  {
     "id": "2026-10-1-34",
     "paycheckId": "2026-10-1",
     "kind": "income",
@@ -15141,17 +15130,6 @@
     "fact": null,
     "order": 10,
     "templateId": "tpl-req-2-2"
-  },
-  {
-    "id": "2026-10-2-26",
-    "paycheckId": "2026-10-2",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26,
-    "templateId": "tpl-req-2-26"
   },
   {
     "id": "2026-10-2-34",
@@ -15302,17 +15280,6 @@
     "templateId": "tpl-req-1-23"
   },
   {
-    "id": "2026-11-1-27",
-    "paycheckId": "2026-11-1",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27,
-    "templateId": "tpl-req-1-27"
-  },
-  {
     "id": "2026-11-1-34",
     "paycheckId": "2026-11-1",
     "kind": "optional",
@@ -15332,17 +15299,6 @@
     "fact": null,
     "order": 10,
     "templateId": "tpl-req-2-2"
-  },
-  {
-    "id": "2026-11-2-26",
-    "paycheckId": "2026-11-2",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26,
-    "templateId": "tpl-req-2-26"
   },
   {
     "id": "2026-11-2-32",
@@ -15561,17 +15517,6 @@
     "templateId": "tpl-req-1-23"
   },
   {
-    "id": "2026-12-1-27",
-    "paycheckId": "2026-12-1",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27,
-    "templateId": "tpl-req-1-27"
-  },
-  {
     "id": "2026-12-1-34",
     "paycheckId": "2026-12-1",
     "kind": "optional",
@@ -15632,17 +15577,6 @@
     "fact": null,
     "order": 10,
     "templateId": "tpl-req-2-2"
-  },
-  {
-    "id": "2026-12-2-26",
-    "paycheckId": "2026-12-2",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26,
-    "templateId": "tpl-req-2-26"
   },
   {
     "id": "2026-12-2-32",
@@ -15772,17 +15706,6 @@
     "templateId": "tpl-req-1-23"
   },
   {
-    "id": "2027-01-1-27",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27,
-    "templateId": "tpl-req-1-27"
-  },
-  {
     "id": "2027-01-2-10",
     "paycheckId": "2027-01-2",
     "kind": "required",
@@ -15792,17 +15715,6 @@
     "fact": null,
     "order": 10,
     "templateId": "tpl-req-2-2"
-  },
-  {
-    "id": "2027-01-2-26",
-    "paycheckId": "2027-01-2",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26,
-    "templateId": "tpl-req-2-26"
   },
   {
     "id": "2027-02-1-11",
@@ -15901,17 +15813,6 @@
     "templateId": "tpl-req-1-23"
   },
   {
-    "id": "2027-02-1-27",
-    "paycheckId": "2027-02-1",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27,
-    "templateId": "tpl-req-1-27"
-  },
-  {
     "id": "2027-02-2-10",
     "paycheckId": "2027-02-2",
     "kind": "required",
@@ -15921,17 +15822,6 @@
     "fact": null,
     "order": 10,
     "templateId": "tpl-req-2-2"
-  },
-  {
-    "id": "2027-02-2-26",
-    "paycheckId": "2027-02-2",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26,
-    "templateId": "tpl-req-2-26"
   },
   {
     "id": "2027-03-1-t-tpl-req-1-3",
@@ -16033,17 +15923,6 @@
     "order": 25
   },
   {
-    "id": "2027-03-1-t-tpl-req-1-27",
-    "paycheckId": "2027-03-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-03-1-t-tpl-year-50",
     "paycheckId": "2027-03-1",
     "templateId": "tpl-year-50",
@@ -16064,17 +15943,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-03-2-t-tpl-req-2-26",
-    "paycheckId": "2027-03-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-04-1-t-tpl-req-1-3",
@@ -16176,17 +16044,6 @@
     "order": 25
   },
   {
-    "id": "2027-04-1-t-tpl-req-1-27",
-    "paycheckId": "2027-04-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-04-2-t-tpl-req-2-2",
     "paycheckId": "2027-04-2",
     "templateId": "tpl-req-2-2",
@@ -16196,17 +16053,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-04-2-t-tpl-req-2-26",
-    "paycheckId": "2027-04-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-04-2-t-tpl-year-41",
@@ -16319,17 +16165,6 @@
     "order": 25
   },
   {
-    "id": "2027-05-1-t-tpl-req-1-27",
-    "paycheckId": "2027-05-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-05-2-t-tpl-req-2-2",
     "paycheckId": "2027-05-2",
     "templateId": "tpl-req-2-2",
@@ -16339,17 +16174,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-05-2-t-tpl-req-2-26",
-    "paycheckId": "2027-05-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-06-1-t-tpl-req-1-3",
@@ -16451,17 +16275,6 @@
     "order": 25
   },
   {
-    "id": "2027-06-1-t-tpl-req-1-27",
-    "paycheckId": "2027-06-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-06-2-t-tpl-req-2-2",
     "paycheckId": "2027-06-2",
     "templateId": "tpl-req-2-2",
@@ -16471,17 +16284,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-06-2-t-tpl-req-2-26",
-    "paycheckId": "2027-06-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-07-1-t-tpl-req-1-3",
@@ -16583,17 +16385,6 @@
     "order": 25
   },
   {
-    "id": "2027-07-1-t-tpl-req-1-27",
-    "paycheckId": "2027-07-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-07-1-t-tpl-year-34",
     "paycheckId": "2027-07-1",
     "templateId": "tpl-year-34",
@@ -16625,17 +16416,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-07-2-t-tpl-req-2-26",
-    "paycheckId": "2027-07-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-08-1-t-tpl-req-1-3",
@@ -16737,17 +16517,6 @@
     "order": 25
   },
   {
-    "id": "2027-08-1-t-tpl-req-1-27",
-    "paycheckId": "2027-08-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-08-1-t-tpl-year-36",
     "paycheckId": "2027-08-1",
     "templateId": "tpl-year-36",
@@ -16768,17 +16537,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-08-2-t-tpl-req-2-26",
-    "paycheckId": "2027-08-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-09-1-t-tpl-req-1-3",
@@ -16880,17 +16638,6 @@
     "order": 25
   },
   {
-    "id": "2027-09-1-t-tpl-req-1-27",
-    "paycheckId": "2027-09-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-09-2-t-tpl-req-2-2",
     "paycheckId": "2027-09-2",
     "templateId": "tpl-req-2-2",
@@ -16900,17 +16647,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-09-2-t-tpl-req-2-26",
-    "paycheckId": "2027-09-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-10-1-t-tpl-req-1-3",
@@ -17012,17 +16748,6 @@
     "order": 25
   },
   {
-    "id": "2027-10-1-t-tpl-req-1-27",
-    "paycheckId": "2027-10-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-10-1-t-tpl-year-39",
     "paycheckId": "2027-10-1",
     "templateId": "tpl-year-39",
@@ -17054,17 +16779,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-10-2-t-tpl-req-2-26",
-    "paycheckId": "2027-10-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-10-2-t-tpl-year-37",
@@ -17188,17 +16902,6 @@
     "order": 25
   },
   {
-    "id": "2027-11-1-t-tpl-req-1-27",
-    "paycheckId": "2027-11-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-11-1-t-tpl-year-38",
     "paycheckId": "2027-11-1",
     "templateId": "tpl-year-38",
@@ -17219,17 +16922,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-11-2-t-tpl-req-2-26",
-    "paycheckId": "2027-11-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-12-1-t-tpl-req-1-3",
@@ -17331,17 +17023,6 @@
     "order": 25
   },
   {
-    "id": "2027-12-1-t-tpl-req-1-27",
-    "paycheckId": "2027-12-1",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 27
-  },
-  {
     "id": "2027-12-1-t-tpl-year-45",
     "paycheckId": "2027-12-1",
     "templateId": "tpl-year-45",
@@ -17362,17 +17043,6 @@
     "plan": 27200,
     "fact": null,
     "order": 10
-  },
-  {
-    "id": "2027-12-2-t-tpl-req-2-26",
-    "paycheckId": "2027-12-2",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
   },
   {
     "id": "2027-12-2-t-tpl-year-47",
@@ -17760,178 +17430,6 @@
     "order": 25
   },
   {
-    "id": "2026-10-1-t-tpl-req-2-26",
-    "paycheckId": "2026-10-1",
-    "templateId": "tpl-req-2-26",
-    "kind": "required",
-    "categoryId": "fun",
-    "title": "Развлечения",
-    "plan": 3000,
-    "fact": null,
-    "order": 26
-  },
-  {
-    "id": "2026-09-2-t-tpl-req-1-27",
-    "paycheckId": "2026-09-2",
-    "templateId": "tpl-req-1-27",
-    "kind": "required",
-    "categoryId": "dasha",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null,
-    "order": 43
-  },
-  {
-    "id": "2026-10-2-new-mtf0ugwc",
-    "paycheckId": "2026-10-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2026-11-2-add-40",
-    "paycheckId": "2026-11-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2026-12-2-add-40",
-    "paycheckId": "2026-12-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-01-2-add-40",
-    "paycheckId": "2027-01-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-02-2-add-40",
-    "paycheckId": "2027-02-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-03-2-add-40",
-    "paycheckId": "2027-03-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-04-2-add-40",
-    "paycheckId": "2027-04-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-05-2-add-40",
-    "paycheckId": "2027-05-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-06-2-add-40",
-    "paycheckId": "2027-06-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-07-2-add-40",
-    "paycheckId": "2027-07-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-08-2-add-40",
-    "paycheckId": "2027-08-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-09-2-add-40",
-    "paycheckId": "2027-09-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-10-2-add-40",
-    "paycheckId": "2027-10-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-11-2-add-40",
-    "paycheckId": "2027-11-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
-    "id": "2027-12-2-add-40",
-    "paycheckId": "2027-12-2",
-    "kind": "required",
-    "order": 40,
-    "categoryId": "other",
-    "title": "Траты на Дашу",
-    "plan": 2000,
-    "fact": null
-  },
-  {
     "id": "2026-09-1-new-mtf11u4r",
     "paycheckId": "2026-09-1",
     "kind": "required",
@@ -17970,5 +17468,27 @@
     "title": "Кредит №3 на 200к",
     "plan": 10900,
     "fact": null
+  },
+  {
+    "id": "2026-09-1-t-tpl-req-2-26",
+    "paycheckId": "2026-09-1",
+    "templateId": "tpl-req-2-26",
+    "kind": "required",
+    "categoryId": "fun",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null,
+    "order": 27
+  },
+  {
+    "id": "2026-09-1-t-tpl-req-1-27",
+    "paycheckId": "2026-09-1",
+    "templateId": "tpl-req-1-27",
+    "kind": "required",
+    "categoryId": "dasha",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null,
+    "order": 28
   }
 ]
