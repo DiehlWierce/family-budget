@@ -4,10 +4,10 @@
     "title": "Ипотека",
     "categoryId": "mortgage",
     "kind": "required",
-    "amount": 27122,
+    "amount": 27200,
     "slot": 2,
     "freq": "each",
-    "from": "2027-03-1",
+    "from": "2026-09-1",
     "to": null,
     "order": 10
   },

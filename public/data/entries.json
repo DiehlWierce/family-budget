@@ -15062,9 +15062,10 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
-    "order": 10
+    "order": 10,
+    "templateId": "tpl-req-2-2"
   },
   {
     "id": "2026-09-2-11",
@@ -15372,9 +15373,10 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
-    "order": 10
+    "order": 10,
+    "templateId": "tpl-req-2-2"
   },
   {
     "id": "2026-10-2-11",
@@ -15682,9 +15684,10 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
-    "order": 10
+    "order": 10,
+    "templateId": "tpl-req-2-2"
   },
   {
     "id": "2026-11-2-11",
@@ -16101,9 +16104,10 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 0,
+    "plan": 27200,
     "fact": null,
-    "order": 10
+    "order": 10,
+    "templateId": "tpl-req-2-2"
   },
   {
     "id": "2026-12-2-11",
@@ -16380,9 +16384,10 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
-    "order": 10
+    "order": 10,
+    "templateId": "tpl-req-2-2"
   },
   {
     "id": "2027-01-2-11",
@@ -16628,9 +16633,10 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
-    "order": 10
+    "order": 10,
+    "templateId": "tpl-req-2-2"
   },
   {
     "id": "2027-02-2-11",
@@ -16861,7 +16867,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -16993,7 +16999,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -17136,7 +17142,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -17268,7 +17274,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -17422,7 +17428,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -17565,7 +17571,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -17697,7 +17703,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -17851,7 +17857,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -18016,7 +18022,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
@@ -18159,7 +18165,7 @@
     "kind": "required",
     "categoryId": "mortgage",
     "title": "Ипотека",
-    "plan": 27122,
+    "plan": 27200,
     "fact": null,
     "order": 10
   },
