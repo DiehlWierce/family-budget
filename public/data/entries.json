@@ -15147,7 +15147,7 @@
     "paycheckId": "2026-10-2",
     "kind": "optional",
     "categoryId": "gifts-x",
-    "title": "На др Люды",
+    "title": "На ДР Люды",
     "plan": 3000,
     "fact": null,
     "order": 35
@@ -17490,5 +17490,627 @@
     "plan": 3000,
     "fact": null,
     "order": 28
+  },
+  {
+    "id": "2026-10-1-new-mtf1a4q3",
+    "paycheckId": "2026-10-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2026-10-1-new-mtf1a5ib",
+    "paycheckId": "2026-10-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2026-11-1-add-37",
+    "paycheckId": "2026-11-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2026-12-1-add-37",
+    "paycheckId": "2026-12-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-01-1-add-37",
+    "paycheckId": "2027-01-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-02-1-add-37",
+    "paycheckId": "2027-02-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-03-1-add-37",
+    "paycheckId": "2027-03-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-04-1-add-37",
+    "paycheckId": "2027-04-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-05-1-add-37",
+    "paycheckId": "2027-05-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-06-1-add-37",
+    "paycheckId": "2027-06-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-07-1-add-37",
+    "paycheckId": "2027-07-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-08-1-add-37",
+    "paycheckId": "2027-08-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-09-1-add-37",
+    "paycheckId": "2027-09-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-10-1-add-37",
+    "paycheckId": "2027-10-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-11-1-add-37",
+    "paycheckId": "2027-11-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-12-1-add-37",
+    "paycheckId": "2027-12-1",
+    "kind": "required",
+    "order": 37,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2026-11-1-add-38",
+    "paycheckId": "2026-11-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2026-12-1-add-38",
+    "paycheckId": "2026-12-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-01-1-add-38",
+    "paycheckId": "2027-01-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-02-1-add-38",
+    "paycheckId": "2027-02-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-03-1-add-38",
+    "paycheckId": "2027-03-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-04-1-add-38",
+    "paycheckId": "2027-04-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-05-1-add-38",
+    "paycheckId": "2027-05-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-06-1-add-38",
+    "paycheckId": "2027-06-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-07-1-add-38",
+    "paycheckId": "2027-07-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-08-1-add-38",
+    "paycheckId": "2027-08-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-09-1-add-38",
+    "paycheckId": "2027-09-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-10-1-add-38",
+    "paycheckId": "2027-10-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-11-1-add-38",
+    "paycheckId": "2027-11-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-12-1-add-38",
+    "paycheckId": "2027-12-1",
+    "kind": "required",
+    "order": 38,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2026-10-2-new-mtf1cu9l",
+    "paycheckId": "2026-10-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2026-10-2-new-mtf1cvet",
+    "paycheckId": "2026-10-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2026-11-2-add-40",
+    "paycheckId": "2026-11-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-add-40",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-01-2-add-40",
+    "paycheckId": "2027-01-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-02-2-add-40",
+    "paycheckId": "2027-02-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-03-2-add-40",
+    "paycheckId": "2027-03-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-04-2-add-40",
+    "paycheckId": "2027-04-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-05-2-add-40",
+    "paycheckId": "2027-05-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-06-2-add-40",
+    "paycheckId": "2027-06-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-07-2-add-40",
+    "paycheckId": "2027-07-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-08-2-add-40",
+    "paycheckId": "2027-08-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-09-2-add-40",
+    "paycheckId": "2027-09-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-10-2-add-40",
+    "paycheckId": "2027-10-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-11-2-add-40",
+    "paycheckId": "2027-11-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2027-12-2-add-40",
+    "paycheckId": "2027-12-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Развлечения",
+    "plan": 2000,
+    "fact": null
+  },
+  {
+    "id": "2026-11-2-add-41",
+    "paycheckId": "2026-11-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-add-41",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-01-2-add-41",
+    "paycheckId": "2027-01-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-02-2-add-41",
+    "paycheckId": "2027-02-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-03-2-add-41",
+    "paycheckId": "2027-03-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-04-2-add-41",
+    "paycheckId": "2027-04-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-05-2-add-41",
+    "paycheckId": "2027-05-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-06-2-add-41",
+    "paycheckId": "2027-06-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-07-2-add-41",
+    "paycheckId": "2027-07-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-08-2-add-41",
+    "paycheckId": "2027-08-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-09-2-add-41",
+    "paycheckId": "2027-09-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-10-2-add-41",
+    "paycheckId": "2027-10-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-11-2-add-41",
+    "paycheckId": "2027-11-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2027-12-2-add-41",
+    "paycheckId": "2027-12-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2026-10-2-t-tpl-y-mtf1e3o9",
+    "paycheckId": "2026-10-2",
+    "templateId": "tpl-y-mtf1e3o9",
+    "kind": "optional",
+    "categoryId": "gifts-x",
+    "title": "На ДР Люды",
+    "plan": 3000,
+    "fact": null,
+    "order": 151
+  },
+  {
+    "id": "2027-10-2-t-tpl-y-mtf1e3o9",
+    "paycheckId": "2027-10-2",
+    "templateId": "tpl-y-mtf1e3o9",
+    "kind": "optional",
+    "categoryId": "gifts-x",
+    "title": "На ДР Люды",
+    "plan": 3000,
+    "fact": null,
+    "order": 151
   }
 ]

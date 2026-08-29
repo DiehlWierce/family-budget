@@ -364,5 +364,18 @@
     "to": null,
     "order": 150,
     "note": "повторялось в 2025, 2026"
+  },
+  {
+    "id": "tpl-y-mtf1e3o9",
+    "title": "На ДР Люды",
+    "categoryId": "gifts-x",
+    "kind": "optional",
+    "amount": 3000,
+    "slot": 2,
+    "freq": "yearly",
+    "month": 10,
+    "from": "2026-09-1",
+    "to": null,
+    "order": 151
   }
 ]
