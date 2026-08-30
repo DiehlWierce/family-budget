@@ -217,12 +217,12 @@
     "categoryId": "gifts-x",
     "kind": "optional",
     "amount": 3000,
-    "slot": 1,
+    "slot": 2,
     "freq": "yearly",
-    "month": 11,
+    "month": 10,
     "from": "2026-09-1",
     "to": null,
-    "order": 138,
+    "order": 144,
     "note": "повторялось в 2024, 2025"
   },
   {
@@ -236,7 +236,7 @@
     "month": 10,
     "from": "2026-09-1",
     "to": null,
-    "order": 139,
+    "order": 138,
     "note": "повторялось в 2025, 2026"
   },
   {
@@ -292,7 +292,7 @@
     "month": 10,
     "from": "2026-09-1",
     "to": null,
-    "order": 143,
+    "order": 139,
     "note": "повторялось в 2024, 2026"
   },
   {
@@ -306,7 +306,7 @@
     "month": 10,
     "from": "2026-09-1",
     "to": null,
-    "order": 144,
+    "order": 143,
     "note": "повторялось в 2024, 2025, 2026"
   },
   {
@@ -332,7 +332,7 @@
     "slot": 2,
     "freq": "yearly",
     "month": 1,
-    "from": "2027-03-1",
+    "from": "2026-09-1",
     "to": null,
     "order": 146,
     "note": "повторялось в 2025, 2026"

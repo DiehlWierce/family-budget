@@ -15032,7 +15032,7 @@
     "title": "Спорт",
     "plan": 15000,
     "fact": null,
-    "order": 16
+    "order": 17
   },
   {
     "id": "2026-10-1-17",
@@ -15042,7 +15042,7 @@
     "title": "Домашний интернет",
     "plan": 750,
     "fact": null,
-    "order": 17
+    "order": 18
   },
   {
     "id": "2026-10-1-18",
@@ -15052,7 +15052,7 @@
     "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
-    "order": 18,
+    "order": 19,
     "templateId": "tpl-req-1-15"
   },
   {
@@ -15063,7 +15063,7 @@
     "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
-    "order": 19,
+    "order": 24,
     "templateId": "tpl-req-1-17"
   },
   {
@@ -15074,7 +15074,7 @@
     "title": "Дорога",
     "plan": 3000,
     "fact": null,
-    "order": 24,
+    "order": 25,
     "templateId": "tpl-req-1-21"
   },
   {
@@ -15085,7 +15085,7 @@
     "title": "Еда",
     "plan": 15000,
     "fact": null,
-    "order": 25,
+    "order": 37,
     "templateId": "tpl-req-1-23"
   },
   {
@@ -15150,7 +15150,7 @@
     "title": "На ДР Бори",
     "plan": 3000,
     "fact": null,
-    "order": 37,
+    "order": 39,
     "templateId": "tpl-year-37"
   },
   {
@@ -15161,7 +15161,7 @@
     "title": "iCloud Даше",
     "plan": 1000,
     "fact": null,
-    "order": 39
+    "order": 138
   },
   {
     "id": "2026-10-2-39",
@@ -15202,39 +15202,7 @@
     "title": "Спорт",
     "plan": 15000,
     "fact": null,
-    "order": 16
-  },
-  {
-    "id": "2026-11-1-17",
-    "paycheckId": "2026-11-1",
-    "kind": "required",
-    "categoryId": "internet-home",
-    "title": "Домашний интернет",
-    "plan": 750,
-    "fact": null,
-    "order": 17
-  },
-  {
-    "id": "2026-11-1-18",
-    "paycheckId": "2026-11-1",
-    "kind": "required",
-    "categoryId": "mobile-dasha",
-    "title": "Моб. инет (Даши)",
-    "plan": 550,
-    "fact": null,
-    "order": 18,
-    "templateId": "tpl-req-1-15"
-  },
-  {
-    "id": "2026-11-1-19",
-    "paycheckId": "2026-11-1",
-    "kind": "required",
-    "categoryId": "mobile-my",
-    "title": "Моб. инет (Мой)",
-    "plan": 750,
-    "fact": null,
-    "order": 19,
-    "templateId": "tpl-req-1-17"
+    "order": 14
   },
   {
     "id": "2026-11-1-24",
@@ -15244,7 +15212,7 @@
     "title": "Дорога",
     "plan": 3000,
     "fact": null,
-    "order": 24,
+    "order": 18,
     "templateId": "tpl-req-1-21"
   },
   {
@@ -15255,7 +15223,7 @@
     "title": "Еда",
     "plan": 15000,
     "fact": null,
-    "order": 25,
+    "order": 19,
     "templateId": "tpl-req-1-23"
   },
   {
@@ -15395,9 +15363,9 @@
     "kind": "required",
     "categoryId": "loan-remont-13",
     "title": "Кредит №1 на 1.3кк",
-    "plan": 36900,
+    "plan": 73800,
     "fact": null,
-    "order": 11,
+    "order": 12,
     "templateId": "tpl-req-1-3"
   },
   {
@@ -15408,7 +15376,7 @@
     "title": "Кредит №2 на 650к",
     "plan": 54200,
     "fact": null,
-    "order": 12
+    "order": 13
   },
   {
     "id": "2026-12-1-16",
@@ -15460,7 +15428,7 @@
     "title": "Дорога",
     "plan": 3000,
     "fact": null,
-    "order": 24,
+    "order": 20,
     "templateId": "tpl-req-1-21"
   },
   {
@@ -15471,7 +15439,7 @@
     "title": "Еда",
     "plan": 15000,
     "fact": null,
-    "order": 25,
+    "order": 21,
     "templateId": "tpl-req-1-23"
   },
   {
@@ -15526,17 +15494,6 @@
     "order": 40
   },
   {
-    "id": "2026-12-2-10",
-    "paycheckId": "2026-12-2",
-    "kind": "required",
-    "categoryId": "mortgage",
-    "title": "Ипотека",
-    "plan": 27200,
-    "fact": null,
-    "order": 10,
-    "templateId": "tpl-req-2-2"
-  },
-  {
     "id": "2026-12-2-32",
     "paycheckId": "2026-12-2",
     "kind": "optional",
@@ -15553,7 +15510,7 @@
     "kind": "optional",
     "categoryId": "debt-extra",
     "title": "На досрочку за отпуск",
-    "plan": 45000,
+    "plan": 20000,
     "fact": null,
     "order": 34
   },
@@ -15566,69 +15523,6 @@
     "plan": 1000,
     "fact": null,
     "order": 44
-  },
-  {
-    "id": "2027-01-1-11",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "loan-remont-13",
-    "title": "Кредит №1 на 1.3кк",
-    "plan": 36900,
-    "fact": null,
-    "order": 11,
-    "templateId": "tpl-req-1-3"
-  },
-  {
-    "id": "2027-01-1-12",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "loan-650",
-    "title": "Кредит №2 на 650к",
-    "plan": 0,
-    "fact": null,
-    "order": 12
-  },
-  {
-    "id": "2027-01-1-16",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "sport",
-    "title": "Спорт",
-    "plan": 0,
-    "fact": null,
-    "order": 16
-  },
-  {
-    "id": "2027-01-1-17",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "internet-home",
-    "title": "Домашний интернет",
-    "plan": 0,
-    "fact": null,
-    "order": 17
-  },
-  {
-    "id": "2027-01-1-18",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "mobile-dasha",
-    "title": "Моб. инет (Даши)",
-    "plan": 550,
-    "fact": null,
-    "order": 18,
-    "templateId": "tpl-req-1-15"
-  },
-  {
-    "id": "2027-01-1-19",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "mobile-my",
-    "title": "Моб. инет (Мой)",
-    "plan": 750,
-    "fact": null,
-    "order": 19,
-    "templateId": "tpl-req-1-17"
   },
   {
     "id": "2027-01-1-24",
@@ -15651,17 +15545,6 @@
     "fact": null,
     "order": 25,
     "templateId": "tpl-req-1-23"
-  },
-  {
-    "id": "2027-01-2-10",
-    "paycheckId": "2027-01-2",
-    "kind": "required",
-    "categoryId": "mortgage",
-    "title": "Ипотека",
-    "plan": 27200,
-    "fact": null,
-    "order": 10,
-    "templateId": "tpl-req-2-2"
   },
   {
     "id": "2027-02-1-11",
@@ -15692,7 +15575,7 @@
     "title": "Спорт",
     "plan": 15000,
     "fact": null,
-    "order": 16
+    "order": 14
   },
   {
     "id": "2027-02-1-17",
@@ -15702,7 +15585,7 @@
     "title": "Домашний интернет",
     "plan": 750,
     "fact": null,
-    "order": 17
+    "order": 15
   },
   {
     "id": "2027-02-1-18",
@@ -15712,7 +15595,7 @@
     "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null,
-    "order": 18,
+    "order": 16,
     "templateId": "tpl-req-1-15"
   },
   {
@@ -15723,7 +15606,7 @@
     "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null,
-    "order": 19,
+    "order": 17,
     "templateId": "tpl-req-1-17"
   },
   {
@@ -15734,7 +15617,7 @@
     "title": "Дорога",
     "plan": 3000,
     "fact": null,
-    "order": 24,
+    "order": 18,
     "templateId": "tpl-req-1-21"
   },
   {
@@ -15745,7 +15628,7 @@
     "title": "Еда",
     "plan": 15000,
     "fact": null,
-    "order": 25,
+    "order": 19,
     "templateId": "tpl-req-1-23"
   },
   {
@@ -16739,17 +16622,6 @@
     "order": 25
   },
   {
-    "id": "2027-11-1-t-tpl-year-38",
-    "paycheckId": "2027-11-1",
-    "templateId": "tpl-year-38",
-    "kind": "optional",
-    "categoryId": "gifts-x",
-    "title": "На ДР В.И.",
-    "plan": 3000,
-    "fact": null,
-    "order": 138
-  },
-  {
     "id": "2027-11-2-t-tpl-req-2-2",
     "paycheckId": "2027-11-2",
     "templateId": "tpl-req-2-2",
@@ -16882,17 +16754,6 @@
     "order": 147
   },
   {
-    "id": "2026-11-1-t-tpl-year-38",
-    "paycheckId": "2026-11-1",
-    "templateId": "tpl-year-38",
-    "kind": "optional",
-    "categoryId": "gifts-x",
-    "title": "На ДР В.И.",
-    "plan": 3000,
-    "fact": null,
-    "order": 138
-  },
-  {
     "id": "2026-09-2-t-tpl-req-1-21",
     "paycheckId": "2026-09-2",
     "templateId": "tpl-req-1-21",
@@ -16912,7 +16773,7 @@
     "title": "Дорога",
     "plan": 3000,
     "fact": null,
-    "order": 24
+    "order": 41
   },
   {
     "id": "2026-11-2-t-tpl-req-1-21",
@@ -16934,7 +16795,7 @@
     "title": "Дорога",
     "plan": 3000,
     "fact": null,
-    "order": 24
+    "order": 48
   },
   {
     "id": "2027-01-2-t-tpl-req-1-21",
@@ -17088,7 +16949,7 @@
     "title": "Еда",
     "plan": 15000,
     "fact": null,
-    "order": 25
+    "order": 152
   },
   {
     "id": "2026-11-2-t-tpl-req-1-23",
@@ -17110,7 +16971,7 @@
     "title": "Еда",
     "plan": 15000,
     "fact": null,
-    "order": 25
+    "order": 49
   },
   {
     "id": "2027-01-2-t-tpl-req-1-23",
@@ -17278,7 +17139,7 @@
     "id": "2026-10-1-new-mtf1a4q3",
     "paycheckId": "2026-10-1",
     "kind": "required",
-    "order": 37,
+    "order": 38,
     "categoryId": "other",
     "title": "Развлечения",
     "plan": 2000,
@@ -17288,7 +17149,7 @@
     "id": "2026-10-1-new-mtf1a5ib",
     "paycheckId": "2026-10-1",
     "kind": "required",
-    "order": 38,
+    "order": 39,
     "categoryId": "other",
     "title": "Траты на Дашу",
     "plan": 3000,
@@ -17298,7 +17159,7 @@
     "id": "2026-11-1-add-37",
     "paycheckId": "2026-11-1",
     "kind": "required",
-    "order": 37,
+    "order": 20,
     "categoryId": "other",
     "title": "Развлечения",
     "plan": 2000,
@@ -17308,7 +17169,7 @@
     "id": "2026-12-1-add-37",
     "paycheckId": "2026-12-1",
     "kind": "required",
-    "order": 37,
+    "order": 22,
     "categoryId": "other",
     "title": "Развлечения",
     "plan": 2000,
@@ -17328,7 +17189,7 @@
     "id": "2027-02-1-add-37",
     "paycheckId": "2027-02-1",
     "kind": "required",
-    "order": 37,
+    "order": 20,
     "categoryId": "other",
     "title": "Развлечения",
     "plan": 2000,
@@ -17438,7 +17299,7 @@
     "id": "2026-11-1-add-38",
     "paycheckId": "2026-11-1",
     "kind": "required",
-    "order": 38,
+    "order": 21,
     "categoryId": "other",
     "title": "Траты на Дашу",
     "plan": 3000,
@@ -17448,7 +17309,7 @@
     "id": "2026-12-1-add-38",
     "paycheckId": "2026-12-1",
     "kind": "required",
-    "order": 38,
+    "order": 41,
     "categoryId": "other",
     "title": "Траты на Дашу",
     "plan": 3000,
@@ -17468,7 +17329,7 @@
     "id": "2027-02-1-add-38",
     "paycheckId": "2027-02-1",
     "kind": "required",
-    "order": 38,
+    "order": 21,
     "categoryId": "other",
     "title": "Траты на Дашу",
     "plan": 3000,
@@ -17578,7 +17439,7 @@
     "id": "2026-10-2-new-mtf1cu9l",
     "paycheckId": "2026-10-2",
     "kind": "required",
-    "order": 40,
+    "order": 153,
     "categoryId": "other",
     "title": "Развлечения",
     "plan": 2000,
@@ -17588,7 +17449,7 @@
     "id": "2026-10-2-new-mtf1cvet",
     "paycheckId": "2026-10-2",
     "kind": "required",
-    "order": 41,
+    "order": 154,
     "categoryId": "other",
     "title": "Траты на Дашу",
     "plan": 3000,
@@ -17608,7 +17469,7 @@
     "id": "2026-12-2-add-40",
     "paycheckId": "2026-12-2",
     "kind": "required",
-    "order": 40,
+    "order": 51,
     "categoryId": "other",
     "title": "Развлечения",
     "plan": 2000,
@@ -17748,7 +17609,7 @@
     "id": "2026-12-2-add-41",
     "paycheckId": "2026-12-2",
     "kind": "required",
-    "order": 41,
+    "order": 52,
     "categoryId": "other",
     "title": "Траты на Дашу",
     "plan": 3000,
@@ -17883,7 +17744,7 @@
     "title": "На ДР Люды",
     "plan": 3000,
     "fact": null,
-    "order": 36
+    "order": 37
   },
   {
     "id": "2027-10-2-t-tpl-y-mtf1e3o9",
@@ -17921,28 +17782,6 @@
   {
     "id": "2026-11-2-t-tpl-req-1-7",
     "paycheckId": "2026-11-2",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
-    "id": "2026-12-2-t-tpl-req-1-7",
-    "paycheckId": "2026-12-2",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
-    "id": "2027-01-2-t-tpl-req-1-7",
-    "paycheckId": "2027-01-2",
     "templateId": "tpl-req-1-7",
     "kind": "required",
     "categoryId": "loan-otpusk",
@@ -18071,5 +17910,318 @@
     "plan": 10900,
     "fact": null,
     "order": 13
+  },
+  {
+    "id": "2026-10-1-new-mtf1qg21",
+    "paycheckId": "2026-10-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2026-11-1-add-16",
+    "paycheckId": "2026-11-1",
+    "kind": "required",
+    "order": 13,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2026-12-1-add-16",
+    "paycheckId": "2026-12-1",
+    "kind": "required",
+    "order": 15,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-02-1-add-16",
+    "paycheckId": "2027-02-1",
+    "kind": "required",
+    "order": 13,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-03-1-add-16",
+    "paycheckId": "2027-03-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-04-1-add-16",
+    "paycheckId": "2027-04-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-05-1-add-16",
+    "paycheckId": "2027-05-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-06-1-add-16",
+    "paycheckId": "2027-06-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-07-1-add-16",
+    "paycheckId": "2027-07-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-08-1-add-16",
+    "paycheckId": "2027-08-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-09-1-add-16",
+    "paycheckId": "2027-09-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-10-1-add-16",
+    "paycheckId": "2027-10-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-11-1-add-16",
+    "paycheckId": "2027-11-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2027-12-1-add-16",
+    "paycheckId": "2027-12-1",
+    "kind": "required",
+    "order": 16,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2026-09-2-new-mtf1y0q9",
+    "paycheckId": "2026-09-2",
+    "kind": "required",
+    "order": 43,
+    "categoryId": "other",
+    "title": "Траты на Дашу",
+    "plan": 3000,
+    "fact": null
+  },
+  {
+    "id": "2026-10-2-t-tpl-year-38",
+    "paycheckId": "2026-10-2",
+    "templateId": "tpl-year-38",
+    "kind": "optional",
+    "categoryId": "gifts-x",
+    "title": "На ДР В.И.",
+    "plan": 3000,
+    "fact": null,
+    "order": 36
+  },
+  {
+    "id": "2027-10-2-t-tpl-year-38",
+    "paycheckId": "2027-10-2",
+    "templateId": "tpl-year-38",
+    "kind": "optional",
+    "categoryId": "gifts-x",
+    "title": "На ДР В.И.",
+    "plan": 3000,
+    "fact": null,
+    "order": 138
+  },
+  {
+    "id": "2026-10-2-new-mtf260dz",
+    "paycheckId": "2026-10-2",
+    "kind": "required",
+    "order": 24,
+    "categoryId": "other",
+    "title": "Домашний интернет",
+    "plan": 750,
+    "fact": null
+  },
+  {
+    "id": "2026-10-2-new-mtf26e83",
+    "paycheckId": "2026-10-2",
+    "kind": "required",
+    "order": 25,
+    "categoryId": "other",
+    "title": "Моб. инет (Даши)",
+    "plan": 550,
+    "fact": null
+  },
+  {
+    "id": "2026-10-2-new-mtf26ope",
+    "paycheckId": "2026-10-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Моб. инет (Мой)",
+    "plan": 750,
+    "fact": null
+  },
+  {
+    "id": "2026-12-1-new-mtf2a7xd",
+    "paycheckId": "2026-12-1",
+    "kind": "required",
+    "order": 11,
+    "categoryId": "other",
+    "title": "Ипотека",
+    "plan": 27200,
+    "fact": null
+  },
+  {
+    "id": "2026-12-1-new-mtf2bh1e",
+    "paycheckId": "2026-12-1",
+    "kind": "required",
+    "order": 14,
+    "categoryId": "other",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-new-mtf2egpz",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 40,
+    "categoryId": "other",
+    "title": "Кварплата",
+    "plan": 12000,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-new-mtf2eh63",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 41,
+    "categoryId": "other",
+    "title": "Спорт",
+    "plan": 15000,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-new-mtf2ei07",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 45,
+    "categoryId": "other",
+    "title": "Домашний интернет",
+    "plan": 750,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-new-mtf2eik3",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 46,
+    "categoryId": "other",
+    "title": "Моб. инет (Даши)",
+    "plan": 550,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-new-mtf2ej17",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 47,
+    "categoryId": "other",
+    "title": "Моб. инет (Мой)",
+    "plan": 750,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-new-mtf2gwja",
+    "paycheckId": "2026-12-2",
+    "kind": "optional",
+    "order": 50,
+    "categoryId": "other-x",
+    "title": "iCloud Мне",
+    "plan": 1000,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-new-mtf2ul1p",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 24,
+    "categoryId": "other",
+    "title": "Ипотека",
+    "plan": 27200,
+    "fact": null
+  },
+  {
+    "id": "2026-12-2-new-mtf2umsd",
+    "paycheckId": "2026-12-2",
+    "kind": "required",
+    "order": 25,
+    "categoryId": "other",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null
+  },
+  {
+    "id": "2027-01-2-t-tpl-year-46",
+    "paycheckId": "2027-01-2",
+    "templateId": "tpl-year-46",
+    "kind": "optional",
+    "categoryId": "gifts-x",
+    "title": "На ДР Саши",
+    "plan": 3000,
+    "fact": null,
+    "order": 146
   }
 ]

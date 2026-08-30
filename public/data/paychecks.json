@@ -1100,7 +1100,7 @@
     "periodYear": 2027,
     "periodMonth": 1,
     "slot": 1,
-    "salaryOverride": null,
+    "salaryOverride": 20500,
     "salaryFact": null,
     "legacy": {
       "column": "HR",
@@ -1115,7 +1115,7 @@
     "periodYear": 2027,
     "periodMonth": 1,
     "slot": 2,
-    "salaryOverride": null,
+    "salaryOverride": 75300,
     "salaryFact": null,
     "legacy": {
       "column": "HU",
@@ -1130,7 +1130,7 @@
     "periodYear": 2027,
     "periodMonth": 2,
     "slot": 1,
-    "salaryOverride": null,
+    "salaryOverride": 150700,
     "salaryFact": null,
     "legacy": {
       "column": "HY",
@@ -1145,7 +1145,7 @@
     "periodYear": 2027,
     "periodMonth": 2,
     "slot": 2,
-    "salaryOverride": null,
+    "salaryOverride": 131500,
     "salaryFact": null,
     "legacy": {
       "column": "IB",
