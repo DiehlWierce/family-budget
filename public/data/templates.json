@@ -41,7 +41,7 @@
     "categoryId": "loan-otpusk",
     "kind": "required",
     "amount": 10900,
-    "slot": 1,
+    "slot": 2,
     "freq": "each",
     "from": "2026-09-1",
     "to": null,

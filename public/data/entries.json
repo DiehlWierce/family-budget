@@ -15195,17 +15195,6 @@
     "order": 12
   },
   {
-    "id": "2026-11-1-13",
-    "paycheckId": "2026-11-1",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13,
-    "templateId": "tpl-req-1-7"
-  },
-  {
     "id": "2026-11-1-16",
     "paycheckId": "2026-11-1",
     "kind": "required",
@@ -15268,16 +15257,6 @@
     "fact": null,
     "order": 25,
     "templateId": "tpl-req-1-23"
-  },
-  {
-    "id": "2026-11-1-34",
-    "paycheckId": "2026-11-1",
-    "kind": "optional",
-    "categoryId": "gifts-x",
-    "title": "На др В.И.",
-    "plan": 3000,
-    "fact": null,
-    "order": 34
   },
   {
     "id": "2026-11-2-10",
@@ -15430,17 +15409,6 @@
     "plan": 54200,
     "fact": null,
     "order": 12
-  },
-  {
-    "id": "2026-12-1-13",
-    "paycheckId": "2026-12-1",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13,
-    "templateId": "tpl-req-1-7"
   },
   {
     "id": "2026-12-1-16",
@@ -15621,17 +15589,6 @@
     "order": 12
   },
   {
-    "id": "2027-01-1-13",
-    "paycheckId": "2027-01-1",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13,
-    "templateId": "tpl-req-1-7"
-  },
-  {
     "id": "2027-01-1-16",
     "paycheckId": "2027-01-1",
     "kind": "required",
@@ -15726,17 +15683,6 @@
     "plan": 27100,
     "fact": null,
     "order": 12
-  },
-  {
-    "id": "2027-02-1-13",
-    "paycheckId": "2027-02-1",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13,
-    "templateId": "tpl-req-1-7"
   },
   {
     "id": "2027-02-1-16",
@@ -15834,17 +15780,6 @@
     "plan": 27100,
     "fact": null,
     "order": 12
-  },
-  {
-    "id": "2027-03-1-t-tpl-req-1-7",
-    "paycheckId": "2027-03-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
   },
   {
     "id": "2027-03-1-t-tpl-req-1-11",
@@ -15957,17 +15892,6 @@
     "order": 12
   },
   {
-    "id": "2027-04-1-t-tpl-req-1-7",
-    "paycheckId": "2027-04-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
     "id": "2027-04-1-t-tpl-req-1-11",
     "paycheckId": "2027-04-1",
     "templateId": "tpl-req-1-11",
@@ -16078,17 +16002,6 @@
     "order": 12
   },
   {
-    "id": "2027-05-1-t-tpl-req-1-7",
-    "paycheckId": "2027-05-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
     "id": "2027-05-1-t-tpl-req-1-11",
     "paycheckId": "2027-05-1",
     "templateId": "tpl-req-1-11",
@@ -16188,17 +16101,6 @@
     "order": 12
   },
   {
-    "id": "2027-06-1-t-tpl-req-1-7",
-    "paycheckId": "2027-06-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
     "id": "2027-06-1-t-tpl-req-1-11",
     "paycheckId": "2027-06-1",
     "templateId": "tpl-req-1-11",
@@ -16296,17 +16198,6 @@
     "plan": 27100,
     "fact": null,
     "order": 12
-  },
-  {
-    "id": "2027-07-1-t-tpl-req-1-7",
-    "paycheckId": "2027-07-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
   },
   {
     "id": "2027-07-1-t-tpl-req-1-11",
@@ -16430,17 +16321,6 @@
     "order": 12
   },
   {
-    "id": "2027-08-1-t-tpl-req-1-7",
-    "paycheckId": "2027-08-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
     "id": "2027-08-1-t-tpl-req-1-11",
     "paycheckId": "2027-08-1",
     "templateId": "tpl-req-1-11",
@@ -16551,17 +16431,6 @@
     "order": 12
   },
   {
-    "id": "2027-09-1-t-tpl-req-1-7",
-    "paycheckId": "2027-09-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
     "id": "2027-09-1-t-tpl-req-1-11",
     "paycheckId": "2027-09-1",
     "templateId": "tpl-req-1-11",
@@ -16659,17 +16528,6 @@
     "plan": 27100,
     "fact": null,
     "order": 12
-  },
-  {
-    "id": "2027-10-1-t-tpl-req-1-7",
-    "paycheckId": "2027-10-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
   },
   {
     "id": "2027-10-1-t-tpl-req-1-11",
@@ -16815,17 +16673,6 @@
     "order": 12
   },
   {
-    "id": "2027-11-1-t-tpl-req-1-7",
-    "paycheckId": "2027-11-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
     "id": "2027-11-1-t-tpl-req-1-11",
     "paycheckId": "2027-11-1",
     "templateId": "tpl-req-1-11",
@@ -16936,17 +16783,6 @@
     "order": 12
   },
   {
-    "id": "2027-12-1-t-tpl-req-1-7",
-    "paycheckId": "2027-12-1",
-    "templateId": "tpl-req-1-7",
-    "kind": "required",
-    "categoryId": "loan-otpusk",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
-    "fact": null,
-    "order": 13
-  },
-  {
     "id": "2027-12-1-t-tpl-req-1-11",
     "paycheckId": "2027-12-1",
     "templateId": "tpl-req-1-11",
@@ -17055,17 +16891,6 @@
     "plan": 3000,
     "fact": null,
     "order": 138
-  },
-  {
-    "id": "2026-10-1-t-tpl-req-2-10",
-    "paycheckId": "2026-10-1",
-    "templateId": "tpl-req-2-10",
-    "kind": "required",
-    "categoryId": "utilities",
-    "title": "Кварплата",
-    "plan": 12000,
-    "fact": null,
-    "order": 15
   },
   {
     "id": "2026-09-2-t-tpl-req-1-21",
@@ -17447,16 +17272,6 @@
     "categoryId": "other-x",
     "title": "iCloud Мне",
     "plan": 1000,
-    "fact": null
-  },
-  {
-    "id": "2026-09-2-new-mtf146el",
-    "paycheckId": "2026-09-2",
-    "kind": "required",
-    "order": 25,
-    "categoryId": "other",
-    "title": "Кредит №3 на 200к",
-    "plan": 10900,
     "fact": null
   },
   {
@@ -18082,8 +17897,173 @@
     "order": 151
   },
   {
-    "id": "2026-10-1-t-tpl-req-1-7",
-    "paycheckId": "2026-10-1",
+    "id": "2026-09-2-t-tpl-req-1-7",
+    "paycheckId": "2026-09-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2026-10-2-t-tpl-req-1-7",
+    "paycheckId": "2026-10-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2026-11-2-t-tpl-req-1-7",
+    "paycheckId": "2026-11-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2026-12-2-t-tpl-req-1-7",
+    "paycheckId": "2026-12-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-01-2-t-tpl-req-1-7",
+    "paycheckId": "2027-01-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-02-2-t-tpl-req-1-7",
+    "paycheckId": "2027-02-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-03-2-t-tpl-req-1-7",
+    "paycheckId": "2027-03-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-04-2-t-tpl-req-1-7",
+    "paycheckId": "2027-04-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-05-2-t-tpl-req-1-7",
+    "paycheckId": "2027-05-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-06-2-t-tpl-req-1-7",
+    "paycheckId": "2027-06-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-07-2-t-tpl-req-1-7",
+    "paycheckId": "2027-07-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-08-2-t-tpl-req-1-7",
+    "paycheckId": "2027-08-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-09-2-t-tpl-req-1-7",
+    "paycheckId": "2027-09-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-10-2-t-tpl-req-1-7",
+    "paycheckId": "2027-10-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-11-2-t-tpl-req-1-7",
+    "paycheckId": "2027-11-2",
+    "templateId": "tpl-req-1-7",
+    "kind": "required",
+    "categoryId": "loan-otpusk",
+    "title": "Кредит №3 на 200к",
+    "plan": 10900,
+    "fact": null,
+    "order": 13
+  },
+  {
+    "id": "2027-12-2-t-tpl-req-1-7",
+    "paycheckId": "2027-12-2",
     "templateId": "tpl-req-1-7",
     "kind": "required",
     "categoryId": "loan-otpusk",
