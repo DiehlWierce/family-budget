@@ -18223,5 +18223,15 @@
     "plan": 3000,
     "fact": null,
     "order": 146
+  },
+  {
+    "id": "2026-08-2-new-mtg6dxvm",
+    "paycheckId": "2026-08-2",
+    "kind": "optional",
+    "order": 50,
+    "categoryId": "other-x",
+    "title": "На VPN",
+    "plan": 1299,
+    "fact": 1110
   }
 ]
