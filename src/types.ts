@@ -35,6 +35,8 @@ export interface Entry {
   title: string
   plan: number | null
   fact: number | null
+  /** Заметка к строке: чем набралась сумма. Живёт только в своей получке. */
+  note?: string
   order: number
 }
 

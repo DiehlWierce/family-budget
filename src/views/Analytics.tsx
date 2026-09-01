@@ -1,20 +1,23 @@
 import { useMemo, useState } from 'react'
 import { useBudget } from '../store'
-import { categoryStats, currentPaycheckId, debtStats, groupStats, totals, yearStats } from '../calc'
-import { dayMonth, money, moneyShort, plural, today } from '../format'
+import {
+  categoryStats, currentPaycheckId, debtStats, shareStats, totals, yearStats,
+} from '../calc'
+import { dayMonth, money, moneyShort, percent, plural, today } from '../format'
 import { Strip } from '../components/Strip'
 
 export function Analytics() {
   const { budget } = useBudget()
   const [year, setYear] = useState<number | 'all'>(new Date().getFullYear())
   const [showClosed, setShowClosed] = useState(false)
+  const [openGroup, setOpenGroup] = useState<string | null>(null)
 
   const stats = useMemo(() => {
     if (!budget) return null
     return {
       years: yearStats(budget),
       cats: categoryStats(budget, year),
-      groups: groupStats(budget, year),
+      share: shareStats(budget, year),
       debts: debtStats(budget),
       strip: budget.paychecks.map((p) => ({
         id: p.id, date: p.date, value: totals(p, budget).free,
@@ -25,9 +28,10 @@ export function Analytics() {
 
   if (!budget || !stats) return <div className="center">Загрузка…</div>
 
-  const { years, cats, groups, debts, strip, currentId } = stats
+  const { years, cats, share, debts, strip, currentId } = stats
   const maxDebtShare = Math.max(0.01, ...years.map((y) => y.debtShare))
-  const maxGroup = Math.max(1, ...groups.map((g) => g.total))
+  const maxShare = Math.max(0.01, ...share.groups.map((g) => g.share))
+  const yearLabel = year === 'all' ? 'всё время' : String(year)
   const activeDebts = debts.filter((d) => d.active)
   const monthlyDebt = activeDebts.reduce((s, d) => s + d.monthly, 0)
   const freedom = activeDebts.length
@@ -125,18 +129,59 @@ export function Analytics() {
       </div>
 
       <div className="card">
-        <div className="card-head"><h2>Куда уходят деньги</h2></div>
+        <div className="card-head"><h2>Куда уходят деньги</h2>
+          <span className="hint">доля от прихода</span>
+        </div>
         <div className="card-body">
-          <div className="bars">
-            {groups.map((g) => (
-              <div className="bar" key={g.id}>
-                <span className="k">{g.name}</span>
-                <span className="track">
-                  <span className="fill" style={{ width: `${(g.total / maxGroup) * 100}%` }} />
-                </span>
-                <span className="v">{moneyShort(g.total)}</span>
-              </div>
-            ))}
+          <div className="calcline">
+            <div className="k">Приход за {yearLabel}</div>
+            <div className="v num">{money(share.income)}</div>
+            <div className="tiny muted">
+              Зарплата и дополнительные приходы вместе. Расписано по тратам{' '}
+              {money(share.spent)} — {percent(share.income ? share.spent / share.income : 0)} прихода.
+            </div>
+          </div>
+
+          {share.groups.length === 0 ? (
+            <div className="tiny muted">За этот период трат нет.</div>
+          ) : (
+            <div className="bars">
+              {share.groups.map((g) => (
+                <div key={g.id}>
+                  <button
+                    className="bar barbtn" onClick={() => setOpenGroup(openGroup === g.id ? null : g.id)}
+                    aria-expanded={openGroup === g.id}
+                  >
+                    <span className="k">{g.name}</span>
+                    <span className="track">
+                      <span className="fill" style={{ width: `${(g.share / maxShare) * 100}%` }} />
+                    </span>
+                    <span className="v">{percent(g.share)} · {moneyShort(g.total)}</span>
+                  </button>
+                  {openGroup === g.id && (
+                    <div className="subbars">
+                      {g.cats.map((c) => (
+                        <div className="bar" key={c.id}>
+                          <span className="k">{c.name}</span>
+                          <span className="track">
+                            <span className="fill sub" style={{ width: `${(c.share / maxShare) * 100}%` }} />
+                          </span>
+                          <span className="v">{percent(c.share)} · {moneyShort(c.total)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div className="tiny muted" style={{ marginTop: 12 }}>
+            {share.rest >= 0
+              ? `Не расписано: ${money(share.rest)} — ${percent(share.income ? share.rest / share.income : 0)} прихода.`
+              : `Расписано больше, чем пришло, на ${money(-share.rest)}.`}
+            {' '}Проценты считаются от всего заработанного; дополнительные приходы поднимают приход,
+            но тратой не считаются. Нажми на крупную категорию — раскроется по подкатегориям.
           </div>
         </div>
       </div>

@@ -146,6 +146,59 @@ export function groupStats(b: Budget, year: number | 'all'): GroupStat[] {
   return [...map.values()].sort((a, z) => z.total - a.total)
 }
 
+export interface ShareSlice {
+  id: string
+  name: string
+  total: number
+  /** Доля от всего прихода за период. */
+  share: number
+}
+
+export interface ShareStat {
+  /** Зарплата плюс дополнительные приходы — всё, что заработано. */
+  income: number
+  /** Всё, что расписано по тратам. */
+  spent: number
+  /** Приход минус траты. Минус — расписано больше, чем пришло. */
+  rest: number
+  groups: (ShareSlice & { cats: ShareSlice[] })[]
+}
+
+/**
+ * Сколько процентов прихода съедает каждая крупная категория.
+ * Дополнительные приходы — часть заработка, а не трата: они увеличивают
+ * знаменатель и в список категорий не попадают.
+ */
+export function shareStats(b: Budget, year: number | 'all'): ShareStat {
+  const income = b.paychecks
+    .filter((p) => year === 'all' || p.periodYear === year)
+    .reduce((s, p) => s + totals(p, b).income, 0)
+  const share = (v: number) => (income > 0 ? v / income : 0)
+  const names = byId(b.groups)
+
+  const map = new Map<string, ShareSlice & { cats: ShareSlice[] }>()
+  let spent = 0
+  for (const c of categoryStats(b, year)) {
+    if (!c.total) continue
+    spent += c.total
+    const gid = c.category.group
+    const g = map.get(gid) ?? {
+      id: gid, name: names[gid]?.name ?? c.category.groupName, total: 0, share: 0, cats: [],
+    }
+    g.total += c.total
+    g.cats.push({ id: c.category.id, name: c.category.name, total: c.total, share: 0 })
+    map.set(gid, g)
+  }
+
+  const groups = [...map.values()].sort((a, z) => z.total - a.total)
+  for (const g of groups) {
+    g.share = share(g.total)
+    g.cats.sort((a, z) => z.total - a.total)
+    for (const c of g.cats) c.share = share(c.total)
+  }
+  return { income, spent, rest: income - spent, groups }
+}
+
 export interface DebtStat {
   category: Category
   monthly: number

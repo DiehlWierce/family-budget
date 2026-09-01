@@ -133,6 +133,8 @@ export function applyForward(
           id: `${p.id}-add-${sample.templateId ?? sample.order}`,
           paycheckId: p.id,
           fact: null,
+          // Заметка — про эту получку и её чеки, вперёд ей ехать незачем.
+          note: undefined,
         }]
       }
     }

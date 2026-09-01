@@ -13,6 +13,15 @@ export const moneyShort = (v: number) => {
   return new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(Math.round(v))
 }
 
+/** Доля в процентах: мелкое не схлопываем в «0%». */
+export const percent = (v: number) => {
+  const a = Math.abs(v) * 100
+  if (a === 0) return '0%'
+  if (a < 0.1) return (v < 0 ? '>−0,1%' : '<0,1%')
+  if (a < 1) return (v * 100).toFixed(1).replace('.', ',') + '%'
+  return Math.round(v * 100) + '%'
+}
+
 export const signed = (v: number) => (v > 0 ? '+' : '') + money(v)
 
 export const dayMonth = (iso: string) => {

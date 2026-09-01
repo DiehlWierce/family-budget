@@ -198,6 +198,20 @@ button, input, select { font: inherit; color: inherit; }
 .bar .track { display: block; height: 18px; background: var(--surface2); border: 1px solid var(--line2); border-radius: 2px; overflow: hidden; }
 .bar .fill { display: block; height: 100%; background: var(--accent); opacity: .8; }
 .bar .fill.debt { background: var(--crit); opacity: .85; }
+.bar .fill.sub { opacity: .45; }
+.barbtn {
+  width: 100%; background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; text-align: left;
+}
+.barbtn:hover .k { color: var(--accent-ink); }
+.barbtn:hover .fill { opacity: 1; }
+.subbars {
+  display: grid; gap: 6px;
+  margin: 8px 0 4px; padding: 8px 0 8px 10px;
+  border-left: 2px solid var(--line2);
+}
+.subbars .bar { font-size: 12.5px; }
+.subbars .bar .track { height: 12px; }
 .bar .v { font-family: "JetBrains Mono", monospace; font-size: 12.5px; color: var(--ink2); font-variant-numeric: tabular-nums; }
 
 /* ------------------------------------------------------------ таблицы */
@@ -258,6 +272,16 @@ td.n { font-family: "JetBrains Mono", monospace; font-size: 13px; }
   font-variant-numeric: tabular-nums; font-size: 13.5px;
 }
 .erow input.fact { color: var(--accent-ink); }
+.erow .e-note { grid-area: note; display: flex; align-items: center; gap: 6px; min-width: 0; }
+.erow input.note {
+  font-size: 13px; color: var(--ink2);
+  border-style: dashed; border-color: var(--line2);
+}
+.erow input.note:focus { border-style: solid; color: var(--ink); }
+.notesum {
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px; white-space: nowrap;
+  color: var(--accent-ink); font-variant-numeric: tabular-nums;
+}
 .erow input::placeholder { color: var(--ink3); opacity: .7; font-family: "Golos Text", sans-serif; }
 .erow .del {
   background: none; border: 0; cursor: pointer; color: var(--ink3);
@@ -366,7 +390,8 @@ td.n { font-family: "JetBrains Mono", monospace; font-size: 13px; }
   grid-template-columns: 1fr 1fr 32px 34px;
   grid-template-areas:
     "name name ord del"
-    "plan fact ord del";
+    "plan fact ord del"
+    "note note ord del";
 }
 
 /* ------------------------------------------------------------ строки базы (План) */
@@ -433,8 +458,8 @@ td.n { font-family: "JetBrains Mono", monospace; font-size: 13px; }
 
 @media (min-width: 600px) {
   .erow.movable {
-    grid-template-columns: 1fr 118px 118px 32px 34px;
-    grid-template-areas: "name plan fact ord del";
+    grid-template-columns: minmax(0, 1fr) 104px 104px minmax(0, .8fr) 32px 34px;
+    grid-template-areas: "name plan fact note ord del";
   }
   .trow {
     grid-template-columns: 1fr 108px minmax(0, 1.1fr) minmax(0, 1.2fr) 32px 34px;

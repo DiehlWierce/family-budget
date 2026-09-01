@@ -3,6 +3,7 @@ import { useBudget, type SpreadItem } from '../store'
 import { currentPaycheckId, planned, totals } from '../calc'
 import { computeSalary, salaryPlan } from '../salary'
 import { dayMonth, money, periodLabel, plural, today } from '../format'
+import { evalExpr, parseAmount } from '../expr'
 import { CategoryPicker } from '../components/CategoryPicker'
 import { Sortable } from '../components/Sortable'
 import type { Entry, Kind, Paycheck } from '../types'
@@ -12,13 +13,6 @@ const SECTIONS: { kind: Kind; title: string; hint: string }[] = [
   { kind: 'optional', title: 'Необязательные траты', hint: 'всё, что сверху' },
   { kind: 'income', title: 'Приходы кроме зарплаты', hint: 'отпускные, возвраты, подарки' },
 ]
-
-const parseAmount = (raw: string): number | null => {
-  const s = raw.replace(/\s|₽/g, '').replace(',', '.')
-  if (s === '') return null
-  const v = Number(s)
-  return Number.isFinite(v) ? v : null
-}
 
 function AmountInput({
   value, onChange, placeholder, area, className, disabled,
@@ -44,6 +38,47 @@ function AmountInput({
       }}
       onKeyDown={(ev) => { if (ev.key === 'Enter') (ev.target as HTMLInputElement).blur() }}
     />
+  )
+}
+
+/**
+ * Заметка к строке. Если внутри одна арифметика — рядом показываем сумму,
+ * чтобы не считать в уме. Дальше это дело хозяйское: заметка есть заметка,
+ * в «Факт» сама она ничего не пишет.
+ */
+function NoteInput({
+  entry, disabled, onCommit,
+}: {
+  entry: Entry
+  disabled: boolean
+  onCommit: (note: string) => void
+}) {
+  const [text, setText] = useState(entry.note ?? '')
+  // Строку могли переписать снаружи: «Назад», перенос правки, смена получки.
+  useEffect(() => { setText(entry.note ?? '') }, [entry.id, entry.note])
+  const sum = evalExpr(text)
+
+  return (
+    <div className="e-note">
+      <input
+        className="note"
+        value={text}
+        disabled={disabled}
+        placeholder="заметка или 450+1200"
+        inputMode="text"
+        onChange={(ev) => setText(ev.target.value)}
+        onKeyDown={(ev) => { if (ev.key === 'Enter') (ev.target as HTMLInputElement).blur() }}
+        onBlur={() => {
+          const next = text.trim()
+          setText(next)
+          if (next === (entry.note ?? '')) return
+          onCommit(next)
+        }}
+      />
+      {sum !== null && text.trim() !== '' && (
+        <span className="notesum" title="Сумма по заметке">= {money(sum)}</span>
+      )}
+    </div>
   )
 }
 
@@ -208,6 +243,12 @@ export function PaycheckView({
         </div>
       </div>
 
+      <div className="tiny muted" style={{ marginTop: 16 }}>
+        В любое поле с суммой и в «Заметки» можно писать арифметику: <code>450+1200+300</code>,{' '}
+        <code>=450+1200</code> или <code>450+1200=</code>. У заметки сумма показывается рядом —
+        в «Факт» её вписываешь сам.
+      </div>
+
       {SECTIONS.map((section) => {
         const list = sectionRows(section.kind)
         return (
@@ -220,7 +261,7 @@ export function PaycheckView({
             <div className="card"><div className="card-body" style={{ paddingTop: 8 }}>
               <div className="erow movable head">
                 <span>Название</span><span className="r">План</span><span className="r">Факт</span>
-                <span /><span />
+                <span>Заметки</span><span /><span />
               </div>
               {list.length === 0 && <div className="tiny muted" style={{ padding: '10px 8px' }}>Пусто.</div>}
 
@@ -249,6 +290,10 @@ export function PaycheckView({
                       <AmountInput
                         value={e.fact} placeholder="факт" area="fact" className="fact" disabled={!canEdit}
                         onChange={(v) => updateEntry(e.id, { fact: v })}
+                      />
+                      <NoteInput
+                        entry={e} disabled={!canEdit}
+                        onCommit={(note) => updateEntry(e.id, { note })}
                       />
                       {canEdit ? <button {...handle} type="button">⠿</button> : <span />}
                       {canEdit ? (

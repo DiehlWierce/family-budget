@@ -284,7 +284,8 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
 
   const updateEntry: Ctx['updateEntry'] = useCallback((id, patch) => {
     const what = patch.fact !== undefined ? 'правку факта'
-      : patch.title !== undefined ? 'переименование строки' : 'правку суммы'
+      : patch.title !== undefined ? 'переименование строки'
+        : patch.note !== undefined ? 'правку заметки' : 'правку суммы'
     edit(what, (b) => ({ ...b, entries: b.entries.map((e) => (e.id === id ? { ...e, ...patch } : e)) }))
   }, [edit])
 
