@@ -264,25 +264,23 @@ export function applyTemplate(
 }
 
 /**
- * Меняет местами два соседних элемента, раздавая по кругу их же значения order.
- * Так перестановка внутри секции не задевает порядок соседних секций.
+ * Перетаскивание: элемент из позиции from встаёт на позицию to внутри своей секции.
+ * Значения order раздаются по кругу тем же набором, что был у секции, — соседние
+ * секции остаются на своих местах.
  */
-export function swapOrder<T extends { id: string; order: number }>(
+export function reorderList<T extends { id: string; order: number }>(
   all: T[],
   group: T[],
-  id: string,
-  dir: -1 | 1,
+  from: number,
+  to: number,
 ): T[] {
   const sorted = [...group].sort((a, z) => a.order - z.order)
-  const i = sorted.findIndex((x) => x.id === id)
-  const j = i + dir
-  if (i < 0 || j < 0 || j >= sorted.length) return all
+  if (from === to || from < 0 || to < 0 || from >= sorted.length || to >= sorted.length) return all
 
   const ids = sorted.map((x) => x.id)
-  ;[ids[i], ids[j]] = [ids[j], ids[i]]
+  const [moved] = ids.splice(from, 1)
+  ids.splice(to, 0, moved)
   let orders = sorted.map((x) => x.order).sort((a, z) => a - z)
-  // Одинаковые order встречаются в перенесённых из таблицы строках: по кругу их раздавать
-  // бессмысленно — перестановка не была бы видна. Тогда нумеруем секцию заново.
   if (new Set(orders).size !== orders.length) orders = orders.map((_, k) => orders[0] + k)
   const next = new Map(ids.map((x, k) => [x, orders[k]]))
   return all.map((x) => (next.has(x.id) ? { ...x, order: next.get(x.id)! } : x))

@@ -1,9 +1,11 @@
-import { useMemo, useState } from 'react'
-import { useBudget } from '../store'
+import { useEffect, useMemo, useState } from 'react'
+import { useBudget, type SpreadItem } from '../store'
 import { currentPaycheckId, planned, totals } from '../calc'
 import { computeSalary, salaryPlan } from '../salary'
 import { dayMonth, money, periodLabel, plural, today } from '../format'
-import type { Entry, Kind } from '../types'
+import { CategoryPicker } from '../components/CategoryPicker'
+import { Sortable } from '../components/Sortable'
+import type { Entry, Kind, Paycheck } from '../types'
 
 const SECTIONS: { kind: Kind; title: string; hint: string }[] = [
   { kind: 'required', title: 'Обязательные траты', hint: 'то, что уйдёт точно' },
@@ -45,7 +47,8 @@ function AmountInput({
   )
 }
 
-type Pending = { entry: Entry; change: 'add' | 'remove' } | null
+/** Копится всё, что правилось в этой получке, — вопрос «и дальше?» задаётся по каждой правке. */
+type Pending = { entry: Entry; change: 'add' | 'remove' }
 
 export function PaycheckView({
   paycheckId, onSelect,
@@ -54,10 +57,16 @@ export function PaycheckView({
   onSelect: (id: string) => void
 }) {
   const {
-    budget, canEdit, updateEntry, updatePaycheck, addEntry, removeEntry, moveEntry, spreadForward,
+    budget, canEdit, updateEntry, updatePaycheck, addEntry, removeEntry, reorderEntry,
+    moveEntryToPaycheck, spreadForwardMany,
   } = useBudget()
-  const [pending, setPending] = useState<Pending>(null)
+  const [pending, setPending] = useState<Pending[]>([])
+  const [detailed, setDetailed] = useState(false)
   const [spread, setSpread] = useState<string | null>(null)
+  const [openRow, setOpenRow] = useState<string | null>(null)
+
+  // Переехали на другую получку — вопросы про предыдущую больше не наши.
+  useEffect(() => { setPending([]); setSpread(null); setOpenRow(null); setDetailed(false) }, [paycheckId])
 
   const data = useMemo(() => {
     if (!budget || !paycheckId) return null
@@ -80,33 +89,51 @@ export function PaycheckView({
   const nowId = currentPaycheckId(budget.paychecks)
   const isPast = paycheck.date <= today()
   const slotName = paycheck.slot === 1 ? 'первые' : 'вторые'
+  const prev: Paycheck | undefined = budget.paychecks[index - 1]
+  const next: Paycheck | undefined = budget.paychecks[index + 1]
 
   const go = (delta: number) => {
-    const next = budget.paychecks[index + delta]
-    if (next) { onSelect(next.id); setPending(null); setSpread(null) }
+    const to = budget.paychecks[index + delta]
+    if (to) onSelect(to.id)
   }
 
   const sectionRows = (kind: Kind) => rows.filter((e) => e.kind === kind)
   const sectionTotal = (kind: Kind) =>
     sectionRows(kind).reduce((s, e) => s + (e.fact ?? planned(e)), 0)
 
-  const edited = (e: Entry, patch: Partial<Entry>) => {
-    updateEntry(e.id, patch)
-    if (!isPast && (patch.plan !== undefined || patch.title !== undefined)) {
-      setPending({ entry: { ...e, ...patch }, change: 'add' })
-      setSpread(null)
-    }
+  /** Правка копится в очереди: одна строка — один вопрос, последняя правка побеждает. */
+  const remember = (entry: Entry, change: 'add' | 'remove') => {
+    if (isPast) return
+    setSpread(null)
+    setPending((list) => {
+      const rest = list.filter((x) => x.entry.id !== entry.id)
+      return [...rest, { entry, change }]
+    })
   }
 
-  const doSpread = () => {
-    if (!pending) return
-    const n = spreadForward(paycheck.id, pending.entry, pending.change)
+  const edited = (e: Entry, patch: Partial<Entry>) => {
+    updateEntry(e.id, patch)
+    if (patch.plan !== undefined || patch.title !== undefined) remember({ ...e, ...patch }, 'add')
+  }
+
+  const forget = (id: string) => setPending((list) => list.filter((x) => x.entry.id !== id))
+
+  const doSpread = (items: Pending[]) => {
+    if (!items.length) return
+    const n = spreadForwardMany(paycheck.id, items as SpreadItem[])
     setSpread(
       n === 0
         ? 'Следующих получек этого типа пока нет. Правка попадёт в них, когда продлишь план.'
-        : `Готово: ${n} ${plural(n, 'получка', 'получки', 'получек')} впереди обновлены.`,
+        : `Готово: ${n} ${plural(n, 'строка', 'строки', 'строк')} в получках впереди обновлены.`,
     )
-    setPending(null)
+    setPending((list) => list.filter((x) => !items.some((i) => i.entry.id === x.entry.id)))
+  }
+
+  const moveTo = (e: Entry, target: Paycheck) => {
+    moveEntryToPaycheck(e.id, target.id)
+    forget(e.id)
+    setOpenRow(null)
+    setSpread(`«${e.title || 'Строка'}» уехала в получку ${dayMonth(target.date)}.`)
   }
 
   return (
@@ -142,6 +169,7 @@ export function PaycheckView({
             <div className="tiny muted">
               Оклад {money(calc.monthly)} · за {calc.periodLabel} · {calc.workdays} из {calc.normWorkdays}{' '}
               {plural(calc.normWorkdays, 'рабочего дня', 'рабочих дней', 'рабочих дней')}
+              {calc.manual ? ' · дни из настроек' : ' · дни по календарю'}
             </div>
           </div>
 
@@ -195,45 +223,75 @@ export function PaycheckView({
                 <span /><span />
               </div>
               {list.length === 0 && <div className="tiny muted" style={{ padding: '10px 8px' }}>Пусто.</div>}
-              {list.map((e: Entry, i: number) => (
-                <div className={'erow movable' + (canEdit ? '' : ' readonly')} key={e.id}>
-                  <input
-                    className="e-name"
-                    defaultValue={e.title}
-                    placeholder="на что"
-                    disabled={!canEdit}
-                    onBlur={(ev) => {
-                      if (ev.target.value !== e.title) edited(e, { title: ev.target.value })
-                    }}
-                  />
-                  <AmountInput
-                    value={e.plan} placeholder="план" area="plan" disabled={!canEdit}
-                    onChange={(v) => edited(e, { plan: v })}
-                  />
-                  <AmountInput
-                    value={e.fact} placeholder="факт" area="fact" className="fact" disabled={!canEdit}
-                    onChange={(v) => updateEntry(e.id, { fact: v })}
-                  />
-                  {canEdit ? (
-                    <span className="ord">
-                      <button
-                        className="ordbtn" title="Выше" aria-label="Поднять строку"
-                        disabled={i === 0} onClick={() => moveEntry(e.id, -1)}
-                      >↑</button>
-                      <button
-                        className="ordbtn" title="Ниже" aria-label="Опустить строку"
-                        disabled={i === list.length - 1} onClick={() => moveEntry(e.id, 1)}
-                      >↓</button>
-                    </span>
-                  ) : <span />}
-                  {canEdit ? (
-                    <button className="del" title="Удалить строку" onClick={() => {
-                      removeEntry(e.id)
-                      if (!isPast) { setPending({ entry: e, change: 'remove' }); setSpread(null) }
-                    }}>×</button>
-                  ) : <span />}
-                </div>
-              ))}
+
+              <Sortable
+                items={list}
+                getId={(e) => e.id}
+                disabled={!canEdit}
+                onReorder={(from, to) => reorderEntry(list[from].id, from, to)}
+              >
+                {(e, _i, handle, dragging) => (
+                  <>
+                    <div className={'erow movable' + (canEdit ? '' : ' readonly') + (dragging ? ' grabbed' : '')}>
+                      <input
+                        className="e-name"
+                        defaultValue={e.title}
+                        placeholder="на что"
+                        disabled={!canEdit}
+                        onBlur={(ev) => {
+                          if (ev.target.value !== e.title) edited(e, { title: ev.target.value })
+                        }}
+                      />
+                      <AmountInput
+                        value={e.plan} placeholder="план" area="plan" disabled={!canEdit}
+                        onChange={(v) => edited(e, { plan: v })}
+                      />
+                      <AmountInput
+                        value={e.fact} placeholder="факт" area="fact" className="fact" disabled={!canEdit}
+                        onChange={(v) => updateEntry(e.id, { fact: v })}
+                      />
+                      {canEdit ? <button {...handle} type="button">⠿</button> : <span />}
+                      {canEdit ? (
+                        <button
+                          className="rowmenu" title="Что сделать со строкой"
+                          aria-label="Меню строки"
+                          onClick={() => setOpenRow(openRow === e.id ? null : e.id)}
+                        >⋯</button>
+                      ) : <span />}
+                    </div>
+                    {openRow === e.id && canEdit && (
+                      <div className="rowpanel">
+                        <label className="field" style={{ marginBottom: 10 }}>
+                          <span>Категория</span>
+                          <CategoryPicker
+                            value={e.categoryId}
+                            income={e.kind === 'income'}
+                            onChange={(id) => updateEntry(e.id, { categoryId: id })}
+                          />
+                        </label>
+                        <div className="tiny muted">Перенести в другую получку</div>
+                        <div className="rowpanel-actions">
+                          <button className="btn ghost" disabled={!prev} onClick={() => prev && moveTo(e, prev)}>
+                            ‹ {prev ? dayMonth(prev.date) : '—'}
+                          </button>
+                          <button className="btn ghost" disabled={!next} onClick={() => next && moveTo(e, next)}>
+                            {next ? dayMonth(next.date) : '—'} ›
+                          </button>
+                        </div>
+                        <button
+                          className="btn ghost danger" style={{ marginTop: 10 }}
+                          onClick={() => {
+                            removeEntry(e.id)
+                            setOpenRow(null)
+                            remember(e, 'remove')
+                          }}
+                        >Удалить строку</button>
+                      </div>
+                    )}
+                  </>
+                )}
+              </Sortable>
+
               {canEdit && (
                 <button className="addbtn" onClick={() => addEntry(paycheck.id, section.kind)}>
                   {section.kind === 'income' ? '+ добавить приход' : '+ добавить строку'}
@@ -246,20 +304,47 @@ export function PaycheckView({
 
       {spread && <div className="banner" style={{ marginTop: 16 }}>{spread}</div>}
 
-      {pending && (
+      {pending.length > 0 && (
         <div className="askbar">
           <div className="askbar-inner">
-            <div className="tiny">
-              {pending.change === 'remove'
-                ? `Убрать «${pending.entry.title || 'строку'}» и из следующих ${slotName} получек?`
-                : `Перенести «${pending.entry.title || 'строку'}» на все следующие ${slotName} получки?`}
-            </div>
+            {pending.length === 1 ? (
+              <div className="tiny">
+                {pending[0].change === 'remove'
+                  ? `Убрать «${pending[0].entry.title || 'строку'}» и из следующих ${slotName} получек?`
+                  : `Перенести «${pending[0].entry.title || 'строку'}» на все следующие ${slotName} получки?`}
+                <div className="muted">Не ответишь — останется только здесь.</div>
+              </div>
+            ) : (
+              <div className="tiny">
+                Правок в этой получке: {pending.length}.{' '}
+                <button className="linkbtn" onClick={() => setDetailed(!detailed)}>
+                  {detailed ? 'свернуть' : 'разобрать по одной'}
+                </button>
+                <div className="muted">Не ответишь — все останутся только здесь.</div>
+              </div>
+            )}
             <div className="askbar-actions">
-              <button className="btn ghost" onClick={() => setPending(null)}>Только эта</button>
-              <button className="btn" onClick={doSpread}>
-                {pending.change === 'remove' ? 'Убрать везде' : 'И дальше'}
+              <button className="btn ghost" onClick={() => { setPending([]); setDetailed(false) }}>
+                Только здесь
+              </button>
+              <button className="btn" onClick={() => doSpread(pending)}>
+                {pending.length === 1 && pending[0].change === 'remove' ? 'Убрать везде' : 'И дальше'}
               </button>
             </div>
+            {detailed && pending.length > 1 && (
+              <div className="asklist">
+                {pending.map((p) => (
+                  <div className="askitem" key={p.entry.id}>
+                    <span className="tiny">
+                      {p.change === 'remove' ? 'убрать ' : ''}«{p.entry.title || 'строка'}»
+                      {p.change === 'add' && p.entry.plan !== null ? ` · ${money(p.entry.plan)}` : ''}
+                    </span>
+                    <button className="btn ghost" onClick={() => forget(p.entry.id)}>только здесь</button>
+                    <button className="btn" onClick={() => doSpread([p])}>и дальше</button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}

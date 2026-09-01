@@ -1,9 +1,12 @@
-import { useMemo, useState, type ReactNode } from 'react'
+import { useMemo, useState } from 'react'
 import { useBudget } from '../store'
 import { currentPaycheckId, nextPaycheck } from '../calc'
 import { computeSalary, monthlyAt } from '../salary'
 import { dayMonth, money, monthName, monthNameGen, plural, today } from '../format'
-import type { Category, Template } from '../types'
+import { CategoryPicker } from '../components/CategoryPicker'
+import { Sortable, type HandleProps } from '../components/Sortable'
+import { Workdays } from './Workdays'
+import type { Template } from '../types'
 
 const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
@@ -32,20 +35,18 @@ function AmountCell({ value, onChange, disabled, className }: {
 }
 
 function TemplateRow({
-  t, canEdit, cats, yearly, first, last, onPatch, onRemove, onMove,
+  t, canEdit, yearly, handle, dragging, onPatch, onRemove,
 }: {
   t: Template
   canEdit: boolean
-  cats: ReactNode
   yearly: boolean
-  first: boolean
-  last: boolean
+  handle: HandleProps
+  dragging: boolean
   onPatch: (patch: Partial<Template>) => void
   onRemove: () => void
-  onMove: (dir: -1 | 1) => void
 }) {
   return (
-    <div className="trow">
+    <div className={'trow' + (dragging ? ' grabbed' : '')}>
       <input
         className="t-name" placeholder="на что" disabled={!canEdit}
         key={t.id + t.title} defaultValue={t.title}
@@ -84,21 +85,12 @@ function TemplateRow({
           <option value="required">обязательная</option>
           <option value="optional">необязательная</option>
         </select>
-        <select
-          value={t.categoryId} disabled={!canEdit} aria-label="Категория"
-          onChange={(ev) => onPatch({ categoryId: ev.target.value })}
-        >
-          {cats}
-        </select>
+        <CategoryPicker
+          value={t.categoryId} disabled={!canEdit}
+          onChange={(id) => onPatch({ categoryId: id })}
+        />
       </div>
-      {canEdit ? (
-        <span className="ord">
-          <button className="ordbtn" title="Выше" aria-label="Поднять"
-            disabled={first} onClick={() => onMove(-1)}>↑</button>
-          <button className="ordbtn" title="Ниже" aria-label="Опустить"
-            disabled={last} onClick={() => onMove(1)}>↓</button>
-        </span>
-      ) : <span />}
+      {canEdit ? <button {...handle} type="button">⠿</button> : <span />}
       {canEdit
         ? <button className="del" title="Убрать из базы" onClick={onRemove}>×</button>
         : <span />}
@@ -108,7 +100,7 @@ function TemplateRow({
 
 export function Plan() {
   const {
-    budget, canEdit, updateTemplate, addTemplate, removeTemplate, moveTemplate,
+    budget, canEdit, updateTemplate, addTemplate, removeTemplate, reorderTemplate,
     applyTemplateToPaychecks, updateSalary, extendTo,
   } = useBudget()
   const [horizon, setHorizon] = useState(HORIZONS[0])
@@ -130,24 +122,11 @@ export function Plan() {
     const now = nowId ? budget.paychecks.find((p) => p.id === nowId) ?? null : null
     const next = nowId ? nextPaycheck(budget.paychecks, nowId) : null
 
-    const groups = new Map(budget.groups.map((g) => [g.id, g.name]))
-    const spend = budget.categories.filter((c) => c.group !== 'income')
-    const byGroup = new Map<string, Category[]>()
-    for (const c of spend) byGroup.set(c.group, [...(byGroup.get(c.group) ?? []), c])
-    const cats = (
-      <>
-        {[...byGroup.entries()].map(([g, list]) => (
-          <optgroup key={g} label={groups.get(g) ?? g}>
-            {list.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
-          </optgroup>
-        ))}
-      </>
-    )
-    return { last, future, regular, yearly, perMonth, yearlySum, now, next, cats }
+    return { last, future, regular, yearly, perMonth, yearlySum, now, next }
   }, [budget])
 
   if (!budget || !view) return <div className="center">Загрузка…</div>
-  const { last, future, regular, yearly, perMonth, yearlySum, now, next, cats } = view
+  const { last, future, regular, yearly, perMonth, yearlySum, now, next } = view
   const step = budget.salary.history[budget.salary.history.length - 1]
   const ix = budget.salary.indexation
 
@@ -189,9 +168,6 @@ export function Plan() {
     })
     setSync('Строка добавлена в базу. Впиши название и сумму — тогда она разойдётся по получкам.')
   }
-
-  const move = (t: Template, dir: -1 | 1, group: Template[]) =>
-    moveTemplate(t.id, dir, group.map((x) => x.id))
 
   const doExtend = () => {
     const n = extendTo(horizon)
@@ -317,6 +293,8 @@ export function Plan() {
         </div>
       </div>
 
+      <Workdays />
+
       <div className="card">
         <div className="card-head"><h2>Ближайшие получки</h2>
           <span className="hint">по расчёту</span>
@@ -396,14 +374,17 @@ export function Plan() {
                   </span>
                 </div>
                 {group.length === 0 && <div className="tiny muted" style={{ padding: '6px 0' }}>Пусто.</div>}
-                {group.map((t, i) => (
-                  <TemplateRow
-                    key={t.id} t={t} canEdit={canEdit} cats={cats} yearly={false}
-                    first={i === 0} last={i === group.length - 1}
-                    onPatch={(p) => patch(t, p)} onRemove={() => drop(t)}
-                    onMove={(dir) => move(t, dir, group)}
-                  />
-                ))}
+                <Sortable
+                  items={group} getId={(t) => t.id} disabled={!canEdit}
+                  onReorder={(from, to) => reorderTemplate(from, to, group.map((x) => x.id))}
+                >
+                  {(t, _i, handle, dragging) => (
+                    <TemplateRow
+                      t={t} canEdit={canEdit} yearly={false} handle={handle} dragging={dragging}
+                      onPatch={(p) => patch(t, p)} onRemove={() => drop(t)}
+                    />
+                  )}
+                </Sortable>
                 {canEdit && (
                   <button className="addbtn" onClick={() => add('each', kind)}>
                     + добавить {kind === 'required' ? 'обязательную' : 'необязательную'} трату
@@ -414,7 +395,8 @@ export function Plan() {
           })}
           <div className="tiny muted" style={{ marginTop: 14 }}>
             «Когда» — в какую получку месяца уходит трата. Сумма указывается на одну получку:
-            «обе получки» значит, что столько уйдёт и 6-го, и 21-го.
+            «обе получки» значит, что столько уйдёт и 6-го, и 21-го. Что означает каждая
+            категория и что в неё попало — в «Настройках», раздел «Категории».
           </div>
         </div>
       </div>
@@ -435,14 +417,17 @@ export function Plan() {
                 <div className="section-title" style={{ marginTop: 14 }}>{monthName(m)}
                   <span className="total">{money(group.reduce((s, t) => s + t.amount, 0))}</span>
                 </div>
-                {group.map((t, i) => (
-                  <TemplateRow
-                    key={t.id} t={t} canEdit={canEdit} cats={cats} yearly
-                    first={i === 0} last={i === group.length - 1}
-                    onPatch={(p) => patch(t, p)} onRemove={() => drop(t)}
-                    onMove={(dir) => move(t, dir, group)}
-                  />
-                ))}
+                <Sortable
+                  items={group} getId={(t) => t.id} disabled={!canEdit}
+                  onReorder={(from, to) => reorderTemplate(from, to, group.map((x) => x.id))}
+                >
+                  {(t, _i, handle, dragging) => (
+                    <TemplateRow
+                      t={t} canEdit={canEdit} yearly handle={handle} dragging={dragging}
+                      onPatch={(p) => patch(t, p)} onRemove={() => drop(t)}
+                    />
+                  )}
+                </Sortable>
               </div>
             )
           })}

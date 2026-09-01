@@ -363,24 +363,17 @@ td.n { font-family: "JetBrains Mono", monospace; font-size: 13px; }
 /* ------------------------------------------------------------ перестановка строк */
 
 .erow.movable {
-  grid-template-columns: 1fr 1fr 26px 34px;
+  grid-template-columns: 1fr 1fr 32px 34px;
   grid-template-areas:
     "name name ord del"
     "plan fact ord del";
 }
-.ord { grid-area: ord; display: flex; flex-direction: column; gap: 1px; align-self: center; }
-.ordbtn {
-  background: none; border: 0; cursor: pointer; color: var(--ink3);
-  font-size: 11px; line-height: 1; padding: 3px 0;
-}
-.ordbtn:hover:not(:disabled) { color: var(--accent-ink); }
-.ordbtn:disabled { opacity: .2; cursor: default; }
 
 /* ------------------------------------------------------------ строки базы (План) */
 
 .trow {
   display: grid;
-  grid-template-columns: 1fr 1fr 26px 34px;
+  grid-template-columns: 1fr 1fr 32px 34px;
   grid-template-areas:
     "name name ord del"
     "amt  when ord del"
@@ -451,12 +444,177 @@ td.n { font-family: "JetBrains Mono", monospace; font-size: 13px; }
 
 @media (min-width: 600px) {
   .erow.movable {
-    grid-template-columns: 1fr 118px 118px 26px 34px;
+    grid-template-columns: 1fr 118px 118px 32px 34px;
     grid-template-areas: "name plan fact ord del";
   }
   .trow {
-    grid-template-columns: 1fr 108px minmax(0, 1.1fr) minmax(0, 1.2fr) 26px 34px;
+    grid-template-columns: 1fr 108px minmax(0, 1.1fr) minmax(0, 1.2fr) 32px 34px;
     grid-template-areas: "name amt when what ord del";
   }
   .trow.head { display: grid; }
+}
+
+/* ------------------------------------------------------------ перетаскивание */
+
+.sortable-item { position: relative; }
+.sortable-item.moving {
+  position: relative; z-index: 5;
+  background: var(--surface); box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+.sortable.dragging { user-select: none; }
+
+.draghandle {
+  grid-area: ord; align-self: stretch;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: 0; cursor: grab;
+  color: var(--ink3); font-size: 16px; line-height: 1; padding: 0;
+  /* Палец должен попадать по всей высоте строки, а не по одной точке. */
+  touch-action: none;
+}
+.draghandle:active { cursor: grabbing; color: var(--accent-ink); }
+.erow.grabbed, .trow.grabbed { border-bottom-color: transparent; }
+.erow.grabbed .e-name, .trow.grabbed .t-name { border-color: var(--accent); }
+
+/* ------------------------------------------------------------ меню строки */
+
+.rowmenu {
+  grid-area: del; align-self: stretch;
+  background: none; border: 0; cursor: pointer; color: var(--ink3);
+  font-size: 17px; line-height: 1; padding: 4px;
+}
+.rowmenu:hover { color: var(--accent-ink); }
+
+.rowpanel {
+  border: 1px solid var(--line); border-left: 2px solid var(--accent);
+  border-radius: var(--radius); background: var(--surface2);
+  padding: 12px 14px; margin: 0 0 8px;
+}
+.rowpanel .field { margin-bottom: 0; }
+.rowpanel .field select {
+  width: 100%; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 8px 10px;
+}
+.rowpanel-actions { display: flex; gap: 8px; margin-top: 6px; }
+.rowpanel-actions .btn { flex: 1 1 0; }
+.btn.ghost.danger { color: var(--crit); border-color: color-mix(in srgb, var(--crit) 35%, transparent); }
+.btn.ghost.danger:hover:not(:disabled) { border-color: var(--crit); color: var(--crit); }
+
+.linkbtn {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px;
+  font-size: inherit; font-family: inherit;
+}
+
+/* ------------------------------------------------------------ очередь правок */
+
+.asklist { width: 100%; display: grid; gap: 6px; margin-top: 4px; border-top: 1px solid var(--line2); padding-top: 8px; }
+.askitem { display: grid; grid-template-columns: 1fr auto auto; gap: 6px; align-items: center; }
+.askitem .btn { padding: 5px 9px; font-size: 12.5px; }
+.askitem .tiny { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ------------------------------------------------------------ журнал */
+
+.segmented {
+  display: flex; gap: 0; margin: 14px 0 0;
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  background: var(--surface);
+}
+.segmented button {
+  flex: 1 1 0; background: none; border: 0; cursor: pointer;
+  padding: 9px 6px; font-size: 13.5px; color: var(--ink2);
+  border-right: 1px solid var(--line);
+}
+.segmented button:last-child { border-right: 0; }
+.segmented button.on { background: var(--accent-soft); color: var(--accent-ink); font-weight: 600; }
+
+.filters { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.filters .field { margin-bottom: 0; }
+.filters .field.wide { grid-column: 1 / -1; }
+.filters .field span { font-size: 12px; color: var(--ink3); }
+
+tr.clickable { cursor: pointer; }
+tr.clickable:hover td { background: var(--surface2); }
+tr.sub-row td { background: var(--surface2); font-size: 13px; }
+tr.sub-row td:first-child { padding-left: 22px; }
+
+table.matrix th.sticky, table.matrix td.sticky {
+  position: sticky; left: 0; background: var(--surface); z-index: 1;
+  max-width: 42vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+table.matrix td.heat {
+  background: color-mix(in srgb, var(--accent) calc(var(--heat, 0) * 45%), transparent);
+}
+
+/* ------------------------------------------------------------ рабочие дни */
+
+.wdhead, .wdrow {
+  display: grid; grid-template-columns: 1fr 60px 60px 60px;
+  gap: 6px; align-items: center; padding: 6px 0;
+}
+.wdhead {
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink3);
+  border-bottom: 1px solid var(--line); margin-top: 14px;
+}
+.wdhead .r { text-align: right; }
+.wdrow { border-bottom: 1px solid var(--line2); }
+.wd-name { font-size: 14px; }
+.wd-note { grid-column: 1 / -1; margin-top: -2px; }
+input.days {
+  width: 100%; text-align: right; background: transparent;
+  border: 1px solid var(--line2); border-radius: 3px; padding: 7px 8px;
+  font-family: "JetBrains Mono", monospace; font-variant-numeric: tabular-nums; font-size: 13.5px;
+}
+input.days:focus { outline: none; border-color: var(--accent); background: var(--surface2); }
+input.days.auto { color: var(--ink3); }
+input.days::placeholder { color: var(--ink3); opacity: .55; }
+
+/* ------------------------------------------------------------ категории */
+
+.groupname {
+  flex: 1; min-width: 0; background: transparent; border: 1px solid transparent;
+  border-radius: 3px; padding: 3px 6px; margin-left: -6px;
+  font-family: Bitter, Georgia, serif; font-size: 17px;
+}
+.groupname:hover:not(:disabled) { border-color: var(--line2); }
+.groupname:focus { outline: none; border-color: var(--accent); background: var(--surface2); }
+
+.catrow { border-bottom: 1px solid var(--line2); padding: 6px 0; }
+.catrow:last-of-type { border-bottom: 0; }
+.catrow.archived { opacity: .55; }
+.catrow-head { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; align-items: center; }
+.catrow-head .linkbtn { grid-column: 2; font-size: 12.5px; }
+.catrow-head .num { grid-row: 2; grid-column: 1; }
+.catname {
+  width: 100%; background: transparent; border: 1px solid transparent;
+  border-radius: 3px; padding: 5px 6px; margin-left: -6px; font-size: 15px;
+}
+.catname:hover:not(:disabled) { border-color: var(--line2); }
+.catname:focus { outline: none; border-color: var(--accent); background: var(--surface2); }
+.catrow-body {
+  background: var(--surface2); border: 1px solid var(--line2); border-radius: var(--radius);
+  padding: 10px 12px; margin: 8px 0 10px;
+}
+.catrow-actions { display: grid; gap: 10px; margin-top: 10px; }
+.catrow-actions .field { margin-bottom: 0; }
+.catrow-buttons { display: flex; gap: 8px; }
+.catrow-buttons .btn { flex: 1 1 0; }
+
+/* ------------------------------------------------------------ шапка и нав */
+
+.iconbtn.small { width: 32px; height: 32px; font-size: 15px; padding: 0; }
+.nav button { font-size: 10px; letter-spacing: 0; padding: 8px 2px 10px; }
+.nav button .glyph { font-size: 16px; }
+
+@media (min-width: 600px) {
+  .filters { grid-template-columns: repeat(4, 1fr); }
+  .filters .field.wide { grid-column: auto / span 2; }
+  .catrow-actions { grid-template-columns: 1fr 1fr auto; align-items: end; }
+  .catrow-head { grid-template-columns: 1fr auto auto; }
+  .catrow-head .num { grid-row: 1; grid-column: 2; }
+  .catrow-head .linkbtn { grid-column: 3; }
+  .wdhead, .wdrow { grid-template-columns: 120px 70px 70px 70px 1fr; }
+  .wd-note { grid-column: auto; margin-top: 0; text-align: right; }
+  .nav button { font-size: 11px; }
 }

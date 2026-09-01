@@ -1,5 +1,7 @@
 import type { Paycheck } from './types'
-import { type CalendarOverrides, daysInMonth, workdaysBetween, workdaysInMonth } from './workdays'
+import {
+  type CalendarOverrides, daysInMonth, halfWorkdaysByCalendar, manualWorkdays, workdaysInMonth,
+} from './workdays'
 
 export interface SalaryStep {
   /** Действует для периодов, начинающихся с этой даты. */
@@ -61,6 +63,8 @@ export interface SalaryCalc {
   workdays: number
   normWorkdays: number
   periodLabel: string
+  /** Рабочие дни взяты из таблицы в настройках, а не посчитаны по календарю. */
+  manual: boolean
 }
 
 const MONTHS_GEN = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
@@ -72,14 +76,17 @@ export function computeSalary(
   cal?: CalendarOverrides,
 ): SalaryCalc {
   const per = accrualPeriod(p)
-  const from = new Date(per.year, per.month - 1, per.fromDay)
-  const to = new Date(per.year, per.month - 1, per.toDay)
-  const workdays = workdaysBetween(from, to, cal)
-  const normWorkdays = workdaysInMonth(per.year, per.month, cal)
+  const half = per.fromDay === 1 ? 'first' : 'second'
+  // Вбитое руками важнее расчёта: производственный календарь знает не всё.
+  const manualDays = manualWorkdays(per.year, per.month, half, cal)
+  const manualNorm = manualWorkdays(per.year, per.month, 'norm', cal)
+  const workdays = manualDays ?? halfWorkdaysByCalendar(per.year, per.month, half, cal)
+  const normWorkdays = manualNorm ?? workdaysInMonth(per.year, per.month, cal)
   const monthly = monthlyAt(`${per.year}-${String(per.month).padStart(2, '0')}-01`, cfg)
   const amount = normWorkdays ? Math.round((monthly / normWorkdays) * workdays) : 0
   return {
     amount, monthly, workdays, normWorkdays,
+    manual: manualDays !== null || manualNorm !== null,
     periodLabel: `${per.fromDay}–${per.toDay} ${MONTHS_GEN[per.month - 1]} ${per.year}`,
   }
 }

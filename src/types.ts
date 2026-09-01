@@ -43,11 +43,17 @@ export interface Category {
   name: string
   group: string
   groupName: string
+  /** Убрана из выбора: закрытый кредит, старое название. История сохраняется. */
+  archived?: boolean
 }
 
 export interface Group {
   id: string
   name: string
+  /** Порядок в списках. Меньше — выше. */
+  order?: number
+  /** Пояснение: что вообще сюда попадает. */
+  note?: string
 }
 
 export interface Template {

@@ -7,14 +7,39 @@
  * из 77 реальных получек правило промахнулось ровно дважды, оба раза в конце декабря.
  */
 
+/**
+ * Рабочие дни месяца, вбитые руками. Ключ — «2026-09».
+ * norm — норма месяца, first — рабочие дни с 1 по 15, second — с 16 по конец.
+ * null или отсутствие значения означает «считай по календарю».
+ */
+export interface MonthWorkdays {
+  norm?: number | null
+  first?: number | null
+  second?: number | null
+}
+
 export interface CalendarOverrides {
   /** Дни, которые правило считает рабочими, а на деле они выходные. */
   extraHolidays: string[]
   /** Дни, которые правило считает выходными, а на деле рабочие. */
   extraWorkdays: string[]
+  /** Ручная таблица рабочих дней — она сильнее любого расчёта. */
+  months?: Record<string, MonthWorkdays>
 }
 
 export const EMPTY_CALENDAR: CalendarOverrides = { extraHolidays: [], extraWorkdays: [] }
+
+export const monthKey = (year: number, month: number) =>
+  `${year}-${String(month).padStart(2, '0')}`
+
+/** Ручное значение для месяца — или null, если его не вводили. */
+export function manualWorkdays(
+  year: number, month: number, field: keyof MonthWorkdays, cal?: CalendarOverrides,
+): number | null {
+  const row = cal?.months?.[monthKey(year, month)]
+  const v = row?.[field]
+  return typeof v === 'number' && Number.isFinite(v) ? v : null
+}
 
 const FIXED: [number, number][] = [
   [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7], [1, 8],
@@ -74,6 +99,15 @@ export const daysInMonth = (year: number, month: number) => new Date(year, month
 
 export function workdaysInMonth(year: number, month: number, cal?: CalendarOverrides): number {
   return workdaysBetween(new Date(year, month - 1, 1), new Date(year, month - 1, daysInMonth(year, month)), cal)
+}
+
+/** Рабочие дни половины месяца по календарю: 'first' — 1–15, 'second' — 16 и дальше. */
+export function halfWorkdaysByCalendar(
+  year: number, month: number, half: 'first' | 'second', cal?: CalendarOverrides,
+): number {
+  const from = new Date(year, month - 1, half === 'first' ? 1 : 16)
+  const to = new Date(year, month - 1, half === 'first' ? 15 : daysInMonth(year, month))
+  return workdaysBetween(from, to, cal)
 }
 
 /** Ближайший рабочий день не позже указанного — зарплату двигают назад, а не вперёд. */

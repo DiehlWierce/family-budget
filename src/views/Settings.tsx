@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useBudget } from '../store'
 import { checkAccess } from '../github'
+import { Categories } from './Categories'
 import type { GithubConfig } from '../types'
 
 /**
@@ -165,6 +166,8 @@ export function Settings() {
           </div>
         )
       )}
+
+      <Categories />
 
       <div className="card">
         <div className="card-head"><h2>Данные</h2></div>

@@ -2,20 +2,53 @@ import { useEffect, useState } from 'react'
 import { BudgetProvider, useBudget } from './store'
 import { currentPaycheckId } from './calc'
 import { Now } from './views/Now'
+import { Ledger } from './views/Ledger'
 import { PaycheckView } from './views/PaycheckView'
 import { Analytics } from './views/Analytics'
 import { Plan } from './views/Plan'
 import { Settings } from './views/Settings'
 
-type Tab = 'now' | 'paycheck' | 'plan' | 'analytics' | 'settings'
+type Tab = 'now' | 'paycheck' | 'ledger' | 'plan' | 'analytics' | 'settings'
 
 const TABS: { id: Tab; label: string; glyph: string }[] = [
   { id: 'now', label: 'Сейчас', glyph: '◉' },
   { id: 'paycheck', label: 'Получка', glyph: '▤' },
+  { id: 'ledger', label: 'Журнал', glyph: '▦' },
   { id: 'plan', label: 'План', glyph: '⌁' },
   { id: 'analytics', label: 'Аналитика', glyph: '◨' },
   { id: 'settings', label: 'Настройки', glyph: '⚙' },
 ]
+
+/** Кнопка «Назад» рядом с публикацией: промахнуться мимо строки легко, потерять её — нет. */
+function UndoBar() {
+  const { undoLabel, redoLabel, undo, redo } = useBudget()
+
+  useEffect(() => {
+    const onKey = (ev: KeyboardEvent) => {
+      if (!(ev.metaKey || ev.ctrlKey) || ev.key.toLowerCase() !== 'z') return
+      ev.preventDefault()
+      if (ev.shiftKey) redo()
+      else undo()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [undo, redo])
+
+  return (
+    <>
+      <button
+        className="iconbtn small" onClick={undo} disabled={!undoLabel}
+        title={undoLabel ? `Отменить ${undoLabel}` : 'Отменять нечего'} aria-label="Отменить последнее действие"
+      >↶</button>
+      {redoLabel && (
+        <button
+          className="iconbtn small" onClick={redo}
+          title={`Вернуть ${redoLabel}`} aria-label="Вернуть отменённое"
+        >↷</button>
+      )}
+    </>
+  )
+}
 
 function SaveBar() {
   const { dirty, save, publish, canEdit } = useBudget()
@@ -43,7 +76,7 @@ function SaveBar() {
 }
 
 function Shell() {
-  const { status, error, budget, save, reload } = useBudget()
+  const { status, error, budget, save, reload, canEdit } = useBudget()
   const [tab, setTab] = useState<Tab>('now')
   const [paycheckId, setPaycheckId] = useState<string | null>(null)
 
@@ -62,6 +95,7 @@ function Shell() {
         <div className="topbar-inner">
           <span className="brand">Бюджет</span>
           <span className="spacer" />
+          {status === 'ready' && canEdit && <UndoBar />}
           <SaveBar />
         </div>
       </div>
@@ -89,6 +123,7 @@ function Shell() {
           )}
           {tab === 'now' && <Now onOpenPaycheck={openPaycheck} />}
           {tab === 'paycheck' && <PaycheckView paycheckId={paycheckId} onSelect={setPaycheckId} />}
+          {tab === 'ledger' && <Ledger onOpenPaycheck={openPaycheck} />}
           {tab === 'plan' && <Plan />}
           {tab === 'analytics' && <Analytics />}
           {tab === 'settings' && <Settings />}

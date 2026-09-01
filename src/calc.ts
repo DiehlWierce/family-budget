@@ -187,3 +187,35 @@ export function debtStats(b: Budget, now = today()): DebtStat[] {
   }
   return out.sort((a, z) => Number(z.active) - Number(a.active) || z.remaining - a.remaining)
 }
+
+export interface MonthStat {
+  key: string
+  year: number
+  month: number
+  income: number
+  required: number
+  optional: number
+  free: number
+  paychecks: Paycheck[]
+}
+
+/** Месяц целиком: обе получки вместе. Так месяцы сравниваются между собой. */
+export function monthStats(b: Budget, year: number | 'all'): MonthStat[] {
+  const map = new Map<string, MonthStat>()
+  for (const p of b.paychecks) {
+    if (year !== 'all' && p.periodYear !== year) continue
+    const key = `${p.periodYear}-${String(p.periodMonth).padStart(2, '0')}`
+    const s = map.get(key) ?? {
+      key, year: p.periodYear, month: p.periodMonth,
+      income: 0, required: 0, optional: 0, free: 0, paychecks: [],
+    }
+    const t = totals(p, b)
+    s.income += t.income
+    s.required += t.required
+    s.optional += t.optional
+    s.free += t.free
+    s.paychecks.push(p)
+    map.set(key, s)
+  }
+  return [...map.values()].sort((a, z) => a.key.localeCompare(z.key))
+}
