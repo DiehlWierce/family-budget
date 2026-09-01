@@ -14988,8 +14988,8 @@
     "paycheckId": "2026-09-2",
     "kind": "optional",
     "categoryId": "debt-extra",
-    "title": "На досрочку за отпуск",
-    "plan": 45000,
+    "title": "Закрыть кредит на 50к",
+    "plan": 50000,
     "fact": null,
     "order": 40
   },
@@ -18223,5 +18223,15 @@
     "plan": 3000,
     "fact": null,
     "order": 146
+  },
+  {
+    "id": "2026-09-2-new-mtj4xlat",
+    "paycheckId": "2026-09-2",
+    "kind": "income",
+    "order": 44,
+    "categoryId": "inc-other",
+    "title": "Отложено из кредита на 50к",
+    "plan": 5000,
+    "fact": null
   }
 ]
