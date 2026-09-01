@@ -14727,7 +14727,8 @@
     "title": "Домашний интернет",
     "plan": 0,
     "fact": null,
-    "order": 17
+    "order": 17,
+    "note": ""
   },
   {
     "id": "2026-08-2-18",
@@ -14786,7 +14787,7 @@
     "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 0,
-    "fact": 0,
+    "fact": null,
     "order": 27
   },
   {
