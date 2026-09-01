@@ -18236,28 +18236,6 @@
     "fact": null
   },
   {
-    "id": "2026-09-2-t-tpl-y-mtj7s890",
-    "paycheckId": "2026-09-2",
-    "templateId": "tpl-y-mtj7s890",
-    "kind": "optional",
-    "categoryId": "other-x",
-    "title": "На ДР Д. Таах",
-    "plan": 300,
-    "fact": null,
-    "order": 152
-  },
-  {
-    "id": "2027-09-2-t-tpl-y-mtj7s890",
-    "paycheckId": "2027-09-2",
-    "templateId": "tpl-y-mtj7s890",
-    "kind": "optional",
-    "categoryId": "other-x",
-    "title": "На ДР Д. Таах",
-    "plan": 300,
-    "fact": null,
-    "order": 152
-  },
-  {
     "id": "2026-08-2-new-mtj7woqb",
     "paycheckId": "2026-08-2",
     "kind": "income",
@@ -18276,5 +18254,47 @@
     "title": "Отложить на возврат кредита",
     "plan": 5000,
     "fact": 5000
+  },
+  {
+    "id": "2026-09-1-new-mtj8weo7",
+    "paycheckId": "2026-09-1",
+    "kind": "optional",
+    "order": 35,
+    "categoryId": "other-x",
+    "title": "Я.Сплит",
+    "plan": 978,
+    "fact": null
+  },
+  {
+    "id": "2026-09-2-new-mtj8x8ly",
+    "paycheckId": "2026-09-2",
+    "kind": "optional",
+    "order": 153,
+    "categoryId": "other-x",
+    "title": "Я.Сплит",
+    "plan": 1677,
+    "fact": null
+  },
+  {
+    "id": "2026-08-2-t-tpl-y-mtj7s890",
+    "paycheckId": "2026-08-2",
+    "templateId": "tpl-y-mtj7s890",
+    "kind": "optional",
+    "categoryId": "other-x",
+    "title": "На ДР Д. Таах",
+    "plan": 300,
+    "fact": 200,
+    "order": 152
+  },
+  {
+    "id": "2027-08-2-t-tpl-y-mtj7s890",
+    "paycheckId": "2027-08-2",
+    "templateId": "tpl-y-mtj7s890",
+    "kind": "optional",
+    "categoryId": "other-x",
+    "title": "На ДР Д. Таах",
+    "plan": 300,
+    "fact": null,
+    "order": 152
   }
 ]
