@@ -18255,5 +18255,25 @@
     "plan": 300,
     "fact": null,
     "order": 152
+  },
+  {
+    "id": "2026-08-2-new-mtj7woqb",
+    "paycheckId": "2026-08-2",
+    "kind": "income",
+    "order": 50,
+    "categoryId": "inc-other",
+    "title": "Из кредитных денег",
+    "plan": 50000,
+    "fact": 50000
+  },
+  {
+    "id": "2026-08-2-new-mtj7x3gv",
+    "paycheckId": "2026-08-2",
+    "kind": "optional",
+    "order": 51,
+    "categoryId": "other-x",
+    "title": "Отложить на возврат кредита",
+    "plan": 5000,
+    "fact": 5000
   }
 ]
