@@ -1,62 +1,82 @@
 [
   {
     "id": "debt",
-    "name": "Долги"
+    "name": "Долги",
+    "order": 10
   },
   {
     "id": "home",
-    "name": "Жильё"
+    "name": "Жильё",
+    "order": 20
   },
   {
     "id": "food",
-    "name": "Еда"
+    "name": "Еда",
+    "order": 30
   },
   {
     "id": "transport",
-    "name": "Транспорт"
+    "name": "Транспорт",
+    "order": 40
   },
   {
     "id": "health",
-    "name": "Здоровье и спорт"
+    "name": "Здоровье и спорт",
+    "order": 50
   },
   {
     "id": "comms",
-    "name": "Связь"
+    "name": "Связь",
+    "order": 60
   },
   {
     "id": "subs",
-    "name": "Подписки"
+    "name": "Подписки",
+    "order": 70
   },
   {
     "id": "fun",
-    "name": "Развлечения"
+    "name": "Развлечения",
+    "order": 80
   },
   {
     "id": "dasha",
-    "name": "Даша"
+    "name": "Даша",
+    "order": 90
   },
   {
     "id": "savings",
-    "name": "Накопления"
+    "name": "Накопления",
+    "order": 100
   },
   {
     "id": "gifts",
-    "name": "Подарки"
+    "name": "Подарки",
+    "order": 110
   },
   {
     "id": "beauty",
-    "name": "Внешний вид"
+    "name": "Внешний вид",
+    "order": 120
   },
   {
     "id": "shopping",
-    "name": "Покупки"
+    "name": "Покупки",
+    "order": 130
   },
   {
     "id": "vacation",
-    "name": "Отпуск"
+    "name": "Отпуск",
+    "order": 140
   },
   {
     "id": "other",
-    "name": "Прочее"
+    "name": "Прочее",
+    "order": 150
+  },
+  {
+    "id": "income",
+    "name": "Приходы",
+    "order": 160
   }
 ]

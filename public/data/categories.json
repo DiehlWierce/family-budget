@@ -129,7 +129,7 @@
     "id": "inc-dasha",
     "name": "От Даши",
     "group": "income",
-    "groupName": "Прочее"
+    "groupName": "Приходы"
   },
   {
     "id": "transport-x",
@@ -141,13 +141,13 @@
     "id": "inc-carryover",
     "name": "Остаток с прошлой получки",
     "group": "income",
-    "groupName": "Прочее"
+    "groupName": "Приходы"
   },
   {
     "id": "inc-refund",
     "name": "Возврат / кэшбэк",
     "group": "income",
-    "groupName": "Прочее"
+    "groupName": "Приходы"
   },
   {
     "id": "subs-x",
@@ -177,7 +177,7 @@
     "id": "inc-savings",
     "name": "Из отложенных",
     "group": "income",
-    "groupName": "Прочее"
+    "groupName": "Приходы"
   },
   {
     "id": "debt-extra",
@@ -189,7 +189,7 @@
     "id": "inc-other",
     "name": "Прочий приход",
     "group": "income",
-    "groupName": "Прочее"
+    "groupName": "Приходы"
   },
   {
     "id": "savings-move",
@@ -201,13 +201,13 @@
     "id": "inc-person",
     "name": "От людей",
     "group": "income",
-    "groupName": "Прочее"
+    "groupName": "Приходы"
   },
   {
     "id": "inc-vacation",
     "name": "Отпускные",
     "group": "income",
-    "groupName": "Прочее"
+    "groupName": "Приходы"
   },
   {
     "id": "loan-remont-old",
@@ -316,5 +316,12 @@
     "name": "Кредит на отпуск",
     "group": "debt",
     "groupName": "Долги"
+  },
+  {
+    "id": "cat-mtj6br3e",
+    "name": "Новая подкатегория",
+    "group": "comms",
+    "groupName": "Связь",
+    "archived": true
   }
 ]
