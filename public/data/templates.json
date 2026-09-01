@@ -377,5 +377,18 @@
     "from": "2026-09-1",
     "to": null,
     "order": 151
+  },
+  {
+    "id": "tpl-y-mtj7s890",
+    "title": "На ДР Д. Таах",
+    "categoryId": "other-x",
+    "kind": "optional",
+    "amount": 300,
+    "slot": 2,
+    "freq": "yearly",
+    "month": 9,
+    "from": "2026-08-2",
+    "to": null,
+    "order": 152
   }
 ]

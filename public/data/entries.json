@@ -18233,5 +18233,27 @@
     "title": "Отложено из кредита на 50к",
     "plan": 5000,
     "fact": null
+  },
+  {
+    "id": "2026-09-2-t-tpl-y-mtj7s890",
+    "paycheckId": "2026-09-2",
+    "templateId": "tpl-y-mtj7s890",
+    "kind": "optional",
+    "categoryId": "other-x",
+    "title": "На ДР Д. Таах",
+    "plan": 300,
+    "fact": null,
+    "order": 152
+  },
+  {
+    "id": "2027-09-2-t-tpl-y-mtj7s890",
+    "paycheckId": "2027-09-2",
+    "templateId": "tpl-y-mtj7s890",
+    "kind": "optional",
+    "categoryId": "other-x",
+    "title": "На ДР Д. Таах",
+    "plan": 300,
+    "fact": null,
+    "order": 152
   }
 ]
