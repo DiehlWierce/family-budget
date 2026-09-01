@@ -2,7 +2,25 @@ import { useState } from 'react'
 import { useBudget } from '../store'
 import { checkAccess } from '../github'
 import { Categories } from './Categories'
-import type { GithubConfig } from '../types'
+import { BUILT_AT, COMMIT, VERSION } from '../version'
+import { today } from '../format'
+import type { Budget, GithubConfig } from '../types'
+
+/**
+ * Выгрузка всех данных одним файлом: страховка на случай, если доступ
+ * к репозиторию пропадёт. Обратно раскладывается по `public/data` руками.
+ */
+function download(budget: Budget) {
+  const blob = new Blob([JSON.stringify(budget, null, 2) + '\n'], {
+    type: 'application/json',
+  })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `budget-${today()}.json`
+  a.click()
+  URL.revokeObjectURL(url)
+}
 
 /**
  * Владельца и репозиторий берём из адреса: приложение живёт на
@@ -179,6 +197,10 @@ export function Settings() {
           </div>
           <div style={{ display: 'flex', gap: 8, marginTop: 14, flexWrap: 'wrap' }}>
             <button className="btn ghost" onClick={reload}>Перечитать с сервера</button>
+            <button className="btn ghost" onClick={() => budget && download(budget)}
+              disabled={!budget}>
+              Скачать все данные
+            </button>
             <button className="btn ghost" onClick={discardDraft} disabled={!dirty}>
               Отменить несохранённые правки
             </button>
@@ -199,6 +221,10 @@ export function Settings() {
             как обычная иконка.
           </div>
         </div>
+      </div>
+
+      <div className="tiny muted" style={{ textAlign: 'center', padding: '18px 0 4px' }}>
+        Версия {VERSION} · {COMMIT} · собрано {new Date(BUILT_AT).toLocaleString('ru-RU')}
       </div>
     </div>
   )

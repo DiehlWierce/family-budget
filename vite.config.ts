@@ -2,6 +2,21 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { execSync } from 'node:child_process'
+import { version } from './package.json'
+
+/**
+ * Версию видно в «Настройках»: по ней понятно, свежую ли сборку открыл телефон —
+ * PWA любит показывать закэшированную.
+ */
+function commit(): string {
+  try {
+    return execSync('git rev-parse --short HEAD', { stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString().trim()
+  } catch {
+    return 'dev'
+  }
+}
 
 /**
  * В dev-режиме приложение сохраняет данные прямо в public/data —
@@ -37,4 +52,9 @@ function localSave(): Plugin {
 export default defineConfig({
   base: process.env.VITE_BASE ?? '/family-budget/',
   plugins: [react(), localSave()],
+  define: {
+    __APP_VERSION__: JSON.stringify(version),
+    __APP_COMMIT__: JSON.stringify(commit()),
+    __APP_BUILT__: JSON.stringify(new Date().toISOString()),
+  },
 })
