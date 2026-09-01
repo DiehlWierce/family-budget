@@ -20,7 +20,8 @@ interface Usage {
  */
 export function Categories() {
   const {
-    budget, canEdit, updateCategory, addCategory, mergeCategories, updateGroup, addGroup,
+    budget, canEdit, updateCategory, addCategory, mergeCategories, removeCategory,
+    updateGroup, addGroup,
   } = useBudget()
   const [open, setOpen] = useState<string | null>(null)
   const [mergeTo, setMergeTo] = useState<Record<string, string>>({})
@@ -122,6 +123,8 @@ export function Categories() {
               {live.map((c) => {
                 const u = stat(c)
                 const expanded = open === c.id
+                // Пустую категорию — случайно добавленную, например, — сносим совсем.
+                const empty = u.entries === 0 && u.templates === 0
                 return (
                   <div className={'catrow' + (c.archived ? ' archived' : '')} key={c.id}>
                     <div className="catrow-head">
@@ -196,6 +199,22 @@ export function Categories() {
                                 className="btn ghost"
                                 onClick={() => updateCategory(c.id, { archived: !c.archived })}
                               >{c.archived ? 'Вернуть из архива' : 'В архив'}</button>
+                              {empty && (
+                                <button
+                                  className="btn ghost danger"
+                                  onClick={() => {
+                                    removeCategory(c.id)
+                                    setOpen(null)
+                                    setDone(`«${c.name}» удалена.`)
+                                  }}
+                                >Удалить</button>
+                              )}
+                            </div>
+                            <div className="tiny muted" style={{ gridColumn: '1 / -1' }}>
+                              {empty
+                                ? 'Категория пустая — её можно удалить насовсем.'
+                                : 'Пока в категории есть строки, удалить её нельзя: строки остались бы'
+                                  + ' без категории. Слей её с другой или убери в архив.'}
                             </div>
                           </div>
                         )}

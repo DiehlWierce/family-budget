@@ -10,16 +10,8 @@ export interface SalaryStep {
   note?: string
 }
 
-export interface Indexation {
-  enabled: boolean
-  /** Месяц, с первого числа которого поднимается оклад. */
-  month: number
-  percent: number
-}
-
 export interface SalaryConfig {
   history: SalaryStep[]
-  indexation: Indexation
 }
 
 /**
@@ -35,26 +27,15 @@ export function accrualPeriod(p: Pick<Paycheck, 'periodYear' | 'periodMonth' | '
   return { year, month, fromDay: 16, toDay: daysInMonth(year, month) }
 }
 
-/** Оклад, действующий на дату, с учётом ежегодной индексации после последней записи. */
+/**
+ * Оклад, действующий на дату: последняя запись, начавшаяся не позже неё.
+ * Ничего не досочиняем — вперёд действует тот оклад, что вбит руками.
+ */
 export function monthlyAt(date: string, cfg: SalaryConfig): number {
-  const steps = [...cfg.history].sort((a, z) => a.from.localeCompare(z.from))
+  const steps = [...(cfg.history ?? [])].sort((a, z) => a.from.localeCompare(z.from))
   let base = steps[0]
   for (const s of steps) if (s.from <= date) base = s
-  if (!base) return 0
-  let value = base.monthly
-  if (!cfg.indexation.enabled) return value
-
-  // Каждое наступившее с момента base.from первое число месяца индексации поднимает оклад.
-  const start = new Date(base.from + 'T00:00:00')
-  const target = new Date(date + 'T00:00:00')
-  let year = start.getFullYear()
-  for (let guard = 0; guard < 60; guard++) {
-    const point = new Date(year, cfg.indexation.month - 1, 1)
-    if (point > target) break
-    if (point > start) value = Math.round(value * (1 + cfg.indexation.percent / 100))
-    year += 1
-  }
-  return value
+  return base?.monthly ?? 0
 }
 
 export interface SalaryCalc {

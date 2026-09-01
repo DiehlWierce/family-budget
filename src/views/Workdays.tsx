@@ -2,7 +2,10 @@ import { useMemo, useState } from 'react'
 import { useBudget } from '../store'
 import { accrualPeriod, computeSalary } from '../salary'
 import { money, monthName, monthNameGen, plural, today } from '../format'
-import { halfWorkdaysByCalendar, monthKey, workdaysInMonth, type MonthWorkdays } from '../workdays'
+import {
+  daysInMonth, halfWorkdaysByCalendar, monthKey, payDate, workdaysInMonth, type MonthWorkdays,
+} from '../workdays'
+import type { Paycheck } from '../types'
 
 const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
@@ -35,16 +38,46 @@ function DaysInput({ value, hint, disabled, onChange }: {
   )
 }
 
+/** Одна половина месяца: сколько отработано и когда за неё платят. */
+function Half({ label, days, hint, pay, payHint, amount, canEdit, onDays, onDate }: {
+  label: string
+  days: number | null
+  hint: number
+  pay: Paycheck | null
+  payHint: string
+  amount: number | null
+  canEdit: boolean
+  onDays: (v: number | null) => void
+  onDate: (v: string) => void
+}) {
+  return (
+    <div className="wdhalf">
+      <span className="wd-half-label">{label}</span>
+      <DaysInput value={days} hint={hint} disabled={!canEdit} onChange={onDays} />
+      <input
+        className="wd-date" type="date" disabled={!canEdit || !pay}
+        key={(pay?.id ?? 'none') + (pay?.date ?? '')} defaultValue={pay?.date ?? payHint}
+        onBlur={(ev) => { if (pay && ev.target.value && ev.target.value !== pay.date) onDate(ev.target.value) }}
+      />
+      <span className="wd-half-sum tiny muted">
+        {!pay ? 'получки ещё нет'
+          : pay.salaryOverride !== null ? `${money(pay.salaryOverride)} · вбито руками`
+            : money(amount ?? 0)}
+      </span>
+    </div>
+  )
+}
+
 /**
- * Таблица рабочих дней. Всё привязано к месяцу начисления, а не к дате прихода денег:
+ * Рабочие дни. Строка — месяц, за который начисляют, а не месяц, в который платят:
  * дни 1–15 уезжают в получку 21-го этого месяца, дни 16–конец — в получку 6-го следующего.
+ * Поэтому первая получка любого месяца — это всегда вторая половина месяца прошлого.
  *
- * Начинаем с месяца, за который считается ближайшая неполученная получка, — а это,
- * когда впереди получка 6-го числа, прошлый месяц. Раньше не показываем: те деньги
- * уже пришли, и правка дней их не изменит.
+ * Начинаем с месяца, за который считается ближайшая неполученная получка. Раньше не
+ * показываем: те деньги уже пришли, и правка дней их не изменит.
  */
 export function Workdays() {
-  const { budget, canEdit, updateCalendar } = useBudget()
+  const { budget, canEdit, updateCalendar, updatePaycheck } = useBudget()
   const now = today()
   // Стартовый месяц — тот, за который считается ближайшая получка: в начале января
   // это ещё декабрь прошлого года, поэтому год по умолчанию берём отсюда, а не с календаря.
@@ -56,7 +89,6 @@ export function Workdays() {
   }, [budget, now])
   const [picked, setPicked] = useState<number | null>(null)
   const year = picked ?? start.year
-  const setYear = setPicked
 
   const view = useMemo(() => {
     if (!budget) return null
@@ -64,27 +96,28 @@ export function Workdays() {
       .filter((y) => y >= start.year)
       .sort()
     const fromMonth = year === start.year ? start.month : 1
-    const months = MONTHS.filter((m) => m >= fromMonth)
-    const rows = months.map((m) => {
-      const key = monthKey(year, m)
-      const manual: MonthWorkdays = budget.calendar.months?.[key] ?? {}
-      // Получка 21-го — за первую половину этого месяца, получка 6-го — за вторую половину.
-      const second = budget.paychecks.find((p) => p.periodYear === year && p.periodMonth === m && p.slot === 2)
+    const rows = MONTHS.filter((m) => m >= fromMonth).map((m) => {
       const nextMonth = m === 12 ? 1 : m + 1
       const nextYear = m === 12 ? year + 1 : year
-      const first = budget.paychecks.find(
+      // Получка 21-го — за первую половину этого месяца, получка 6-го следующего — за вторую.
+      const pay21 = budget.paychecks.find(
+        (p) => p.periodYear === year && p.periodMonth === m && p.slot === 2,
+      ) ?? null
+      const pay6 = budget.paychecks.find(
         (p) => p.periodYear === nextYear && p.periodMonth === nextMonth && p.slot === 1,
-      )
+      ) ?? null
       return {
-        month: m, key, manual,
+        month: m, key: monthKey(year, m), nextMonth, nextYear, pay21, pay6,
+        manual: (budget.calendar.months?.[monthKey(year, m)] ?? {}) as MonthWorkdays,
         calc: {
           norm: workdaysInMonth(year, m, budget.calendar),
           first: halfWorkdaysByCalendar(year, m, 'first', budget.calendar),
           second: halfWorkdaysByCalendar(year, m, 'second', budget.calendar),
         },
-        pay21: second ? computeSalary(second, budget.salary, budget.calendar) : null,
-        pay6: first ? computeSalary(first, budget.salary, budget.calendar) : null,
-        pinned: (second?.salaryOverride ?? null) !== null || (first?.salaryOverride ?? null) !== null,
+        hint21: payDate(year, m, 21, budget.calendar),
+        hint6: payDate(nextYear, nextMonth, 6, budget.calendar),
+        sum21: pay21 ? computeSalary(pay21, budget.salary, budget.calendar).amount : null,
+        sum6: pay6 ? computeSalary(pay6, budget.salary, budget.calendar).amount : null,
       }
     })
     return { years: years.length ? years : [start.year], rows }
@@ -106,59 +139,77 @@ export function Workdays() {
   const filled = Object.keys(budget.calendar.months ?? {}).length
 
   return (
-    <div className="card">
-      <div className="card-head"><h2>Рабочие дни</h2>
-        <span className="hint">{filled ? `${filled} ${plural(filled, 'месяц', 'месяца', 'месяцев')} вбито` : 'по календарю'}</span>
-      </div>
-      <div className="card-body">
-        <div className="tiny muted">
-          Получка считается так: оклад делим на норму месяца и умножаем на рабочие дни половины.
-          Пустое поле — считаем сами по производственному календарю; вписанное число всегда
-          сильнее расчёта. Начинаю с месяца, за который считается ближайшая получка: деньги
-          6-го числа — это вторая половина прошлого месяца. Что было раньше, не показываю —
-          те получки уже пришли, и правка дней их не изменит.
+    <>
+      <div className="card">
+        <div className="card-head"><h2>Рабочие дни и даты получек</h2>
+          <span className="hint">
+            {filled ? `${filled} ${plural(filled, 'месяц', 'месяца', 'месяцев')} вбито` : 'по календарю'}
+          </span>
         </div>
-
-        <div className="picker" style={{ marginTop: 14 }}>
-          <select value={year} onChange={(ev) => setYear(Number(ev.target.value))} aria-label="Год">
-            {years.map((y) => <option key={y} value={y}>{y} год</option>)}
-          </select>
-        </div>
-
-        <div className="wdhead">
-          <span>Месяц</span>
-          <span className="r">Норма</span>
-          <span className="r">1–15</span>
-          <span className="r">16–конец</span>
-        </div>
-        {rows.map((r) => (
-          <div className="wdrow" key={r.key}>
-            <span className="wd-name">{monthName(r.month)}</span>
-            <DaysInput
-              value={r.manual.norm ?? null} hint={r.calc.norm} disabled={!canEdit}
-              onChange={(v) => set(r.key, 'norm', v)}
-            />
-            <DaysInput
-              value={r.manual.first ?? null} hint={r.calc.first} disabled={!canEdit}
-              onChange={(v) => set(r.key, 'first', v)}
-            />
-            <DaysInput
-              value={r.manual.second ?? null} hint={r.calc.second} disabled={!canEdit}
-              onChange={(v) => set(r.key, 'second', v)}
-            />
-            <span className="wd-note tiny muted">
-              {r.pay21 && `получка 21 ${monthNameGen(r.month)} — ${money(r.pay21.amount)}`}
-              {r.pay6 && `${r.pay21 ? ' · ' : ''}6 ${monthNameGen(r.month === 12 ? 1 : r.month + 1)} — ${money(r.pay6.amount)}`}
-              {r.pinned && ' · где-то сумма вбита руками, расчёт не применяется'}
-            </span>
+        <div className="card-body">
+          <div className="picker">
+            <select value={year} onChange={(ev) => setPicked(Number(ev.target.value))} aria-label="Год">
+              {years.map((y) => <option key={y} value={y}>{y} год</option>)}
+            </select>
           </div>
-        ))}
 
-        <div className="tiny muted" style={{ marginTop: 12 }}>
-          Числа справа — сколько выйдет по расчёту с текущим окладом. Если в самой получке
-          вбита сумма «вместо расчёта», она сильнее и этой таблицы.
+          {rows.map((r) => (
+            <div className="wdmonth" key={r.key}>
+              <div className="wdmonth-head">
+                <span className="wd-name">{monthName(r.month)} {year}</span>
+                <span className="wd-norm-label tiny muted">рабочих дней в месяце</span>
+                <DaysInput
+                  value={r.manual.norm ?? null} hint={r.calc.norm} disabled={!canEdit}
+                  onChange={(v) => set(r.key, 'norm', v)}
+                />
+              </div>
+              <Half
+                label={`1–15 ${monthNameGen(r.month)} → получка`}
+                days={r.manual.first ?? null} hint={r.calc.first}
+                pay={r.pay21} payHint={r.hint21} amount={r.sum21} canEdit={canEdit}
+                onDays={(v) => set(r.key, 'first', v)}
+                onDate={(d) => r.pay21 && updatePaycheck(r.pay21.id, { date: d })}
+              />
+              <Half
+                label={`16–${daysInMonth(year, r.month)} ${monthNameGen(r.month)} → получка`}
+                days={r.manual.second ?? null} hint={r.calc.second}
+                pay={r.pay6} payHint={r.hint6} amount={r.sum6} canEdit={canEdit}
+                onDays={(v) => set(r.key, 'second', v)}
+                onDate={(d) => r.pay6 && updatePaycheck(r.pay6.id, { date: d })}
+              />
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+
+      <div className="card">
+        <div className="card-head"><h2>Как это читается</h2></div>
+        <div className="card-body">
+          <div className="tiny muted">
+            <p style={{ margin: '0 0 8px' }}>
+              Строка — месяц, за который начислили, а не месяц, в который заплатили. У месяца две
+              половины, и каждая едет в свою получку: <b>1–15</b> — в получку 21-го этого месяца,
+              <b> 16 и дальше</b> — в получку 6-го следующего. Значит, первая получка любого
+              месяца — это всегда вторая половина месяца прошлого.
+            </p>
+            <p style={{ margin: '0 0 8px' }}>
+              Сумма получки — оклад, делённый на рабочие дни всего месяца и умноженный на
+              рабочие дни половины.
+            </p>
+            <p style={{ margin: '0 0 8px' }}>
+              Числа полей — рабочие дни. Серое число — расчёт по производственному календарю;
+              впиши своё, и оно станет сильнее расчёта. Чтобы вернуться к расчёту, сотри поле.
+            </p>
+            <p style={{ margin: 0 }}>
+              Дата рядом — день, когда деньги придут. По умолчанию это 6-е и 21-е, а если
+              выпадает на выходной или праздник — ближайший рабочий день назад: отсюда и 5-е,
+              и 4-е, и 31 декабря вместо 6 января. Правило знает не все переносы, поэтому дату
+              можно поправить руками. Если в самой получке вбита сумма «вместо расчёта»,
+              она сильнее и рабочих дней, и оклада.
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }

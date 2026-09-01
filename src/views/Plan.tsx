@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 import { useBudget } from '../store'
-import { currentPaycheckId, nextPaycheck } from '../calc'
-import { computeSalary, monthlyAt } from '../salary'
-import { dayMonth, money, monthName, monthNameGen, plural, today } from '../format'
+import { currentPaycheckId } from '../calc'
+import { computeSalary } from '../salary'
+import { dayMonth, money, monthName, plural, today } from '../format'
 import { CategoryPicker } from '../components/CategoryPicker'
 import { Sortable, type HandleProps } from '../components/Sortable'
 import { Workdays } from './Workdays'
@@ -12,8 +12,6 @@ const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 /** Дальше 2027-го пока не считаем: год досчитывается кнопкой «Продлить». */
 const HORIZONS = [2027, 2028, 2029, 2030]
-
-type Scope = 'next' | 'current' | 'new'
 
 const parseAmount = (raw: string): number => {
   const s = raw.replace(/\s|₽/g, '').replace(',', '.')
@@ -106,7 +104,6 @@ export function Plan() {
   const [horizon, setHorizon] = useState(HORIZONS[0])
   const [note, setNote] = useState<string | null>(null)
   const [sync, setSync] = useState<string | null>(null)
-  const [scope, setScope] = useState<Scope>('next')
 
   const view = useMemo(() => {
     if (!budget) return null
@@ -120,26 +117,22 @@ export function Plan() {
 
     const nowId = currentPaycheckId(budget.paychecks)
     const now = nowId ? budget.paychecks.find((p) => p.id === nowId) ?? null : null
-    const next = nowId ? nextPaycheck(budget.paychecks, nowId) : null
 
-    return { last, future, regular, yearly, perMonth, yearlySum, now, next }
+    return { last, future, regular, yearly, perMonth, yearlySum, now }
   }, [budget])
 
   if (!budget || !view) return <div className="center">Загрузка…</div>
-  const { last, future, regular, yearly, perMonth, yearlySum, now, next } = view
+  const { last, future, regular, yearly, perMonth, yearlySum, now } = view
   const step = budget.salary.history[budget.salary.history.length - 1]
-  const ix = budget.salary.indexation
 
-  const startId = scope === 'current' ? now?.id ?? null : scope === 'next' ? next?.id ?? null : null
-  const startLabel = scope === 'new'
-    ? 'только в получках, которых ещё нет'
-    : startId
-      ? `начиная с ${dayMonth((scope === 'current' ? now! : next!).date)}`
-      : 'только в базе — подходящей получки не нашлось'
+  // Правка базы всегда идёт с текущей получки: прошлое — записанная история, а ближайшая
+  // получка — то, что ты сейчас живёшь, и её правка касается в первую очередь.
+  const startId = now?.id ?? null
 
   const said = (n: number, what: string) => setSync(
     startId
-      ? `${what}: тронуто ${n} ${plural(n, 'строка', 'строки', 'строк')} в получках ${startLabel}.`
+      ? `${what}: тронуто ${n} ${plural(n, 'строка', 'строки', 'строк')}`
+        + ` в получках начиная с текущей — ${dayMonth(now!.date)}.`
       : `${what}: правка легла в базу. Уже расписанные получки не тронуты.`,
   )
 
@@ -253,42 +246,9 @@ export function Plan() {
             })}>+ добавить изменение оклада</button>
           )}
 
-          <div className="section-title" style={{ marginTop: 20 }}>Индексация</div>
-          <label className="checkline">
-            <input
-              type="checkbox" checked={ix.enabled} disabled={!canEdit}
-              onChange={(ev) => updateSalary({ indexation: { ...ix, enabled: ev.target.checked } })}
-            />
-            <span>Поднимать оклад каждый год</span>
-          </label>
-          <div className="fields" style={{ marginTop: 10 }}>
-            <label className="field">
-              <span>С какого месяца</span>
-              <select
-                value={ix.month} disabled={!canEdit || !ix.enabled}
-                onChange={(ev) => updateSalary({ indexation: { ...ix, month: Number(ev.target.value) } })}
-              >
-                {MONTHS.map((m) => <option key={m} value={m}>{monthName(m)}</option>)}
-              </select>
-            </label>
-            <label className="field">
-              <span>На сколько процентов</span>
-              <input
-                inputMode="decimal" disabled={!canEdit || !ix.enabled}
-                key={String(ix.percent)} defaultValue={String(ix.percent)}
-                onBlur={(ev) => {
-                  const v = parseAmount(ev.target.value)
-                  if (v !== ix.percent) updateSalary({ indexation: { ...ix, percent: v } })
-                }}
-                onKeyDown={(ev) => { if (ev.key === 'Enter') (ev.target as HTMLInputElement).blur() }}
-              />
-            </label>
-          </div>
-          <div className="tiny muted" style={{ marginTop: 8 }}>
-            {ix.enabled
-              ? `Оклад растёт на ${ix.percent}% с первого числа ${monthNameGen(ix.month)} каждого года.`
-                + ' Получка 21-го числа — первая, которая это застаёт.'
-              : 'Индексация выключена: оклад держится на последнем значении из таблицы выше.'}
+          <div className="tiny muted" style={{ marginTop: 12 }}>
+            Вперёд действует последний вбитый оклад — сам он не растёт. Повысили — добавь
+            строку с датой, и все получки с этого дня пересчитаются.
           </div>
         </div>
       </div>
@@ -308,7 +268,8 @@ export function Plan() {
                   <div>
                     <div className="name">{dayMonth(p.date)} {p.date.slice(0, 4)}</div>
                     <div className="sub">
-                      {c.workdays} из {c.normWorkdays} раб. дней · оклад {money(c.monthly)}
+                      за {c.periodLabel} · {c.workdays} из {c.normWorkdays} раб. дней ·
+                      оклад {money(c.monthly)}
                       {p.salaryOverride !== null ? ' · вбито руками' : ''}
                     </div>
                   </div>
@@ -318,40 +279,9 @@ export function Plan() {
             })}
           </div>
           <div className="tiny muted" style={{ marginTop: 12 }}>
-            Оклад через год — {money(monthlyAt(`${new Date().getFullYear() + 1}-12-01`, budget.salary))},
-            через три — {money(monthlyAt(`${new Date().getFullYear() + 3}-12-01`, budget.salary))}.
+            Получка 6-го числа — это вторая половина прошлого месяца, получка 21-го — первая
+            половина этого. Рабочие дни и даты правятся в блоке выше.
           </div>
-        </div>
-      </div>
-
-      <div className="card">
-        <div className="card-head"><h2>Куда попадают правки базы</h2></div>
-        <div className="card-body">
-          <div className="scopes">
-            {([
-              ['current', now ? `С текущей — ${dayMonth(now.date)}` : 'С текущей получки',
-                'Правка задевает и ту получку, которую ты сейчас живёшь.'],
-              ['next', next ? `Со следующей — ${dayMonth(next.date)}` : 'Со следующей получки',
-                'Текущая остаётся как есть. Обычный случай: платёж изменился со следующего раза.'],
-              ['new', 'Только в новых', 'Уже расписанные получки не трогаем совсем.'],
-            ] as [Scope, string, string][]).map(([id, title, hint]) => (
-              <label key={id} className={'scope' + (scope === id ? ' on' : '')}>
-                <input
-                  type="radio" name="scope" checked={scope === id}
-                  onChange={() => { setScope(id); setSync(null) }}
-                />
-                <span>
-                  <b>{title}</b>
-                  <i className="tiny muted">{hint}</i>
-                </span>
-              </label>
-            ))}
-          </div>
-          <div className="tiny muted" style={{ marginTop: 10 }}>
-            Прошлое не меняется никогда. Там, где факт уже проставлен, правится только название и
-            категория — сумма остаётся той, что была на самом деле.
-          </div>
-          {sync && <div className="banner" style={{ marginTop: 12 }}>{sync}</div>}
         </div>
       </div>
 
@@ -360,6 +290,12 @@ export function Plan() {
           <span className="hint">{money(perMonth)} в месяц</span>
         </div>
         <div className="card-body">
+          <div className="tiny muted" style={{ marginBottom: 12 }}>
+            Правка отсюда идёт с текущей получки{now ? ` — ${dayMonth(now.date)}` : ''} и дальше.
+            Прошлое не меняется никогда. Там, где факт уже проставлен, правятся только название и
+            категория — сумма остаётся той, что была на самом деле.
+          </div>
+          {sync && <div className="banner" style={{ marginBottom: 12 }}>{sync}</div>}
           <div className="trow head">
             <span>Трата</span><span className="r">Сумма</span><span>Когда</span>
             <span>Что это</span><span /><span />

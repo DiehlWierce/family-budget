@@ -88,6 +88,15 @@ function normalize(b: Budget): Budget {
     })
   }
   const names = new Map(groups.map((g) => [g.id, g.name]))
+  const categories = (b.categories ?? []).map((c) => ({ ...c, groupName: names.get(c.group) ?? c.groupName }))
+
+  // Строка, чья подкатегория не существует, раньше просто выпадала из всех сводов:
+  // трата была, а в разборе по категориям её нет. Лучше показать её в «Прочем».
+  const catIds = new Set(categories.map((c) => c.id))
+  const fallback = catIds.has('other-x') ? 'other-x' : categories[0]?.id
+  const rehome = <T extends { categoryId: string }>(x: T) =>
+    (catIds.has(x.categoryId) || !fallback ? x : { ...x, categoryId: fallback })
+
   return {
     ...b,
     calendar: {
@@ -96,7 +105,11 @@ function normalize(b: Budget): Budget {
       months: cal.months ?? {},
     },
     groups,
-    categories: (b.categories ?? []).map((c) => ({ ...c, groupName: names.get(c.group) ?? c.groupName })),
+    categories,
+    entries: (b.entries ?? []).map(rehome),
+    templates: (b.templates ?? []).map(rehome),
+    // Индексации больше нет: вперёд действует последний вбитый оклад.
+    salary: { history: b.salary?.history ?? [] },
   }
 }
 
@@ -146,6 +159,8 @@ interface Ctx {
   addCategory: (c: Category) => void
   /** Слить подкатегории в одну: строки и шаблоны переезжают, лишние записи исчезают. */
   mergeCategories: (fromIds: string[], intoId: string) => number
+  /** Убрать подкатегорию совсем. Только пустую: за занятой стоит история. */
+  removeCategory: (id: string) => void
   updateGroup: (id: string, patch: Partial<Group>) => void
   addGroup: (g: Group) => void
   extendTo: (year: number) => number
@@ -262,7 +277,7 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const updatePaycheck: Ctx['updatePaycheck'] = useCallback((id, patch) => {
-    edit('правку зарплаты', (b) => ({
+    edit(patch.date !== undefined ? 'правку даты получки' : 'правку зарплаты', (b) => ({
       ...b, paychecks: b.paychecks.map((p) => (p.id === id ? { ...p, ...patch } : p)),
     }))
   }, [edit])
@@ -280,7 +295,7 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
       const order = siblings.length ? Math.max(...siblings.map((e) => e.order)) + 1 : 10
       const entry: Entry = {
         id, paycheckId, kind, order,
-        categoryId: kind === 'income' ? 'inc-other' : kind === 'required' ? 'other' : 'other-x',
+        categoryId: kind === 'income' ? 'inc-other' : 'other-x',
         title: '', plan: null, fact: null,
       }
       return { ...b, entries: [...b.entries, entry] }
@@ -424,6 +439,16 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
     return moved
   }, [apply])
 
+  const removeCategory: Ctx['removeCategory'] = useCallback((id) => {
+    const name = current.current?.categories.find((c) => c.id === id)?.name
+    edit(`удаление категории «${name || 'без названия'}»`, (b) => (
+      // Занятую категорию не трогаем: строки остались бы без категории.
+      b.entries.some((e) => e.categoryId === id) || b.templates.some((t) => t.categoryId === id)
+        ? b
+        : { ...b, categories: b.categories.filter((c) => c.id !== id) }
+    ))
+  }, [edit])
+
   const updateGroup: Ctx['updateGroup'] = useCallback((id, patch) => {
     edit('правку крупной категории', (b) => {
       const groups = b.groups.map((g) => (g.id === id ? { ...g, ...patch } : g))
@@ -511,7 +536,7 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
     publish, discardDraft, spreadForward, spreadForwardMany,
     updateTemplate, addTemplate, removeTemplate, reorderTemplate,
     applyTemplateToPaychecks, updateSalary, updateCalendar,
-    updateCategory, addCategory, mergeCategories, updateGroup, addGroup, extendTo,
+    updateCategory, addCategory, mergeCategories, removeCategory, updateGroup, addGroup, extendTo,
     reload: () => setNonce((n) => n + 1),
     // historyTick меняется на каждом шаге истории — без него undoLabel застревал бы.
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -521,7 +546,7 @@ export function BudgetProvider({ children }: { children: ReactNode }) {
       publish, discardDraft, spreadForward, spreadForwardMany,
       updateTemplate, addTemplate, removeTemplate, reorderTemplate,
       applyTemplateToPaychecks, updateSalary, updateCalendar,
-      updateCategory, addCategory, mergeCategories, updateGroup, addGroup, extendTo])
+      updateCategory, addCategory, mergeCategories, removeCategory, updateGroup, addGroup, extendTo])
 
   return <BudgetContext.Provider value={value}>{children}</BudgetContext.Provider>
 }

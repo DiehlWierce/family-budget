@@ -17110,7 +17110,7 @@
     "paycheckId": "2026-09-1",
     "kind": "required",
     "order": 33,
-    "categoryId": "other",
+    "categoryId": "internet-home",
     "title": "Домашний интернет",
     "plan": 750,
     "fact": null
@@ -17120,7 +17120,7 @@
     "paycheckId": "2026-09-1",
     "kind": "required",
     "order": 34,
-    "categoryId": "other",
+    "categoryId": "mobile-dasha",
     "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null
@@ -17140,7 +17140,7 @@
     "paycheckId": "2026-10-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17150,7 +17150,7 @@
     "paycheckId": "2026-10-1",
     "kind": "required",
     "order": 39,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17160,7 +17160,7 @@
     "paycheckId": "2026-11-1",
     "kind": "required",
     "order": 20,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17170,7 +17170,7 @@
     "paycheckId": "2026-12-1",
     "kind": "required",
     "order": 22,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17180,7 +17180,7 @@
     "paycheckId": "2027-01-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17190,7 +17190,7 @@
     "paycheckId": "2027-02-1",
     "kind": "required",
     "order": 20,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17200,7 +17200,7 @@
     "paycheckId": "2027-03-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17210,7 +17210,7 @@
     "paycheckId": "2027-04-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17220,7 +17220,7 @@
     "paycheckId": "2027-05-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17230,7 +17230,7 @@
     "paycheckId": "2027-06-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17240,7 +17240,7 @@
     "paycheckId": "2027-07-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17250,7 +17250,7 @@
     "paycheckId": "2027-08-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17260,7 +17260,7 @@
     "paycheckId": "2027-09-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17270,7 +17270,7 @@
     "paycheckId": "2027-10-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17280,7 +17280,7 @@
     "paycheckId": "2027-11-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17290,7 +17290,7 @@
     "paycheckId": "2027-12-1",
     "kind": "required",
     "order": 37,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17300,7 +17300,7 @@
     "paycheckId": "2026-11-1",
     "kind": "required",
     "order": 21,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17310,7 +17310,7 @@
     "paycheckId": "2026-12-1",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17320,7 +17320,7 @@
     "paycheckId": "2027-01-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17330,7 +17330,7 @@
     "paycheckId": "2027-02-1",
     "kind": "required",
     "order": 21,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17340,7 +17340,7 @@
     "paycheckId": "2027-03-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17350,7 +17350,7 @@
     "paycheckId": "2027-04-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17360,7 +17360,7 @@
     "paycheckId": "2027-05-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17370,7 +17370,7 @@
     "paycheckId": "2027-06-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17380,7 +17380,7 @@
     "paycheckId": "2027-07-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17390,7 +17390,7 @@
     "paycheckId": "2027-08-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17400,7 +17400,7 @@
     "paycheckId": "2027-09-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17410,7 +17410,7 @@
     "paycheckId": "2027-10-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17420,7 +17420,7 @@
     "paycheckId": "2027-11-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17430,7 +17430,7 @@
     "paycheckId": "2027-12-1",
     "kind": "required",
     "order": 38,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17440,7 +17440,7 @@
     "paycheckId": "2026-10-2",
     "kind": "required",
     "order": 153,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17450,7 +17450,7 @@
     "paycheckId": "2026-10-2",
     "kind": "required",
     "order": 154,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17460,7 +17460,7 @@
     "paycheckId": "2026-11-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17470,7 +17470,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 51,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17480,7 +17480,7 @@
     "paycheckId": "2027-01-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17490,7 +17490,7 @@
     "paycheckId": "2027-02-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17500,7 +17500,7 @@
     "paycheckId": "2027-03-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17510,7 +17510,7 @@
     "paycheckId": "2027-04-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17520,7 +17520,7 @@
     "paycheckId": "2027-05-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17530,7 +17530,7 @@
     "paycheckId": "2027-06-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17540,7 +17540,7 @@
     "paycheckId": "2027-07-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17550,7 +17550,7 @@
     "paycheckId": "2027-08-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17560,7 +17560,7 @@
     "paycheckId": "2027-09-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17570,7 +17570,7 @@
     "paycheckId": "2027-10-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17580,7 +17580,7 @@
     "paycheckId": "2027-11-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17590,7 +17590,7 @@
     "paycheckId": "2027-12-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "fun",
     "title": "Развлечения",
     "plan": 2000,
     "fact": null
@@ -17600,7 +17600,7 @@
     "paycheckId": "2026-11-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17610,7 +17610,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 52,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17620,7 +17620,7 @@
     "paycheckId": "2027-01-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17630,7 +17630,7 @@
     "paycheckId": "2027-02-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17640,7 +17640,7 @@
     "paycheckId": "2027-03-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17650,7 +17650,7 @@
     "paycheckId": "2027-04-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17660,7 +17660,7 @@
     "paycheckId": "2027-05-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17670,7 +17670,7 @@
     "paycheckId": "2027-06-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17680,7 +17680,7 @@
     "paycheckId": "2027-07-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17690,7 +17690,7 @@
     "paycheckId": "2027-08-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17700,7 +17700,7 @@
     "paycheckId": "2027-09-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17710,7 +17710,7 @@
     "paycheckId": "2027-10-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17720,7 +17720,7 @@
     "paycheckId": "2027-11-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17730,7 +17730,7 @@
     "paycheckId": "2027-12-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -17916,7 +17916,7 @@
     "paycheckId": "2026-10-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -17926,7 +17926,7 @@
     "paycheckId": "2026-11-1",
     "kind": "required",
     "order": 13,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -17936,7 +17936,7 @@
     "paycheckId": "2026-12-1",
     "kind": "required",
     "order": 15,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -17946,7 +17946,7 @@
     "paycheckId": "2027-02-1",
     "kind": "required",
     "order": 13,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -17956,7 +17956,7 @@
     "paycheckId": "2027-03-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -17966,7 +17966,7 @@
     "paycheckId": "2027-04-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -17976,7 +17976,7 @@
     "paycheckId": "2027-05-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -17986,7 +17986,7 @@
     "paycheckId": "2027-06-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -17996,7 +17996,7 @@
     "paycheckId": "2027-07-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -18006,7 +18006,7 @@
     "paycheckId": "2027-08-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -18016,7 +18016,7 @@
     "paycheckId": "2027-09-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -18026,7 +18026,7 @@
     "paycheckId": "2027-10-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -18036,7 +18036,7 @@
     "paycheckId": "2027-11-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -18046,7 +18046,7 @@
     "paycheckId": "2027-12-1",
     "kind": "required",
     "order": 16,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -18056,7 +18056,7 @@
     "paycheckId": "2026-09-2",
     "kind": "required",
     "order": 43,
-    "categoryId": "other",
+    "categoryId": "dasha",
     "title": "Траты на Дашу",
     "plan": 3000,
     "fact": null
@@ -18088,7 +18088,7 @@
     "paycheckId": "2026-10-2",
     "kind": "required",
     "order": 24,
-    "categoryId": "other",
+    "categoryId": "internet-home",
     "title": "Домашний интернет",
     "plan": 750,
     "fact": null
@@ -18098,7 +18098,7 @@
     "paycheckId": "2026-10-2",
     "kind": "required",
     "order": 25,
-    "categoryId": "other",
+    "categoryId": "mobile-dasha",
     "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null
@@ -18108,7 +18108,7 @@
     "paycheckId": "2026-10-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "mobile-my",
     "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null
@@ -18118,7 +18118,7 @@
     "paycheckId": "2026-12-1",
     "kind": "required",
     "order": 11,
-    "categoryId": "other",
+    "categoryId": "mortgage",
     "title": "Ипотека",
     "plan": 27200,
     "fact": null
@@ -18128,7 +18128,7 @@
     "paycheckId": "2026-12-1",
     "kind": "required",
     "order": 14,
-    "categoryId": "other",
+    "categoryId": "loan-otpusk",
     "title": "Кредит №3 на 200к",
     "plan": 10900,
     "fact": null
@@ -18138,7 +18138,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 40,
-    "categoryId": "other",
+    "categoryId": "utilities",
     "title": "Кварплата",
     "plan": 12000,
     "fact": null
@@ -18148,7 +18148,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 41,
-    "categoryId": "other",
+    "categoryId": "sport",
     "title": "Спорт",
     "plan": 15000,
     "fact": null
@@ -18158,7 +18158,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 45,
-    "categoryId": "other",
+    "categoryId": "internet-home",
     "title": "Домашний интернет",
     "plan": 750,
     "fact": null
@@ -18168,7 +18168,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 46,
-    "categoryId": "other",
+    "categoryId": "mobile-dasha",
     "title": "Моб. инет (Даши)",
     "plan": 550,
     "fact": null
@@ -18178,7 +18178,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 47,
-    "categoryId": "other",
+    "categoryId": "mobile-my",
     "title": "Моб. инет (Мой)",
     "plan": 750,
     "fact": null
@@ -18198,7 +18198,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 24,
-    "categoryId": "other",
+    "categoryId": "mortgage",
     "title": "Ипотека",
     "plan": 27200,
     "fact": null
@@ -18208,7 +18208,7 @@
     "paycheckId": "2026-12-2",
     "kind": "required",
     "order": 25,
-    "categoryId": "other",
+    "categoryId": "loan-otpusk",
     "title": "Кредит №3 на 200к",
     "plan": 10900,
     "fact": null

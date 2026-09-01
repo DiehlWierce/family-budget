@@ -20,10 +20,5 @@
       "monthly": 215300,
       "note": "повышение"
     }
-  ],
-  "indexation": {
-    "enabled": false,
-    "month": 9,
-    "percent": 5
-  }
+  ]
 }

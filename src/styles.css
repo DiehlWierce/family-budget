@@ -419,17 +419,6 @@ td.n { font-family: "JetBrains Mono", monospace; font-size: 13px; }
 
 /* ------------------------------------------------------------ куда применять правку */
 
-.scopes { display: grid; gap: 8px; }
-.scope {
-  display: flex; gap: 10px; align-items: flex-start;
-  border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 10px 12px; cursor: pointer;
-}
-.scope.on { border-color: var(--accent); background: var(--accent-soft); }
-.scope input { width: 17px; height: 17px; margin-top: 2px; accent-color: var(--accent); }
-.scope span { display: grid; gap: 2px; }
-.scope b { font-weight: 600; font-size: 14.5px; }
-.scope i { font-style: normal; }
 
 .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .fields .field { margin-bottom: 0; }
@@ -548,19 +537,26 @@ table.matrix td.heat {
 
 /* ------------------------------------------------------------ рабочие дни */
 
-.wdhead, .wdrow {
-  display: grid; grid-template-columns: 1fr 60px 60px 60px;
-  gap: 6px; align-items: center; padding: 6px 0;
+.wdmonth { border-bottom: 1px solid var(--line); padding: 12px 0; }
+.wdmonth:last-of-type { border-bottom: 0; padding-bottom: 0; }
+.wdmonth-head {
+  display: grid; grid-template-columns: 1fr auto 60px; gap: 8px; align-items: center;
 }
-.wdhead {
-  font-family: "JetBrains Mono", monospace; font-size: 10px;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--ink3);
-  border-bottom: 1px solid var(--line); margin-top: 14px;
+.wd-name { font-family: Bitter, Georgia, serif; font-size: 16px; }
+.wd-norm-label { text-align: right; }
+.wdhalf {
+  display: grid; grid-template-columns: 1fr 60px; gap: 6px 8px;
+  align-items: center; margin-top: 8px;
 }
-.wdhead .r { text-align: right; }
-.wdrow { border-bottom: 1px solid var(--line2); }
-.wd-name { font-size: 14px; }
-.wd-note { grid-column: 1 / -1; margin-top: -2px; }
+.wd-half-label { font-size: 13px; color: var(--ink2); }
+.wd-half-sum { grid-column: 1 / -1; margin-top: -4px; }
+input.wd-date {
+  grid-column: 1 / -1; width: 100%; background: transparent;
+  border: 1px solid var(--line2); border-radius: 3px; padding: 6px 8px;
+  font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--ink);
+}
+input.wd-date:focus { outline: none; border-color: var(--accent); background: var(--surface2); }
+input.wd-date:disabled { color: var(--ink3); }
 input.days {
   width: 100%; text-align: right; background: transparent;
   border: 1px solid var(--line2); border-radius: 3px; padding: 7px 8px;
@@ -614,7 +610,8 @@ input.days::placeholder { color: var(--ink3); opacity: .55; }
   .catrow-head { grid-template-columns: 1fr auto auto; }
   .catrow-head .num { grid-row: 1; grid-column: 2; }
   .catrow-head .linkbtn { grid-column: 3; }
-  .wdhead, .wdrow { grid-template-columns: 120px 70px 70px 70px 1fr; }
-  .wd-note { grid-column: auto; margin-top: 0; text-align: right; }
+  .wdhalf { grid-template-columns: 1fr 70px 150px 130px; align-items: center; }
+  .wd-half-sum { grid-column: auto; margin-top: 0; text-align: right; }
+  input.wd-date { grid-column: auto; }
   .nav button { font-size: 11px; }
 }

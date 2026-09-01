@@ -288,7 +288,7 @@ def main():
                 plan_v = -plan if has_plan else None
                 fact_v = -fact if has_fact else None
             elif required:
-                cid, name, group = REQUIRED_MAP.get(label, ('other', 'Прочее', 'other'))
+                cid, name, group = REQUIRED_MAP.get(label, ('other-x', 'Прочее', 'other'))
                 remember(cid, name, group)
                 kind = 'required'
                 plan_v, fact_v = (plan if has_plan else None), (fact if has_fact else None)
@@ -350,7 +350,6 @@ def main():
     dump('salary.json', {
         'history': [{'from': TODAY[:8] + '01', 'monthly': 215000,
                      'note': 'актуальный оклад — поправь, если не так'}],
-        'indexation': {'enabled': True, 'month': 9, 'percent': 5},
     })
     dump('calendar.json', {
         # Переносы конца года утверждает постановление, правило их не знает.
